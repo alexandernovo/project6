@@ -347,12 +347,13 @@
     color: #fff;
 }
 
-.btn-prime {
-    background-color: #555554;
-    color: white;
+.btn-prime,
+.btn-prime:active,
+.btn-prime:focus, .btn-prime:hover {
+    background-color: #555554 !important;
+    color: white !important;
 }
 
-.bg-green
-{
+.bg-green {
     background-color: #329514;
 }
