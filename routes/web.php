@@ -8,6 +8,7 @@ use App\Http\Controllers\BoatingController;
 use App\Http\Controllers\ChainsawController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IncidentReportController;
+use App\Http\Controllers\InventoryReportController;
 use App\Http\Controllers\ProgressReportController;
 use App\Http\Controllers\SituationalReportController;
 use App\Http\Controllers\StoreController;
@@ -46,3 +47,9 @@ Route::get('/progressreport/view', [ProgressReportController::class, 'progressre
 Route::post('/progressreport/save_new_progressreport', [ProgressReportController::class, 'save_new_progressreport'])->name('save_new_progressreport');
 Route::post('/progressreport/getprogressreports', [ProgressReportController::class, 'getprogressreports'])->name('getprogressreport');
 Route::post('/progressreport/deleteprogressreport', [ProgressReportController::class, 'deleteprogressreport'])->name('deleteprogressreport');
+
+//inventory report
+Route::get('/inventoryreport/view', [InventoryReportController::class, 'inventoryreport_view'])->name('inventoryreport_view');
+Route::post('/inventoryreport/save_new_inventoryreport', [InventoryReportController::class, 'save_new_inventoryreport'])->name('save_new_inventoryreport');
+Route::post('/inventoryreport/getinventoryreports', [InventoryReportController::class, 'getinventoryreports'])->name('getinventoryreport');
+Route::post('/inventoryreport/deleteinventoryreport', [InventoryReportController::class, 'deleteinventoryreport'])->name('deleteinventoryreport');
