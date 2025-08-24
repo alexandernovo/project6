@@ -27,13 +27,17 @@
             @if (Route::currentRouteName() != 'home')
                 <div class="body-wrapper vh-100 d-flex flex-column justify-content-between">
                     @include('components.header')
-                    <div class="px-3 pb-3 mt-3">
+                    <div class="px-3 pb-3 mt-3 flex-1">
                         @yield('content')
                     </div>
                     @include('components.footer')
                 </div>
             @else
-                @yield('content')
+                <div class="vh-100 d-flex flex-column justify-content-between">
+                    @include('components.header')
+                    @yield('content')
+                    @include('components.footer')
+                </div>
             @endif
         </div>
     </div>

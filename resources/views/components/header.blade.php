@@ -1,11 +1,13 @@
 <header class="app-header border-bottom position-sticky top-0 w-100 header-footer-bg">
     <nav class="navbar navbar-expand-lg navbar-light">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
-                    <i class="ti ti-menu-2 text-white"></i>
-                </a>
-            </li>
+            @if (Route::currentRouteName() != 'home')
+                <li class="nav-item">
+                    <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
+                        <i class="ti ti-menu-2 text-white"></i>
+                    </a>
+                </li>
+            @endif
             @if (Route::currentRouteName() == 'home')
                 <li class="nav-item dropdown">
                     <div class="brand-logo d-flex align-items-center justify-content-between ps-0">

@@ -343,6 +343,11 @@
 .sidebar-nav ul .sidebar-item.selected > .sidebar-link,
 .sidebar-nav ul .sidebar-item.selected > .sidebar-link.active,
 .sidebar-nav ul .sidebar-item > .sidebar-link.active {
-    background-color: #ACABAB !important;
+    background-color: #acabab !important;
     color: #fff;
+}
+
+.btn-prime {
+    background-color: #555554;
+    color: white;
 }

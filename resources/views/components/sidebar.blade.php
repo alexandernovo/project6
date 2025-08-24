@@ -1,11 +1,16 @@
 <aside class="left-sidebar" style="background-color: #545454">
     <div class="h-100">
+        <div class="mt-3 mb-4">
+            <div class="d-flex justify-content-center gap-2 align-items-center mb-2">
+                <img src="{{ asset('assets/images/logo.png') }}" class="bg-white rounded-circle" width=""
+                    alt="" style="width: 78px; height: 78px" />
+                <img src="{{ asset('assets/images/logo.png') }}" class="bg-white rounded-circle" width=""
+                    alt="" style="width: 78px; height: 78px" />
+            </div>
+            <p class="mb-0 text-center text-white font-semibold" style="font-size: 17px;">TIBIAO MDRRMO PORTAL</p>
+        </div>
         <nav class="sidebar-nav scroll-sidebar mt-1 position-relative pb-3 h-100">
             <ul id="sidebarnav">
-                <li class="nav-small-cap mt-1">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Main</span>
-                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false">
                         <span>
@@ -16,7 +21,7 @@
                 </li>
                 <hr class="border-top border-white">
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="k" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('incidentreport_view') }}" aria-expanded="false">
                         <span>
                             <i class="bi bi-journals"></i>
                         </span>
@@ -33,7 +38,7 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('association_view') }}" aria-expanded="false">
+                    <a class="sidebar-link" href="s" aria-expanded="false">
                         <span>
                             <i class="bi bi-journals"></i>
                         </span>
@@ -41,7 +46,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('boating_view') }}" aria-expanded="false">
+                    <a class="sidebar-link" href="e" aria-expanded="false">
                         <span>
                             <i class="bi bi-journals"></i>
                         </span>
@@ -50,7 +55,7 @@
                 </li>
                 <hr class="border-top border-white">
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('chainsaw_view') }}" aria-expanded="false">
+                    <a class="sidebar-link" href="r" aria-expanded="false">
                         <span>
                             <i class="bi bi-folder2-open"></i>
                         </span>
@@ -58,7 +63,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('trees_view') }}" aria-expanded="false">
+                    <a class="sidebar-link" href="y" aria-expanded="false">
                         <span>
                             <i class="bi bi-folder2-open"></i>
                         </span>
@@ -66,7 +71,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('store_view') }}" aria-expanded="false">
+                    <a class="sidebar-link" href="u" aria-expanded="false">
                         <span>
                             <i class="bi bi-people-fill"></i>
                         </span>
@@ -74,7 +79,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('tricycle_view') }}" aria-expanded="false">
+                    <a class="sidebar-link" href="i" aria-expanded="false">
                         <span>
                             <i class="bi bi-person-circle"></i>
                         </span>
