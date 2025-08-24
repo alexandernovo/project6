@@ -1,4 +1,4 @@
-<aside class="left-sidebar " style="height: calc(100vh - 120px); top: 69px;">
+<aside class="left-sidebar" style="background-color: #545454">
     <div class="h-100">
         <nav class="sidebar-nav scroll-sidebar mt-1 position-relative pb-3 h-100">
             <ul id="sidebarnav">
@@ -9,108 +9,78 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false">
                         <span>
-                           <i class="bi bi-window-sidebar"></i>
+                            <i class="bi bi-microsoft"></i>
                         </span>
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
+                <hr class="border-top border-white">
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="k" aria-expanded="false">
                         <span>
-                            <i class="bi bi-list-stars"></i>
+                            <i class="bi bi-journals"></i>
                         </span>
-                        <span class="hide-menu">Report</span>
+                        <span class="hide-menu">Incident Report</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="l" aria-expanded="false">
                         <span>
-                            <i class="bi bi-gear"></i>
+                            <i class="bi bi-journals"></i>
                         </span>
-                        <span class="hide-menu">Setting</span>
+                        <span class="hide-menu">Situational Report</span>
                     </a>
                 </li>
-                <li class="nav-small-cap mt-2">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Certification</span>
-                </li>
+
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('association_view') }}" aria-expanded="false">
                         <span>
-                            <i class="bi bi-people"></i>
+                            <i class="bi bi-journals"></i>
                         </span>
-                        <span class="hide-menu">Association</span>
+                        <span class="hide-menu">Progress Report</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('boating_view') }}" aria-expanded="false">
                         <span>
-                            <i class="bi bi-folder"></i>
+                            <i class="bi bi-journals"></i>
                         </span>
-                        <span class="hide-menu">Boating</span>
+                        <span class="hide-menu">Inventory Report</span>
                     </a>
                 </li>
+                <hr class="border-top border-white">
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('chainsaw_view') }}" aria-expanded="false">
                         <span>
-                            <i class="bi bi-folder"></i>
+                            <i class="bi bi-folder2-open"></i>
                         </span>
-                        <span class="hide-menu">Chainsaw</span>
+                        <span class="hide-menu">Staff's Submit Report</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('trees_view') }}" aria-expanded="false">
                         <span>
-                            <i class="bi bi-tree"></i>
+                            <i class="bi bi-folder2-open"></i>
                         </span>
-                        <span class="hide-menu">Cutting Trees</span>
+                        <span class="hide-menu">Records Report</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('store_view') }}" aria-expanded="false">
                         <span>
-                            <i class="bi bi-shop"></i>
+                            <i class="bi bi-people-fill"></i>
                         </span>
-                        <span class="hide-menu">Sari-Sari Store</span>
+                        <span class="hide-menu">Staff User</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('tricycle_view') }}" aria-expanded="false">
                         <span>
-                            <i class="bi bi-folder"></i>
+                            <i class="bi bi-person-circle"></i>
                         </span>
-                        <span class="hide-menu">Tricycle</span>
+                        <span class="hide-menu">Profile</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('vendor_view') }}" aria-expanded="false">
-                        <span>
-                            <i class="bi bi-people"></i>
-                        </span>
-                        <span class="hide-menu">Vendors</span>
-                    </a>
-                </li>
-                <li class="nav-small-cap  mt-2">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Waste</span>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('wastecollect_view') }}" aria-expanded="false">
-                        <span>
-                            <i class="bi bi-trash"></i>
-                        </span>
-                        <span class="hide-menu">Waste Collection</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('wastebottle_view') }}" aria-expanded="false">
-                        <span>
-                            <i class="bi bi-trash"></i>
-                        </span>
-                        <span class="hide-menu">Waste in the Bottle</span>
-                    </a>
-                </li>
-
             </ul>
         </nav>
     </div>

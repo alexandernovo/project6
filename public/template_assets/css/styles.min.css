@@ -16447,7 +16447,6 @@ fieldset:disabled .btn {
     transition: 0.2s ease-in;
     height: 100%;
     z-index: 11;
-    border-right: 1px solid rgb(229, 234, 239);
 }
 .left-sidebar .scroll-sidebar {
     overflow-y: auto;
@@ -16471,7 +16470,7 @@ fieldset:disabled .btn {
 }
 .nav-small-cap {
     margin-top: 24px;
-    color: #2a3547;
+    color: white;
     font-size: 12px;
     font-weight: 700;
     padding: 3px 12px;
@@ -16482,7 +16481,7 @@ fieldset:disabled .btn {
     display: none;
 }
 .sidebar-nav ul .sidebar-item .sidebar-link {
-    color: #2a3547;
+    color: white;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

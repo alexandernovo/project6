@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-end primary-bg-new" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+<div class="offcanvas offcanvas-end" style="background-color: #545454" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
     aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title text-white" id="staticBackdropLabel">
@@ -25,7 +25,7 @@
                         <p id="error_login" class="text-warning mt-1 d-none mb-0 error-class"></p>
                     </div>
                     <div class="form-group mt-4">
-                        <button class="btn w-100 text-white" style="background-color: gray">Login</button>
+                        <button class="btn w-100 text-white" style="background-color: gray">Log in</button>
                     </div>
                 </form>
             </div>
