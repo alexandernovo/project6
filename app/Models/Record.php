@@ -10,21 +10,30 @@ class Record extends Model
     protected $table = 'records';
 
     protected $primaryKey = 'record_id';
-    
+
     public $timestamps = true;
 
     protected $fillable = [
-        'client_id',
-        'ornumber',
-        'association',
-        'model_no',
-        'brand',
-        'serial_no',
-        'lot_no',
-        'requester',
-        'name_other',
+        'typeincident',
+        'datetimeoccurence',
+        'barangay',
+        'specificlocation',
+        'detaileddesc',
+        'involvedinjured',
+        'involveddead',
+        'filesubmitted',
         'status',
-        'type',
-        'expiration',
+        'affectedfamilies',
+        'individuals',
+        'evacuationfamilies',
+        'evacuationindividuals',
+        'remarks',
+        'clearingoperations',
+        'quantity',
+        'unit',
+        'description',
+        'propertyno',
+        'dateacquired',
+        'amount',
     ];
 }

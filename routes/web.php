@@ -20,11 +20,12 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard_view'])->name('
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
-//waste bottle
-Route::get('/wastebottle/view', [WasteBottleController::class, 'wastebottle_view'])->name('wastebottle_view');
-Route::post('/wastebottle/save_new_wastebottle', [WasteBottleController::class, 'save_new_wastebottle'])->name('save_new_wastebottle');
-Route::post('/wastebottle/getwastebottles', [WasteBottleController::class, 'getwastebottles'])->name('getwastebottle');
-Route::post('/wastebottle/deletewastebottle', [WasteBottleController::class, 'deletewastebottle'])->name('deletewastebottle');
+//waste collection
+Route::get('/wastecollect/view', [WasteCollectController::class, 'wastecollect_view'])->name('wastecollect_view');
+Route::post('/wastecollect/save_new_wastecollect', [WasteCollectController::class, 'save_new_wastecollect'])->name('save_new_wastecollect');
+Route::post('/wastecollect/getwastecollects', [WasteCollectController::class, 'getwastecollects'])->name('getwastecollect');
+Route::post('/wastecollect/deletewastecollect', [WasteCollectController::class, 'deletewastecollect'])->name('deletewastecollect');
+
 
 //incident report
 Route::get('/incidentreport/view', [IncidentReportController::class, 'incidentreport_view'])->name('incidentreport_view');
