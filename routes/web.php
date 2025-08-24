@@ -9,11 +9,15 @@ use App\Http\Controllers\ChainsawController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IncidentReportController;
 use App\Http\Controllers\InventoryReportController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgressReportController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SituationalReportController;
+use App\Http\Controllers\StaffReportController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\TreesController;
 use App\Http\Controllers\TricycleController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\WasteBottleController;
 use App\Http\Controllers\WasteCollectController;
@@ -53,3 +57,18 @@ Route::get('/inventoryreport/view', [InventoryReportController::class, 'inventor
 Route::post('/inventoryreport/save_new_inventoryreport', [InventoryReportController::class, 'save_new_inventoryreport'])->name('save_new_inventoryreport');
 Route::post('/inventoryreport/getinventoryreports', [InventoryReportController::class, 'getinventoryreports'])->name('getinventoryreport');
 Route::post('/inventoryreport/deleteinventoryreport', [InventoryReportController::class, 'deleteinventoryreport'])->name('deleteinventoryreport');
+
+//staff report
+Route::get('/staffreport/view', [StaffReportController::class, 'staffreport_view'])->name('staffreport_view');
+Route::post('/staffreport/save_new_staffreport', [StaffReportController::class, 'save_new_staffreport'])->name('save_new_staffreport');
+Route::post('/staffreport/getstaffreports', [StaffReportController::class, 'getstaffreports'])->name('getstaffreport');
+Route::post('/staffreport/deletestaffreport', [StaffReportController::class, 'deletestaffreport'])->name('deletestaffreport');
+
+//report
+Route::get('/report/view', [ReportController::class, 'report_view'])->name('report_view');
+
+//user
+Route::get('/user/view', [UserController::class, 'user_view'])->name('user_view');
+
+//profile
+Route::get('/profile/view', [ProfileController::class, 'profile_view'])->name('profile_view');

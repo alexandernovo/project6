@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Client;
+use App\Models\Record;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Exception;
+
+class ProfileController extends Controller
+{
+    public function profile_view()
+    {
+        return view('profile.views.profile');
+    }
+}

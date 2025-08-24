@@ -55,7 +55,7 @@
                 </li>
                 <hr class="border-top border-white">
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="r" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('staffreport_view') }}" aria-expanded="false">
                         <span>
                             <i class="bi bi-folder2-open"></i>
                         </span>
@@ -63,7 +63,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="y" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('report_view') }}" aria-expanded="false">
                         <span>
                             <i class="bi bi-folder2-open"></i>
                         </span>
@@ -71,7 +71,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="u" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('user_view') }}" aria-expanded="false">
                         <span>
                             <i class="bi bi-people-fill"></i>
                         </span>
@@ -79,7 +79,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="i" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('profile_view') }}" aria-expanded="false">
                         <span>
                             <i class="bi bi-person-circle"></i>
                         </span>
