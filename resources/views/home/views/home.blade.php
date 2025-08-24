@@ -1,17 +1,21 @@
 @extends('layout.mainlayout')
 @section('content')
+    @include('home.css.home')
     @include('home.components.login')
-    <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 " style="height: calc(100vh - 122px);">
-        <div class="text-center ">
-            <p class="mb-1" style="color: black; font-size: 35px; font-weight: bold">MENRO</p>
-            <p class="mb-2" style="font-size: 18px">(Municipal Environment and Natural Resources Office)</p>
-            <p class="mb-2" style="color: black; font-size: 35px; font-weight: bold">an Automated Recording System <br> in
-                Municipality of Barbaza Antique</p>
-            <p class="mb-1" style="font-size: 17px; font-style: italic;">Ensuring Business Legality, Supporting Environment
-                Goals</p>
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 bg-home"
+        style="height: calc(100vh - 122px);">
+        <div class="text-start text-white">
+            <p class="mb-3" style="font-size: 26px">Welcome to</p>
+            <p class="mb-1" style="font-size: 52px; font-weight: bold">TIBIAO MDRRMO Portal</p>
+            <p class="mb-2 mt-3" style="font-size: 26px;">
+                " Prepare Today, Protected Tommorow - Municipal<br>Disaster Risk Reduction and Management Office<br>
+                (MDRRMO) at the Frontline of Safety and Resilience "
+            </p>
+
         </div>
-        <div class="ms-3">
-            <img src="{{ asset('assets/images/logo.jpg') }}" alt="" style="width: 400px; height: 400px">
+        <div class="ms-3 d-flex gap-3">
+            <img src="{{ asset('assets/images/logo2.png') }}" alt="" style="width: 320px; height: 320px">
+            <img src="{{ asset('assets/images/logo1.png') }}" alt="" style="width: 320px; height: 320px">
         </div>
     </div>
 @endsection

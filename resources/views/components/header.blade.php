@@ -1,4 +1,4 @@
-<header class="app-header border-bottom position-sticky top-0 w-100 header-footer-bg">
+<header class="app-header position-sticky top-0 w-100 header-footer-bg" style="border-bottom: 1px solid black;">
     <nav class="navbar navbar-expand-lg navbar-light">
         <ul class="navbar-nav">
             @if (Route::currentRouteName() != 'home')
