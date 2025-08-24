@@ -1,11 +1,8 @@
 <?php
 
-use App\Http\Controllers\AssociationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BoatingController;
-use App\Http\Controllers\ChainsawController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IncidentReportController;
 use App\Http\Controllers\InventoryReportController;
@@ -14,12 +11,7 @@ use App\Http\Controllers\ProgressReportController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SituationalReportController;
 use App\Http\Controllers\StaffReportController;
-use App\Http\Controllers\StoreController;
-use App\Http\Controllers\TreesController;
-use App\Http\Controllers\TricycleController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\VendorController;
-use App\Http\Controllers\WasteBottleController;
 use App\Http\Controllers\WasteCollectController;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -69,6 +61,9 @@ Route::get('/report/view', [ReportController::class, 'report_view'])->name('repo
 
 //user
 Route::get('/user/view', [UserController::class, 'user_view'])->name('user_view');
+Route::post('/user/save_new_user', [UserController::class, 'save_new_user'])->name('save_new_user');
+Route::post('/user/getusers', [UserController::class, 'getusers'])->name('getuser');
+Route::post('/user/activatedeactivate', [UserController::class, 'activatedeactivate'])->name('activatedeactivate');
 
 //profile
 Route::get('/profile/view', [ProfileController::class, 'profile_view'])->name('profile_view');

@@ -324,3 +324,27 @@ function updateTimeAgoBaseOnClass() {
 function cloneObject(obj) {
     return JSON.parse(JSON.stringify(obj));
 }
+function statusBadgeRenderer(data) {
+    if (data === "Paid") {
+        return `<span class="badge bg-success text-white px-3 py-1 rounded-pill">Paid</span>`;
+    } else if (data === "Pending") {
+        return `<span class="badge bg-warning text-white px-3 py-1 rounded-pill">Pending</span>`;
+    } else if (data) {
+        return `<span class="badge bg-secondary text-white px-3 py-1 rounded-pill">${data}</span>`;
+    } else {
+        return `<span class="badge bg-light text-dark px-3 py-1 rounded-pill">N/A</span>`;
+    }
+}
+
+function statusBadge(data) {
+    if (data === "ACTIVE") {
+        return `<span class="badge bg-success text-white px-3 py-1 rounded-pill" style="font-size: 12px">Active</span>`;
+    } else {
+        return `<span class="badge bg-danger text-white px-3 py-1 rounded-pill" style="font-size: 12px">Inactive</span>`;
+    }
+}
+
+function formReset(formId) {
+    $(`#${formId}`)[0].reset();
+    $(`#${formId} input[type='hidden']`).val(0);
+}

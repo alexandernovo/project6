@@ -2,9 +2,9 @@
     <div class="h-100">
         <div class="mt-3 mb-4">
             <div class="d-flex justify-content-center gap-2 align-items-center mb-2">
-                <img src="{{ asset('assets/images/logo.png') }}" class="bg-white rounded-circle" width=""
+                <img src="{{ asset('assets/images/logo2.png') }}" class="bg-white rounded-circle" width=""
                     alt="" style="width: 78px; height: 78px" />
-                <img src="{{ asset('assets/images/logo.png') }}" class="bg-white rounded-circle" width=""
+                <img src="{{ asset('assets/images/logo1.png') }}" class="bg-white rounded-circle" width=""
                     alt="" style="width: 78px; height: 78px" />
             </div>
             <p class="mb-0 text-center text-white font-semibold" style="font-size: 17px;">TIBIAO MDRRMO PORTAL</p>
