@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Exception;
 
-class IncidentReportController extends Controller
+class SituationalReportController extends Controller
 {
-    public function incidentreport_view()
+    public function situationalreport_view()
     {
-        return view('incidentreport.views.incidentreport');
+        return view('situationalreport.views.situationalreport');
     }
 
-    public function save_new_incidentreport(Request $request)
+    public function save_new_situationalreport(Request $request)
     {
         try {
             DB::beginTransaction();
@@ -26,7 +26,7 @@ class IncidentReportController extends Controller
 
             if ($record_id == 0) {
                 $all['status'] = "ACTIVE";
-                $all['typeOfRecord'] = "INCIDENTREPORT";
+                $all['typeOfRecord'] = "SITUATIONALREPORT";
                 $all['process_status'] = "Pending";
                 Record::create($all);
             } else {
@@ -37,7 +37,7 @@ class IncidentReportController extends Controller
 
             return response()->json([
                 'status' => 'success',
-                'message' => "incidentreport saved successfully"
+                'message' => "situationalreport saved successfully"
             ]);
         } catch (Exception $ex) {
             DB::rollBack();
@@ -49,7 +49,7 @@ class IncidentReportController extends Controller
         }
     }
 
-    public function getincidentreports(Request $request)
+    public function getsituationalreports(Request $request)
     {
         $length = $request->input('length');
         $start = $request->input('start');
@@ -62,7 +62,7 @@ class IncidentReportController extends Controller
                 'users.*',
                 DB::raw("(users.firstname + ' ' + users.middlename + ' ' + users.lastname) AS fullname")
             )
-            ->where("records.typeOfRecord", "INCIDENTREPORT");
+            ->where("records.typeOfRecord", "SITUATIONALREPORT");
 
         if (!empty($searchValue)) {
             $query->where(function ($q) use ($searchValue) {
@@ -91,7 +91,7 @@ class IncidentReportController extends Controller
         ]);
     }
 
-    public function deleteincidentreport(Request $request)
+    public function deletesituationalreport(Request $request)
     {
         $record_id = $request->record_id;
 
@@ -99,7 +99,7 @@ class IncidentReportController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => "incidentreport deleted successfully"
+            'message' => "situationalreport deleted successfully"
         ]);
     }
 }

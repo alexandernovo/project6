@@ -8,6 +8,7 @@ use App\Http\Controllers\BoatingController;
 use App\Http\Controllers\ChainsawController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IncidentReportController;
+use App\Http\Controllers\SituationalReportController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\TreesController;
 use App\Http\Controllers\TricycleController;
@@ -32,3 +33,9 @@ Route::get('/incidentreport/view', [IncidentReportController::class, 'incidentre
 Route::post('/incidentreport/save_new_incidentreport', [IncidentReportController::class, 'save_new_incidentreport'])->name('save_new_incidentreport');
 Route::post('/incidentreport/getincidentreports', [IncidentReportController::class, 'getincidentreports'])->name('getincidentreport');
 Route::post('/incidentreport/deleteincidentreport', [IncidentReportController::class, 'deleteincidentreport'])->name('deleteincidentreport');
+
+//situational report
+Route::get('/situationalreport/view', [SituationalReportController::class, 'situationalreport_view'])->name('situationalreport_view');
+Route::post('/situationalreport/save_new_situationalreport', [SituationalReportController::class, 'save_new_situationalreport'])->name('save_new_situationalreport');
+Route::post('/situationalreport/getsituationalreports', [SituationalReportController::class, 'getsituationalreports'])->name('getsituationalreport');
+Route::post('/situationalreport/deletesituationalreport', [SituationalReportController::class, 'deletesituationalreport'])->name('deletesituationalreport');

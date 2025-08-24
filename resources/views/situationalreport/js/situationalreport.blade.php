@@ -1,22 +1,22 @@
 <script>
-    let incidentreportOptions;
-    let incidentreportTable;
-    let incidentreportData = [];
-    let selectedincidentreportId = null;
+    let situationalreportOptions;
+    let situationalreportTable;
+    let situationalreportData = [];
+    let selectedsituationalreportId = null;
 
-    incidentreportOptions = {
+    situationalreportOptions = {
         processing: false,
         serverSide: true,
         // data: [],
         ajax: {
-            url: "{{ route('getincidentreport') }}",
+            url: "{{ route('getsituationalreport') }}",
             type: 'POST',
             dataType: 'json',
             data: function(d) {
                 d._token = '{{ csrf_token() }}';
             },
             dataSrc: function(json) {
-                incidentreportData = json.data;
+                situationalreportData = json.data;
                 return json.data;
             }
         },
@@ -42,20 +42,6 @@
                 }
             },
             {
-                title: 'Type of<br>Incident',
-                className: 'text-nowrap p-3 align-middle text-center',
-                render: function(data, type, row) {
-                    return "";
-                }
-            },
-            {
-                title: 'Date & Time<br>of Occurence',
-                className: 'text-nowrap p-3 align-middle text-center',
-                render: function(data, type, row) {
-                    return "";
-                }
-            },
-            {
                 title: 'Barangay',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
@@ -63,14 +49,14 @@
                 }
             },
             {
-                title: 'Specific<br>Location',
+                title: 'Affected Families',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return "";
                 }
             },
             {
-                title: `Detailed Description<br>of Incident`,
+                title: 'Person/Individuals',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return "";
@@ -78,14 +64,21 @@
             },
             {
                 title: `
-                    <div class="p-2" style="border-bottom: 1px solid #EBF1F6">No. of Person Involved</div>
+                    <div class="p-2" style="border-bottom: 1px solid #EBF1F6">Evacuation Center/Outside</div>
                     <div class="d-flex">
-                        <div class="w-50 p-2" style="border-right: 1px solid #EBF1F6">Injured</div>
-                        <div class="w-50 p-2">Dead</div>
+                        <div class="w-50 p-2" style="border-right: 1px solid #EBF1F6">Families</div>
+                        <div class="w-50 p-2">Individuals</div>
                     </div>
                 `,
                 orderable: false,
                 className: 'text-nowrap p-3 align-middle text-center p-0',
+                render: function(data, type, row) {
+                    return "";
+                }
+            },
+            {
+                title: 'Remarks',
+                className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return "";
                 }
@@ -113,49 +106,49 @@
             }
         ],
         initComplete: function(settings, json) {
-            appendButtonsincidentreport();
+            appendButtonssituationalreport();
             $('[data-bs-toggle="tooltip"]').tooltip();
         }
     };
 
     $(document).ready(function() {
-        renderincidentreportTable();
+        rendersituationalreportTable();
     })
 
-    function renderincidentreportTable() {
-        if (incidentreportTable) {
-            incidentreportTable.destroy();
+    function rendersituationalreportTable() {
+        if (situationalreportTable) {
+            situationalreportTable.destroy();
         }
-        incidentreportTable = new DataTable('#incidentreportTable', incidentreportOptions)
+        situationalreportTable = new DataTable('#situationalreportTable', situationalreportOptions)
     }
 
-    $(document).on("click", "#reloadincidentreportBtn", function() {
+    $(document).on("click", "#reloadsituationalreportBtn", function() {
         reloadButtonLoading(true);
-        reloadincidentreportTable();
+        reloadsituationalreportTable();
         setTimeout(() => {
             reloadButtonLoading(false);
         }, 500);
     });
 
-    function reloadincidentreportTable() {
-        if (incidentreportTable) {
-            incidentreportTable.ajax.reload(null, false);
+    function reloadsituationalreportTable() {
+        if (situationalreportTable) {
+            situationalreportTable.ajax.reload(null, false);
         } else {
-            renderincidentreportTable();
+            rendersituationalreportTable();
         }
     }
 
-    function reloadincidentreportTableWithPagination() {
-        if (incidentreportTable) {
-            incidentreportTable.ajax.reload(null, true);
+    function reloadsituationalreportTableWithPagination() {
+        if (situationalreportTable) {
+            situationalreportTable.ajax.reload(null, true);
         } else {
-            renderincidentreportTable();
+            rendersituationalreportTable();
         }
     }
 
-    function appendButtonsincidentreport() {
-        $('#incidentreportTable_wrapper .row .dt-length').append(`
-            <div class="d-flex gap-2 ms-2 align-items-center incidentreportBtnSm">
+    function appendButtonssituationalreport() {
+        $('#situationalreportTable_wrapper .row .dt-length').append(`
+            <div class="d-flex gap-2 ms-2 align-items-center situationalreportBtnSm">
                 <div class="d-flex">
                     <div class="input-group" style="width: 120%">
                         <span  style="border: 1px solid #EAEFF4 !important" class="input-group-text filter-padding">From:</span>
@@ -170,7 +163,7 @@
                         Filter
                     </button>
                 </div>
-                <button class="btn btn-info d-flex flex-nowrap align-items-center gap-2" id="reloadincidentreportBtn">
+                <button class="btn btn-info d-flex flex-nowrap align-items-center gap-2" id="reloadsituationalreportBtn">
                     <span>
                         <i class="bi bi-arrow-clockwise"></i>
                     </span>
@@ -182,38 +175,38 @@
 
     function reloadButtonLoading(isLoading) {
         if (isLoading) {
-            $("#reloadincidentreportBtn").html(`
+            $("#reloadsituationalreportBtn").html(`
                     <div class="spinner-border text-white" role="status" style="width: 14px; height: 14px">
                 </div>
                 Reloading
             `);
         } else {
-            $("#reloadincidentreportBtn").html(`
+            $("#reloadsituationalreportBtn").html(`
                 <i class="bi bi-arrow-clockwise"></i>
                 Reload
             `);
         }
     }
 
-    $(document).on('click', '#incidentreportTable tbody tr', function() {
-        let data = incidentreportTable.row(this).data();
+    $(document).on('click', '#situationalreportTable tbody tr', function() {
+        let data = situationalreportTable.row(this).data();
         if (!data) return;
 
         if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
-            selectedincidentreportId = null;
+            selectedsituationalreportId = null;
         } else {
             $('tr.selected').removeClass('selected');
             $(this).addClass('selected');
-            selectedincidentreportId = data.record_id; // incidentreport the ID
+            selectedsituationalreportId = data.record_id; // situationalreport the ID
         }
     });
 
-    // Reincidentreport selection after reload
-    // incidentreportOptions.drawCallback = function(settings) {
-    //     incidentreportTable.rows().every(function() {
+    // Resituationalreport selection after reload
+    // situationalreportOptions.drawCallback = function(settings) {
+    //     situationalreportTable.rows().every(function() {
     //         let data = this.data();
-    //         if (data.record_id === selectedincidentreportId) {
+    //         if (data.record_id === selectedsituationalreportId) {
     //             $(this.node()).addClass('selected');
     //         }
     //     });

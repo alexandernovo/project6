@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('involveddead')->nullable();
             $table->string('filesubmitted')->nullable();
             $table->string('status')->nullable();
+            $table->string('process_status')->nullable();
 
             $table->integer('affectedfamilies')->nullable();
             $table->integer('individuals')->nullable();
@@ -37,6 +38,7 @@ return new class extends Migration
             $table->string('propertyno')->nullable();
             $table->string('dateacquired')->nullable();
             $table->decimal('amount', 10, 2)->nullable();
+            $table->string('typeOfRecord')->nullable();
 
             $table->timestamps();
         });

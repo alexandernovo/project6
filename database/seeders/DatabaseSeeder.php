@@ -11,17 +11,16 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'firstname'   => 'System',
-            'middlename'  => 'Admin',
-            'lastname'    => 'User',
+            'firstname'   => 'Admin',
+            'middlename'  => '',
+            'lastname'    => '',
             'username'    => 'admin',
             'designation' => 'Administrator',
             'email'       => 'admin@example.com',
             'address'     => 'Main Office',
             'phone_num'   => '09123456789',
             'status'      => 'active',
-            'password'    => Hash::make('password123'), // change this later
-            'notify'      => true,
+            'password'    => Hash::make('admin123'), 
             'created_at'  => now(),
             'updated_at'  => now(),
         ]);

@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="l" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('situationalreport_view') }}" aria-expanded="false">
                         <span>
                             <i class="bi bi-journals"></i>
                         </span>
