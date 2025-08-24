@@ -8,6 +8,7 @@ use App\Http\Controllers\BoatingController;
 use App\Http\Controllers\ChainsawController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IncidentReportController;
+use App\Http\Controllers\ProgressReportController;
 use App\Http\Controllers\SituationalReportController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\TreesController;
@@ -39,3 +40,9 @@ Route::get('/situationalreport/view', [SituationalReportController::class, 'situ
 Route::post('/situationalreport/save_new_situationalreport', [SituationalReportController::class, 'save_new_situationalreport'])->name('save_new_situationalreport');
 Route::post('/situationalreport/getsituationalreports', [SituationalReportController::class, 'getsituationalreports'])->name('getsituationalreport');
 Route::post('/situationalreport/deletesituationalreport', [SituationalReportController::class, 'deletesituationalreport'])->name('deletesituationalreport');
+
+//progress report
+Route::get('/progressreport/view', [ProgressReportController::class, 'progressreport_view'])->name('progressreport_view');
+Route::post('/progressreport/save_new_progressreport', [ProgressReportController::class, 'save_new_progressreport'])->name('save_new_progressreport');
+Route::post('/progressreport/getprogressreports', [ProgressReportController::class, 'getprogressreports'])->name('getprogressreport');
+Route::post('/progressreport/deleteprogressreport', [ProgressReportController::class, 'deleteprogressreport'])->name('deleteprogressreport');
