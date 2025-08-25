@@ -351,3 +351,14 @@ function formReset(formId) {
     $(`#${formId}`)[0].reset();
     $(`#${formId} input[type='hidden']`).val(0);
 }
+
+function formatRecordType(type) {
+    const map = {
+        SITUATIONALREPORT: "Situational Report",
+        INCIDENTREPORT: "Incident Report",
+        INVENTORYREPORT: "Inventory Report",
+        PROGRESSREPORT: "Progress Report",
+    };
+
+    return map[type] || type;
+}

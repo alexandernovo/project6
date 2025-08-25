@@ -61,18 +61,17 @@ class StaffReportController extends Controller
                 'records.*',
                 'users.*',
                 DB::raw("
-    CONCAT(
-        users.firstname, ' ',
-        CASE 
-            WHEN users.middlename IS NOT NULL AND users.middlename <> '' 
-            THEN LEFT(users.middlename, 1) + '. ' 
-            ELSE '' 
-        END,
-        users.lastname
-    ) AS fullname
-")
-            )
-            ->where("records.typeOfRecord", "staffreport");
+                    CONCAT(
+                        users.firstname, ' ',
+                        CASE 
+                            WHEN users.middlename IS NOT NULL AND users.middlename <> '' 
+                            THEN LEFT(users.middlename, 1) + '. ' 
+                            ELSE '' 
+                        END,
+                        users.lastname
+                    ) AS fullname
+                ")
+            );
 
         if (!empty($searchValue)) {
             $query->where(function ($q) use ($searchValue) {
