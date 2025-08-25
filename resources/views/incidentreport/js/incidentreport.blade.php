@@ -115,11 +115,11 @@
                 render: function(data, type, row) {
                     return `
                         <div class="d-flex gap-2">
-                            <button class="btn btn-warning">
+                            <button class="btn btn-warning editRecord" data-record_id="${row.record_id}">
                                 <i class="bi bi-pencil-square"></i>
                                 Edit
                             </button>
-                            <button class="btn btn-danger">
+                            <button class="btn btn-danger deleteRecord" data-record_id="${row.record_id}">
                                 <i class="bi bi-trash3-fill"></i>
                                 Delete
                             </button>
@@ -211,27 +211,24 @@
         }
     }
 
-    $(document).on('click', '#incidentreportTable tbody tr', function() {
-        let data = incidentreportTable.row(this).data();
-        if (!data) return;
-
-        if ($(this).hasClass('selected')) {
-            $(this).removeClass('selected');
-            selectedincidentreportId = null;
-        } else {
-            $('tr.selected').removeClass('selected');
-            $(this).addClass('selected');
-            selectedincidentreportId = data.record_id; // incidentreport the ID
-        }
+    $(document).on('click', '.deleteRecord', function() {
+        let record_id = $(this).data("record_id");
+        Swal.fire({
+            title: `Delete this Incident Report?`,
+            text: `Are you sure you want to delete this Incident Report?`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: "Delete"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                postRequest("{{ route('deleteRecord') }}", {
+                    record_id: record_id,
+                }, (response) => {
+                    if (response.status == "success") {
+                        reloadincidentreportTable();
+                    }
+                })
+            }
+        });
     });
-
-    // Reincidentreport selection after reload
-    // incidentreportOptions.drawCallback = function(settings) {
-    //     incidentreportTable.rows().every(function() {
-    //         let data = this.data();
-    //         if (data.record_id === selectedincidentreportId) {
-    //             $(this.node()).addClass('selected');
-    //         }
-    //     });
-    // };
 </script>

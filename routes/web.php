@@ -8,6 +8,7 @@ use App\Http\Controllers\IncidentReportController;
 use App\Http\Controllers\InventoryReportController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgressReportController;
+use App\Http\Controllers\RecordController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SituationalReportController;
 use App\Http\Controllers\StaffReportController;
@@ -70,3 +71,6 @@ Route::get('/profile/view', [ProfileController::class, 'profile_view'])->name('p
 
 //dashboard
 Route::post('/dashboard/getreport', [DashboardController::class, 'getreport'])->name('getreport');
+
+//record
+Route::post('/record/deleteRecord', [RecordController::class, 'deleteRecord'])->name('deleteRecord');

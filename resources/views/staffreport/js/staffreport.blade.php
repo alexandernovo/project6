@@ -82,11 +82,11 @@
                 render: function(data, type, row) {
                     return `
                         <div class="d-flex gap-2">
-                            <button class="btn btn-warning">
+                            <button class="btn btn-warning editRecord" data-record_id="${row.record_id}">
                                 <i class="bi bi-pencil-square"></i>
                                 Edit
                             </button>
-                            <button class="btn btn-danger">
+                            <button class="btn btn-danger deleteRecord" data-record_id="${row.record_id}">
                                 <i class="bi bi-trash3-fill"></i>
                                 Delete
                             </button>
@@ -177,28 +177,24 @@
             `);
         }
     }
-
-    $(document).on('click', '#staffreportTable tbody tr', function() {
-        let data = staffreportTable.row(this).data();
-        if (!data) return;
-
-        if ($(this).hasClass('selected')) {
-            $(this).removeClass('selected');
-            selectedstaffreportId = null;
-        } else {
-            $('tr.selected').removeClass('selected');
-            $(this).addClass('selected');
-            selectedstaffreportId = data.record_id; // staffreport the ID
-        }
+    $(document).on('click', '.deleteRecord', function() {
+        let record_id = $(this).data("record_id");
+        Swal.fire({
+            title: `Delete this Staff Report?`,
+            text: `Are you sure you want to delete this Staff Report?`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: "Delete"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                postRequest("{{ route('deleteRecord') }}", {
+                    record_id: record_id,
+                }, (response) => {
+                    if (response.status == "success") {
+                        reloadstaffreportTable();
+                    }
+                })
+            }
+        });
     });
-
-    // Restaffreport selection after reload
-    // staffreportOptions.drawCallback = function(settings) {
-    //     staffreportTable.rows().every(function() {
-    //         let data = this.data();
-    //         if (data.record_id === selectedstaffreportId) {
-    //             $(this.node()).addClass('selected');
-    //         }
-    //     });
-    // };
 </script>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Client;
+
 use App\Models\Record;
 use App\Models\WasteCollection;
 use Illuminate\Http\Request;

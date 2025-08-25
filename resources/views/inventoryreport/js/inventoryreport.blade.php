@@ -103,11 +103,11 @@
                 render: function(data, type, row) {
                     return `
                         <div class="d-flex gap-2">
-                            <button class="btn btn-warning">
+                            <button class="btn btn-warning editRecord" data-record_id="${row.record_id}">
                                 <i class="bi bi-pencil-square"></i>
                                 Edit
                             </button>
-                            <button class="btn btn-danger">
+                            <button class="btn btn-danger deleteRecord" data-record_id="${row.record_id}">
                                 <i class="bi bi-trash3-fill"></i>
                                 Delete
                             </button>
@@ -199,27 +199,24 @@
         }
     }
 
-    $(document).on('click', '#inventoryreportTable tbody tr', function() {
-        let data = inventoryreportTable.row(this).data();
-        if (!data) return;
-
-        if ($(this).hasClass('selected')) {
-            $(this).removeClass('selected');
-            selectedinventoryreportId = null;
-        } else {
-            $('tr.selected').removeClass('selected');
-            $(this).addClass('selected');
-            selectedinventoryreportId = data.record_id; // inventoryreport the ID
-        }
+    $(document).on('click', '.deleteRecord', function() {
+        let record_id = $(this).data("record_id");
+        Swal.fire({
+            title: `Delete this Inventory Report?`,
+            text: `Are you sure you want to delete this Inventory Report?`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: "Delete"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                postRequest("{{ route('deleteRecord') }}", {
+                    record_id: record_id,
+                }, (response) => {
+                    if (response.status == "success") {
+                        reloadinventoryreportTable();
+                    }
+                })
+            }
+        });
     });
-
-    // Reinventoryreport selection after reload
-    // inventoryreportOptions.drawCallback = function(settings) {
-    //     inventoryreportTable.rows().every(function() {
-    //         let data = this.data();
-    //         if (data.record_id === selectedinventoryreportId) {
-    //             $(this.node()).addClass('selected');
-    //         }
-    //     });
-    // };
 </script>
