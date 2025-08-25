@@ -67,3 +67,6 @@ Route::post('/user/activatedeactivate', [UserController::class, 'activatedeactiv
 
 //profile
 Route::get('/profile/view', [ProfileController::class, 'profile_view'])->name('profile_view');
+
+//dashboard
+Route::post('/dashboard/getreport', [DashboardController::class, 'getreport'])->name('getreport');

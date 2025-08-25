@@ -349,11 +349,24 @@
 
 .btn-prime,
 .btn-prime:active,
-.btn-prime:focus, .btn-prime:hover {
+.btn-prime:focus,
+.btn-prime:hover {
     background-color: #555554 !important;
     color: white !important;
 }
 
 .bg-green {
-    background-color: #329514;
+    background-color: #329514; /* existing */
+}
+
+.bg-red {
+    background-color: #c62828; /* deep red */
+}
+
+.bg-orange {
+    background-color: #ef6c00; /* strong orange */
+}
+
+.bg-blue {
+    background-color: #1565c0; /* vivid blue */
 }

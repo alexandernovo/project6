@@ -11,7 +11,10 @@
                 " Prepare Today, Protected Tommorow - Municipal<br>Disaster Risk Reduction and Management Office<br>
                 (MDRRMO) at the Frontline of Safety and Resilience "
             </p>
-
+            <div class="d-flex gap-2 mt-5">
+                <button class="btn-prime btn px-4" style="font-size: 18px; border-radius: 13px">Log in</button>
+                <button class="btn-prime btn px-4" style="font-size: 18px; border-radius: 13px">Sign in</button>
+            </div>
         </div>
         <div class="ms-3 d-flex gap-3">
             <img src="{{ asset('assets/images/logo2.png') }}" alt="" style="width: 320px; height: 320px">
