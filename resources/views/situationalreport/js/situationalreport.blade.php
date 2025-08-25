@@ -31,35 +31,35 @@
                 title: 'Staff<br>Name',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.fullname;
                 }
             },
             {
                 title: 'Designation',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.designation;
                 }
             },
             {
                 title: 'Barangay',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.barangay;
                 }
             },
             {
                 title: 'Affected Families',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.affectedfamilies;
                 }
             },
             {
                 title: 'Person/Individuals',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.individuals;
                 }
             },
             {
@@ -73,14 +73,19 @@
                 orderable: false,
                 className: 'text-nowrap p-3 align-middle text-center p-0',
                 render: function(data, type, row) {
-                    return "";
+                    return `
+                        <div class="d-flex">
+                           <div class="w-50 p-2" style="border-right: 1px solid #EBF1F6">${row.evacuationfamilies}</div>
+                           <div class="w-50 p-2">${row.evacuationindividuals}</div>
+                        <div>
+                    `;
                 }
             },
             {
                 title: 'Remarks',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.remarks;
                 }
             },
             {
@@ -94,14 +99,25 @@
                 title: 'Date<br>Submitted',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return row.total
+                    return formatDateToStr(row.created_at);
                 }
             },
             {
                 title: 'Action',
                 className: 'text-nowrap p-3 align-middle text-center sticky-action',
                 render: function(data, type, row) {
-                    return row.total
+                    return `
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-warning">
+                                <i class="bi bi-pencil-square"></i>
+                                Edit
+                            </button>
+                            <button class="btn btn-danger">
+                                <i class="bi bi-trash3-fill"></i>
+                                Delete
+                            </button>
+                        <div>
+                    `;
                 }
             }
         ],

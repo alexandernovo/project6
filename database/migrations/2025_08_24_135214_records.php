@@ -36,7 +36,7 @@ return new class extends Migration
             $table->string('unit')->nullable();
             $table->string('description')->nullable();
             $table->string('propertyno')->nullable();
-            $table->string('dateacquired')->nullable();
+            $table->date('dateacquired')->nullable();
             $table->decimal('amount', 10, 2)->nullable();
             $table->string('typeOfRecord')->nullable();
 

@@ -71,6 +71,7 @@ $(document).ready(function () {
         }
     });
 });
+
 function formatDateToStr(rawDateTime, withTime = true) {
     var months = [
         "Jan",
@@ -86,6 +87,7 @@ function formatDateToStr(rawDateTime, withTime = true) {
         "Nov",
         "Dec",
     ];
+
     if (
         rawDateTime !== null &&
         typeof rawDateTime === "string" &&
@@ -93,30 +95,31 @@ function formatDateToStr(rawDateTime, withTime = true) {
     ) {
         var dateTimeParts = rawDateTime.split(" ");
         var dateParts = dateTimeParts[0].split("-");
-        var timeParts = dateTimeParts[1].split(":");
         var year = dateParts[0];
-        var month = months[parseInt(dateParts[1]) - 1];
-        var day = parseInt(dateParts[2]);
-        var hour = parseInt(timeParts[0]);
-        var minute = timeParts[1];
-        var period = "AM";
-        if (hour >= 12) {
-            period = "PM";
-            if (hour > 12) {
-                hour -= 12;
+        var month = months[parseInt(dateParts[1], 10) - 1];
+        var day = parseInt(dateParts[2], 10);
+
+        // If time exists and user wants it
+        if (dateTimeParts.length > 1 && withTime) {
+            var timeParts = dateTimeParts[1].split(":");
+            var hour = parseInt(timeParts[0], 10);
+            var minute = timeParts[1];
+            var period = "AM";
+
+            if (hour >= 12) {
+                period = "PM";
+                if (hour > 12) hour -= 12;
+            } else if (hour === 0) {
+                hour = 12; // midnight case
             }
+
+            return `${month} ${day}, ${year} ${hour}:${minute} ${period}`;
         }
-        return (
-            month +
-            " " +
-            day +
-            ", " +
-            year +
-            (withTime ? " " + hour + ":" + minute + " " + period : "")
-        );
-    } else {
-        return "";
+
+        // Only date
+        return `${month} ${day}, ${year}`;
     }
+    return "";
 }
 
 function formatDatetimeLocalToStr(rawDateTime) {

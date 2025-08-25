@@ -31,56 +31,56 @@
                 title: 'Staff<br>Name',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.fullname;
                 }
             },
             {
                 title: 'Designation',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.designation;
                 }
             },
             {
                 title: 'Quantity',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.quantity;
                 }
             },
             {
                 title: 'Unit',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.unit;
                 }
             },
             {
                 title: 'Description',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.description;
                 }
             },
             {
                 title: 'Property No.',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return row.propertyno;
                 }
             },
             {
                 title: 'Date Acquired',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return formatDateToStr(row.dateacquired, false);
                 }
             },
             {
                 title: 'Amount',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    return "₱" + row.amount;
                 }
             },
             {
@@ -94,14 +94,25 @@
                 title: 'Date<br>Submitted',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return row.total
+                    return formatDateToStr(row.created_at);
                 }
             },
             {
                 title: 'Action',
                 className: 'text-nowrap p-3 align-middle text-center sticky-action',
                 render: function(data, type, row) {
-                    return row.total
+                    return `
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-warning">
+                                <i class="bi bi-pencil-square"></i>
+                                Edit
+                            </button>
+                            <button class="btn btn-danger">
+                                <i class="bi bi-trash3-fill"></i>
+                                Delete
+                            </button>
+                        <div>
+                    `;
                 }
             }
         ],
