@@ -13,7 +13,7 @@
             </p>
             <div class="d-flex gap-2 mt-5">
                 <a href="{{ route('login') }}" class="btn-prime btn px-4" style="font-size: 18px; border-radius: 13px">Log in</a>
-                <a href="{{ route('signup') }}" class="btn-prime btn px-4" style="font-size: 18px; border-radius: 13px">Sign in</a>
+                <a href="{{ route('signup') }}" class="btn-prime btn px-4" style="font-size: 18px; border-radius: 13px">Sign up</a>
             </div>
         </div>
         <div class="ms-3 d-flex gap-3">
