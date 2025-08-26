@@ -162,13 +162,13 @@ function formatDatetimeLocalToStr(rawDateTime) {
     return "";
 }
 
-function populateForm(data, formId, callback = null) {
+function populateForm(data, formId, alias = "", callback = null) {
     $.each(data, function (key, value) {
         if (value === null) {
             value = "";
         }
 
-        let field = $(`#${formId} #${key}`);
+        let field = $(`#${formId} #${key}${alias}`);
         if (field.length > 0) {
             if (field.is("textarea")) {
                 field.val(value);
@@ -348,8 +348,8 @@ function statusBadge(data) {
 }
 
 function formReset(formId) {
-    $(`#${formId}`)[0].reset();
-    $(`#${formId} input[type='hidden']`).val(0);
+    $(`#${formId}, .${formId}`)[0].reset();
+    $(`#${formId} input[type='hidden'], .${formId} input[type='hidden']`).val(0);
 }
 
 function formatRecordType(type) {

@@ -7,6 +7,7 @@ use App\Models\Record;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class StaffReportController extends Controller
 {
@@ -14,24 +15,31 @@ class StaffReportController extends Controller
     {
         return view('staffreport.views.staffreport');
     }
-    
+
     public function submitreportdashboard()
     {
         return view('staffreport.views.submitreportdashboard');
+    }
+
+    public function incidentreport_staff()
+    {
+        return view('staffreport.views.incidentreport');
     }
 
     public function save_new_staffreport(Request $request)
     {
         try {
             DB::beginTransaction();
-
             $all = $request->all();
             $record_id = $all['record_id'];
             unset($all['record_id']);
 
+            if (!empty($all['datetimeoccurence'])) {
+                $all['datetimeoccurence'] = date('Y-m-d h:i:s', strtotime($all['datetimeoccurence']));
+            }
+
             if ($record_id == 0) {
                 $all['status'] = "ACTIVE";
-                $all['typeOfRecord'] = "staffreport";
                 $all['process_status'] = "Pending";
                 Record::create($all);
             } else {
@@ -40,9 +48,12 @@ class StaffReportController extends Controller
 
             DB::commit();
 
+            $user = Auth::user();
+            $message = $user->usertype == "ADMIN" ? "Report Saved Successfully" : "Report Saved Successfully, Please view your archive.";
+
             return response()->json([
                 'status' => 'success',
-                'message' => "staffreport saved successfully"
+                'message' => $message
             ]);
         } catch (Exception $ex) {
             DB::rollBack();

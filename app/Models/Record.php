@@ -14,6 +14,7 @@ class Record extends Model
     public $timestamps = true;
 
     protected $fillable = [
+        "staff_id",
         'typeincident',
         'datetimeoccurence',
         'barangay',

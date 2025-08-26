@@ -56,6 +56,8 @@ Route::post('/inventoryreport/deleteinventoryreport', [InventoryReportController
 //staff report
 Route::get('/staffreport/view', [StaffReportController::class, 'staffreport_view'])->name('staffreport_view');
 Route::get('/staffreport/submitreportdashboard', [StaffReportController::class, 'submitreportdashboard'])->name('submitreportdashboard');
+Route::get('/staffreport/incidentreport_staff', [StaffReportController::class, 'incidentreport_staff'])->name('incidentreport_staff');
+
 Route::post('/staffreport/save_new_staffreport', [StaffReportController::class, 'save_new_staffreport'])->name('save_new_staffreport');
 Route::post('/staffreport/getstaffreports', [StaffReportController::class, 'getstaffreports'])->name('getstaffreport');
 Route::post('/staffreport/deletestaffreport', [StaffReportController::class, 'deletestaffreport'])->name('deletestaffreport');

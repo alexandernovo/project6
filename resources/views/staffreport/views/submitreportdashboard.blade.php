@@ -4,13 +4,13 @@
     @php
         $reports = [
             [
-                'title' => 'INCIDENT RECORD REPORT',
+                'title' => 'INCIDENT REPORT',
                 'class' => 'bg-red',
-                'route' => route('incidentreportPrint'),
+                'route' => route('incidentreport_staff'),
             ],
-            ['title' => 'SITUATIONAL RECORD REPORT', 'class' => 'bg-orange', 'route' => ''],
-            ['title' => 'PROGRESS RECORD REPORT', 'class' => 'bg-blue', 'route' => ''],
-            ['title' => 'INVENTORY RECORD REPORT', 'class' => 'bg-green', 'route' => ''],
+            ['title' => 'SITUATIONAL REPORT', 'class' => 'bg-orange', 'route' => ''],
+            ['title' => 'PROGRESS REPORT', 'class' => 'bg-blue', 'route' => ''],
+            ['title' => 'INVENTORY REPORT', 'class' => 'bg-green', 'route' => ''],
         ];
     @endphp
     <div class="row mx-auto">
@@ -19,14 +19,14 @@
                 <div class="col-12">
                     <div
                         class="d-flex align-items-center mb-2 flex-wrap text-lg-start text-sm-center gap-2 title-tips-class">
-                        <h4 class="fw-semibold mb-0 text-nowrap">Records Report</h4>
+                        <h4 class="fw-semibold mb-0 text-nowrap">Submit Report</h4>
                     </div>
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
                         <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item">
                                 <a class="text-muted text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item" aria-current="page">Records Report</li>
+                            <li class="breadcrumb-item" aria-current="page">Submit Report</li>
                         </ol>
                     </nav>
                 </div>
