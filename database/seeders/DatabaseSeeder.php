@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             'email'       => 'admin@example.com',
             'address'     => 'Main Office',
             'phone_num'   => '09123456789',
-            'status'      => 'active',
+            'status'      => 'ACTIVE',
             'usertype'      => 'ADMIN',
             'password'    => Hash::make('admin123'),
             'created_at'  => now(),

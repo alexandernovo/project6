@@ -1,5 +1,6 @@
 @extends('layout.mainlayout')
 @section('content')
+    @include('staffreport.css.staffreport')
     @php
         $reports = [
             [
@@ -38,9 +39,13 @@
                     <i class="bi bi-journal-text" style="font-size: 100px"></i>
                     <p class="mb-2 fw-semibold text-center" style="font-size: 16px">{{ $report['title'] }}</p>
                     <a href="{{ $report['route'] }}" class="btn w-100 mt-3 text-white"
-                        style="border: 1px solid white">View</a>
+                        style="border: 1px solid white">Submit</a>
                 </div>
             @endforeach
         </div>
     </div>
+@endsection
+
+@section('js')
+    @include('staffreport.js.staffreport')
 @endsection

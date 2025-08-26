@@ -1,8 +1,10 @@
 <script>
-    $(document).on('submit', '#login_form', function(e) {
+    $(document).on('submit', '#login_form, #login_form_staff', function(e) {
         e.preventDefault();
 
-        $('#error_login').addClass('d-none').text('');
+        $('#error_login, #error_login_staff').addClass('d-none').text('');
+        let form = $(this);
+        let typeLogin = form.find('input[name="typeLogin"]').val();
 
         $.ajax({
             type: 'POST',
@@ -15,7 +17,11 @@
                 if (response.status === 'success') {
                     window.location = "{{ route('dashboard') }}";
                 } else {
-                    $('#error_login').removeClass('d-none').text(response.message);
+                    if (typeLogin == "STAFF") {
+                        $('#error_login_staff').removeClass('d-none').text(response.message);
+                    } else {
+                        $('#error_login').removeClass('d-none').text(response.message);
+                    }
                 }
             },
             error: function(xhr) {

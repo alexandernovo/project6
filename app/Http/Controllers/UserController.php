@@ -27,7 +27,9 @@ class UserController extends Controller
             unset($all['id']);
 
             if ($user_id == 0) {
-                $all['status'] = "ACTIVE";
+                if (empty($all['status'])) {
+                    $all['status'] = "ACTIVE";
+                }
                 $all['usertype'] = "STAFF";
                 $all['password'] = Hash::make($all['password']);
                 User::create($all);

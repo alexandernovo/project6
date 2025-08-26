@@ -16,6 +16,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\WasteCollectController;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/login', [HomeController::class, 'login'])->name('login');
+Route::get('/signup', [HomeController::class, 'signup'])->name('signup');
 Route::get('/dashboard', [DashboardController::class, 'dashboard_view'])->name('dashboard');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
@@ -53,12 +55,14 @@ Route::post('/inventoryreport/deleteinventoryreport', [InventoryReportController
 
 //staff report
 Route::get('/staffreport/view', [StaffReportController::class, 'staffreport_view'])->name('staffreport_view');
+Route::get('/staffreport/submitreportdashboard', [StaffReportController::class, 'submitreportdashboard'])->name('submitreportdashboard');
 Route::post('/staffreport/save_new_staffreport', [StaffReportController::class, 'save_new_staffreport'])->name('save_new_staffreport');
 Route::post('/staffreport/getstaffreports', [StaffReportController::class, 'getstaffreports'])->name('getstaffreport');
 Route::post('/staffreport/deletestaffreport', [StaffReportController::class, 'deletestaffreport'])->name('deletestaffreport');
 
 //report
 Route::get('/report/view', [ReportController::class, 'report_view'])->name('report_view');
+Route::get('/report/incidentreportPrint', [ReportController::class, 'incidentreportPrint'])->name('incidentreportPrint');
 
 //user
 Route::get('/user/view', [UserController::class, 'user_view'])->name('user_view');

@@ -1,14 +1,14 @@
 <header class="app-header position-sticky top-0 w-100 header-footer-bg" style="border-bottom: 1px solid black;">
     <nav class="navbar navbar-expand-lg navbar-light">
         <ul class="navbar-nav">
-            @if (Route::currentRouteName() != 'home')
+            @if (!in_array(Route::currentRouteName(), $excludedRoutes))
                 <li class="nav-item">
                     <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
                         <i class="ti ti-menu-2 text-white"></i>
                     </a>
                 </li>
             @endif
-            @if (Route::currentRouteName() == 'home')
+            @if (in_array(Route::currentRouteName(), $excludedRoutes))
                 <li class="nav-item dropdown">
                     <div class="brand-logo d-flex align-items-center justify-content-between ps-0">
                         <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-2">
@@ -38,7 +38,7 @@
             @endif
         </ul>
         <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
-            @if (Route::currentRouteName() != 'home')
+            @if (!in_array(Route::currentRouteName(), $excludedRoutes))
                 <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
                     <div class="d-flex gap align-items-center">
                         <div class="d-flex flex-column justify-content-center align-items-end border-end pe-2">
@@ -71,7 +71,8 @@
             @else
                 <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end gap-4">
                     <li class="nav-item dropdown">
-                        <a class="nav-link nav-icon-hover px-2 cursor-pointer text-white fw-semibold"
+                        <a href="{{ route('home') }}"
+                            class="nav-link nav-icon-hover px-2 cursor-pointer text-white fw-semibold"
                             style="font-size: 13px">
                             <i class="bi bi-house-fill me-1"></i>
                             Home

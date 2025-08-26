@@ -1,5 +1,6 @@
 @extends('layout.mainlayout')
 @section('content')
+    @include('dashboard.css.dashboard')
     @php
         $countDash = $countDash->pluck('total', 'typeOfRecord')->toArray();
         $counts = [
@@ -46,7 +47,7 @@
         </div>
         <div class="d-flex justify-content-between px-0">
             @foreach ($counts as $count)
-                <div class="border p-4 {{ $count['class'] }}" style="width: 24%; border-radius: 13px">
+                <div class="border p-3 {{ $count['class'] }}" style="width: 24%; border-radius: 13px">
                     <p class="mb-1 text-white text-center" style="font-size: 18px">{{ $count['title'] }}</p>
                     <p class="mb-1 text-white text-center" style="font-size: 30px">
                         <i class="bi bi-journal-text text-white" style="font-size: 30px"></i>
@@ -76,12 +77,13 @@
                 </table>
             </div>
         </div>
-
-        <div class="card mt-3">
-            <div class="card-body p-3">
-                <p class="mb-2 fw-semibold" style="font-size: 16px">MONTHLY REPORT DATA CHART</p>
+        @if (auth()->user()->usertype == 'ADMIN')
+            <div class="card mt-3">
+                <div class="card-body p-3">
+                    <p class="mb-2 fw-semibold" style="font-size: 16px">MONTHLY REPORT DATA CHART</p>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 @endsection
 

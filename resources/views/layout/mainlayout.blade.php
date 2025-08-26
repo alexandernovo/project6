@@ -1,3 +1,7 @@
+@php
+    $excludedRoutes = ['home', 'login', 'signup'];
+@endphp
+
 <!doctype html>
 <html lang="en">
 
@@ -21,10 +25,10 @@
     <div class="">
         <div class="page-wrapper flex-1" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6"
             data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
-            @if (Route::currentRouteName() != 'home')
+            @if (!in_array(Route::currentRouteName(), $excludedRoutes))
                 @include('components.sidebar')
             @endif
-            @if (Route::currentRouteName() != 'home')
+            @if (!in_array(Route::currentRouteName(), $excludedRoutes))
                 <div class="body-wrapper vh-100 d-flex flex-column justify-content-between">
                     @include('components.header')
                     <div class="px-3 pb-3 mt-3 flex-1">

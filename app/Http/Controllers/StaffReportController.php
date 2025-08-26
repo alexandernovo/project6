@@ -14,6 +14,11 @@ class StaffReportController extends Controller
     {
         return view('staffreport.views.staffreport');
     }
+    
+    public function submitreportdashboard()
+    {
+        return view('staffreport.views.submitreportdashboard');
+    }
 
     public function save_new_staffreport(Request $request)
     {

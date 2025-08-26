@@ -1,5 +1,5 @@
-<div class="offcanvas offcanvas-end" style="background-color: #545454" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
-    aria-labelledby="staticBackdropLabel">
+<div class="offcanvas offcanvas-end" style="background-color: #545454" data-bs-backdrop="static" tabindex="-1"
+    id="staticBackdrop" aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title text-white" id="staticBackdropLabel">
             <i class="bi bi-person-lock me-1" style="font-size: 20px"></i>
@@ -15,13 +15,16 @@
                 style="width: 120px; height: 120px">
             <div class="w-100 px-3 mt-4">
                 <form id="login_form">
+                    <input type="hidden" name="typeLogin" id="typeLogin" value="ADMIN">
                     <div class="form-group mb-2">
                         <label for="" class="mb-1 text-white">Username</label>
-                        <input type="text" name="username" id="username" class="form-control bg-white" placeholder="Username">
+                        <input type="text" name="username" id="username" class="form-control bg-white"
+                            placeholder="Username">
                     </div>
                     <div class="form-group">
                         <label for="" class="mb-1 text-white">Password</label>
-                        <input type="password" name="password" id="password" class="form-control bg-white" placeholder="Password">
+                        <input type="password" name="password" id="password" class="form-control bg-white"
+                            placeholder="Password">
                         <p id="error_login" class="text-warning mt-1 d-none mb-0 error-class"></p>
                     </div>
                     <div class="form-group mt-4">

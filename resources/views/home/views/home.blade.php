@@ -12,8 +12,8 @@
                 (MDRRMO) at the Frontline of Safety and Resilience "
             </p>
             <div class="d-flex gap-2 mt-5">
-                <button class="btn-prime btn px-4" style="font-size: 18px; border-radius: 13px">Log in</button>
-                <button class="btn-prime btn px-4" style="font-size: 18px; border-radius: 13px">Sign in</button>
+                <a href="{{ route('login') }}" class="btn-prime btn px-4" style="font-size: 18px; border-radius: 13px">Log in</a>
+                <a href="{{ route('signup') }}" class="btn-prime btn px-4" style="font-size: 18px; border-radius: 13px">Sign in</a>
             </div>
         </div>
         <div class="ms-3 d-flex gap-3">

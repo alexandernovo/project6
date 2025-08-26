@@ -7,6 +7,7 @@
     reportOptions = {
         processing: false,
         serverSide: true,
+        scrollX: true,
         // data: [],
         ajax: {
             url: "{{ route('getreport') }}",

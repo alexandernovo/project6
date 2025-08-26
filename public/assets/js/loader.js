@@ -111,14 +111,14 @@ let loader = `
     </div>
 `;
 
-let navEntry = performance.getEntriesByType("navigation")[0];
+// let navEntry = performance.getEntriesByType("navigation")[0];
 
-if (navEntry) {
-    if (navEntry.type === "reload") {
-        document.body.insertAdjacentHTML("beforeend", loader);
-        setTimeout(() => {
-            const loaderEl = document.querySelector(".totalLoader");
-            if (loaderEl) loaderEl.remove();
-        }, 1000);
-    }
-}
+// if (navEntry) {
+//     if (navEntry.type === "reload") {
+//         document.body.insertAdjacentHTML("beforeend", loader);
+//         setTimeout(() => {
+//             const loaderEl = document.querySelector(".totalLoader");
+//             if (loaderEl) loaderEl.remove();
+//         }, 1000);
+//     }
+// }
