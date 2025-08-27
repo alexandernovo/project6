@@ -36,5 +36,6 @@ class Record extends Model
         'propertyno',
         'dateacquired',
         'amount',
+        'typeOfRecord',
     ];
 }

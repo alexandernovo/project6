@@ -9,11 +9,12 @@
         serverSide: true,
         // data: [],
         ajax: {
-            url: "{{ route('getinventoryreport') }}",
+            url: "{{ route('getstaffreports') }}",
             type: 'POST',
             dataType: 'json',
             data: function(d) {
                 d._token = '{{ csrf_token() }}';
+                d.typeOfRecord = "INVENTORYREPORT";
             },
             dataSrc: function(json) {
                 inventoryreportData = json.data;

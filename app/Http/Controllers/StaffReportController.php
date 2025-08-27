@@ -15,6 +15,10 @@ class StaffReportController extends Controller
     {
         return view('staffreport.views.staffreport');
     }
+    public function archive_view()
+    {
+        return view('staffreport.views.archive');
+    }
 
     public function submitreportdashboard()
     {
@@ -24,6 +28,21 @@ class StaffReportController extends Controller
     public function incidentreport_staff()
     {
         return view('staffreport.views.incidentreport');
+    }
+
+    public function situationalreport_staff()
+    {
+        return view('staffreport.views.situationalreport');
+    }
+
+    public function progressreport_staff()
+    {
+        return view('staffreport.views.progressreport');
+    }
+
+    public function inventoryreport_staff()
+    {
+        return view('staffreport.views.inventoryreport');
     }
 
     public function save_new_staffreport(Request $request)
@@ -36,6 +55,10 @@ class StaffReportController extends Controller
 
             if (!empty($all['datetimeoccurence'])) {
                 $all['datetimeoccurence'] = date('Y-m-d h:i:s', strtotime($all['datetimeoccurence']));
+            }
+
+            if (!empty($all['dateacquired'])) {
+                $all['dateacquired'] = date('Y-m-d', strtotime($all['dateacquired']));
             }
 
             if ($record_id == 0) {
@@ -70,6 +93,7 @@ class StaffReportController extends Controller
         $length = $request->input('length');
         $start = $request->input('start');
         $searchValue = $request->input('search.value');
+        $typeOfRecord = $request->input('typeOfRecord');
 
         $query = DB::table('records')
             ->leftJoin('users', 'records.staff_id', '=', 'users.id')
@@ -101,6 +125,10 @@ class StaffReportController extends Controller
             });
         }
 
+        if (!empty($typeOfRecord)) {
+            $query->where("records.typeOfRecord", $typeOfRecord);
+        }
+
         $totalData = $query->count();
 
         $data = $query
@@ -116,15 +144,13 @@ class StaffReportController extends Controller
         ]);
     }
 
-    public function deletestaffreport(Request $request)
+    public function deleteRecord(Request $request)
     {
         $record_id = $request->record_id;
-
         Record::where('record_id', $record_id)->delete();
 
         return response()->json([
             'status' => 'success',
-            'message' => "staffreport deleted successfully"
         ]);
     }
 }

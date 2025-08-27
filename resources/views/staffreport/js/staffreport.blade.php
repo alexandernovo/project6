@@ -9,7 +9,7 @@
         serverSide: true,
         // data: [],
         ajax: {
-            url: "{{ route('getstaffreport') }}",
+            url: "{{ route('getstaffreports') }}",
             type: 'POST',
             dataType: 'json',
             data: function(d) {
@@ -70,7 +70,7 @@
                 }
             },
             {
-                title: 'Date Submitted',
+                title: 'Date & Time Submitted',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return formatDateToStr(row.created_at);

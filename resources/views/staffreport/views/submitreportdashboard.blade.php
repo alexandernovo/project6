@@ -8,9 +8,21 @@
                 'class' => 'bg-red',
                 'route' => route('incidentreport_staff'),
             ],
-            ['title' => 'SITUATIONAL REPORT', 'class' => 'bg-orange', 'route' => ''],
-            ['title' => 'PROGRESS REPORT', 'class' => 'bg-blue', 'route' => ''],
-            ['title' => 'INVENTORY REPORT', 'class' => 'bg-green', 'route' => ''],
+            [
+                'title' => 'SITUATIONAL REPORT',
+                'class' => 'bg-orange',
+                'route' => route('situationalreport_staff'),
+            ],
+            [
+                'title' => 'PROGRESS REPORT',
+                'class' => 'bg-blue',
+                'route' => route('progressreport_staff'),
+            ],
+            [
+                'title' => 'INVENTORY REPORT',
+                'class' => 'bg-green',
+                'route' => route('inventoryreport_staff'),
+            ],
         ];
     @endphp
     <div class="row mx-auto">

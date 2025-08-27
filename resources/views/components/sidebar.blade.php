@@ -89,7 +89,7 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ route('report_view') }}" aria-expanded="false">
+                        <a class="sidebar-link" href="{{ route('archive_view') }}" aria-expanded="false">
                             <span>
                                 <i class="bi bi-folder-plus"></i>
                             </span>

@@ -1,10 +1,10 @@
 <script>
-    let progressreportOptions;
-    let progressreportTable;
-    let progressreportData = [];
-    let selectedprogressreportId = null;
+    let archivedTableOptions;
+    let archivedTable;
+    let archivedTableData = [];
+    let selectedarchivedTableId = null;
 
-    progressreportOptions = {
+    archivedTableOptions = {
         processing: false,
         serverSide: true,
         // data: [],
@@ -14,10 +14,9 @@
             dataType: 'json',
             data: function(d) {
                 d._token = '{{ csrf_token() }}';
-                d.typeOfRecord = "PROGRESSREPORT";
             },
             dataSrc: function(json) {
-                progressreportData = json.data;
+                archivedTableData = json.data;
                 return json.data;
             }
         },
@@ -29,7 +28,7 @@
                 }
             },
             {
-                title: 'Staff<br>Name',
+                title: 'Staff Name',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return row.fullname;
@@ -43,68 +42,35 @@
                 }
             },
             {
-                title: 'Barangay',
+                title: 'Report Type',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return row.barangay;
+                    return formatRecordType(row.typeOfRecord);
                 }
             },
             {
-                title: 'Affected Families',
+                title: 'Address',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return row.affectedfamilies;
+                    return row.address;
                 }
             },
             {
-                title: 'Person/Individuals',
+                title: 'Contact',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return row.individuals;
+                    return row.phone_num;
                 }
             },
             {
-                title: `
-                    <div class="p-2" style="border-bottom: 1px solid #EBF1F6">Evacuation Center/Outside</div>
-                    <div class="d-flex">
-                        <div class="w-50 p-2" style="border-right: 1px solid #EBF1F6">Families</div>
-                        <div class="w-50 p-2">Individuals</div>
-                    </div>
-                `,
-                orderable: false,
-                className: 'text-nowrap p-3 align-middle text-center p-0',
-                render: function(data, type, row) {
-                    return `
-                        <div class="d-flex">
-                           <div class="w-50 p-2" style="border-right: 1px solid #EBF1F6">${row.evacuationfamilies}</div>
-                           <div class="w-50 p-2">${row.evacuationindividuals}</div>
-                        <div>
-                    `;
-                }
-            },
-            {
-                title: 'Remarks',
-                className: 'text-nowrap p-3 align-middle text-center',
-                render: function(data, type, row) {
-                    return row.remarks;
-                }
-            },
-            {
-                title: 'Clearing<br>Operations',
-                className: 'text-nowrap p-3 align-middle text-center',
-                render: function(data, type, row) {
-                    return row.clearingoperations;
-                }
-            },
-            {
-                title: 'File<br>Submitted',
+                title: 'File Submitted',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return "";
                 }
             },
             {
-                title: 'Date<br>Submitted',
+                title: 'Date & Time Submitted',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return formatDateToStr(row.created_at);
@@ -130,49 +96,49 @@
             }
         ],
         initComplete: function(settings, json) {
-            appendButtonsprogressreport();
+            appendButtonsarchivedTable();
             $('[data-bs-toggle="tooltip"]').tooltip();
         }
     };
 
     $(document).ready(function() {
-        renderprogressreportTable();
+        renderarchivedTable();
     })
 
-    function renderprogressreportTable() {
-        if (progressreportTable) {
-            progressreportTable.destroy();
+    function renderarchivedTable() {
+        if (archivedTable) {
+            archivedTable.destroy();
         }
-        progressreportTable = new DataTable('#progressreportTable', progressreportOptions)
+        archivedTable = new DataTable('#archivedTable', archivedTableOptions)
     }
 
-    $(document).on("click", "#reloadprogressreportBtn", function() {
+    $(document).on("click", "#reloadarchivedTableBtn", function() {
         reloadButtonLoading(true);
-        reloadprogressreportTable();
+        reloadarchivedTable();
         setTimeout(() => {
             reloadButtonLoading(false);
         }, 500);
     });
 
-    function reloadprogressreportTable() {
-        if (progressreportTable) {
-            progressreportTable.ajax.reload(null, false);
+    function reloadarchivedTable() {
+        if (archivedTable) {
+            archivedTable.ajax.reload(null, false);
         } else {
-            renderprogressreportTable();
+            renderarchivedTable();
         }
     }
 
-    function reloadprogressreportTableWithPagination() {
-        if (progressreportTable) {
-            progressreportTable.ajax.reload(null, true);
+    function reloadarchivedTableWithPagination() {
+        if (archivedTable) {
+            archivedTable.ajax.reload(null, true);
         } else {
-            renderprogressreportTable();
+            renderarchivedTable();
         }
     }
 
-    function appendButtonsprogressreport() {
-        $('#progressreportTable_wrapper .row .dt-length').append(`
-            <div class="d-flex gap-2 ms-2 align-items-center progressreportBtnSm">
+    function appendButtonsarchivedTable() {
+        $('#archivedTable_wrapper .row .dt-length').append(`
+            <div class="d-flex gap-2 ms-2 align-items-center archivedTableBtnSm">
                 <div class="d-flex">
                     <div class="input-group" style="width: 120%">
                         <span  style="border: 1px solid #EAEFF4 !important" class="input-group-text filter-padding">From:</span>
@@ -187,7 +153,7 @@
                         Filter
                     </button>
                 </div>
-                <button class="btn btn-info d-flex flex-nowrap align-items-center gap-2" id="reloadprogressreportBtn">
+                <button class="btn btn-info d-flex flex-nowrap align-items-center gap-2" id="reloadarchivedTableBtn">
                     <span>
                         <i class="bi bi-arrow-clockwise"></i>
                     </span>
@@ -199,24 +165,23 @@
 
     function reloadButtonLoading(isLoading) {
         if (isLoading) {
-            $("#reloadprogressreportBtn").html(`
+            $("#reloadarchivedTableBtn").html(`
                     <div class="spinner-border text-white" role="status" style="width: 14px; height: 14px">
                 </div>
                 Reloading
             `);
         } else {
-            $("#reloadprogressreportBtn").html(`
+            $("#reloadarchivedTableBtn").html(`
                 <i class="bi bi-arrow-clockwise"></i>
                 Reload
             `);
         }
     }
-
     $(document).on('click', '.deleteRecord', function() {
         let record_id = $(this).data("record_id");
         Swal.fire({
-            title: `Delete this Progress Report?`,
-            text: `Are you sure you want to delete this Progress Report?`,
+            title: `Delete this Archive?`,
+            text: `Are you sure you want to delete this Archive?`,
             icon: 'question',
             showCancelButton: true,
             confirmButtonText: "Delete"
@@ -226,7 +191,7 @@
                     record_id: record_id,
                 }, (response) => {
                     if (response.status == "success") {
-                        reloadprogressreportTable();
+                        reloadarchivedTable();
                     }
                 })
             }

@@ -9,11 +9,12 @@
         serverSide: true,
         // data: [],
         ajax: {
-            url: "{{ route('getsituationalreport') }}",
+            url: "{{ route('getstaffreports') }}",
             type: 'POST',
             dataType: 'json',
             data: function(d) {
                 d._token = '{{ csrf_token() }}';
+                d.typeOfRecord = "SITUATIONALREPORT";
             },
             dataSrc: function(json) {
                 situationalreportData = json.data;
@@ -218,7 +219,7 @@
                     record_id: record_id,
                 }, (response) => {
                     if (response.status == "success") {
-                        rendersituationalreportTable();
+                        reloadsituationalreportTable();
                     }
                 })
             }
