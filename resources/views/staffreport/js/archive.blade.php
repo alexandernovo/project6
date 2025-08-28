@@ -3,6 +3,8 @@
     let archivedTable;
     let reportFormData = [];
     let selectedarchivedTableId = null;
+    let dateFrom = "";
+    let dateTo = "";
 
     archivedTableOptions = {
         processing: false,
@@ -14,6 +16,8 @@
             dataType: 'json',
             data: function(d) {
                 d._token = '{{ csrf_token() }}';
+                d.dateFrom = dateFrom;
+                d.dateTo = dateTo;
             },
             dataSrc: function(json) {
                 reportFormData = json.data;
@@ -114,6 +118,7 @@
     }
 
     $(document).on("click", "#reloadarchivedTableBtn", function() {
+        resetDate();
         reloadButtonLoading(true);
         reloadarchivedTable();
         setTimeout(() => {
@@ -178,6 +183,23 @@
             `);
         }
     }
+
+    $(document).on('click', '#filterDateBtn', function() {
+        dateFrom = $("#dateFromFilter").val();
+        dateTo = $("#dateToFilter").val();
+        archivedTableOptions.ajax.data.dateFrom = dateFrom;
+        archivedTableOptions.ajax.data.dateTo = dateTo;
+        reloadarchivedTable();
+    });
+
+    function resetDate() {
+        dateFrom = "";
+        dateTo = "";
+
+        archivedTableOptions.ajax.data.dateFrom = dateFrom;
+        archivedTableOptions.ajax.data.dateTo = dateTo;
+    }
+
     $(document).on('click', '.deleteRecord', function() {
         let record_id = $(this).data("record_id");
         Swal.fire({
