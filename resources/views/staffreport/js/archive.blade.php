@@ -1,7 +1,7 @@
 <script>
     let archivedTableOptions;
     let archivedTable;
-    let archivedTableData = [];
+    let reportFormData = [];
     let selectedarchivedTableId = null;
 
     archivedTableOptions = {
@@ -16,7 +16,7 @@
                 d._token = '{{ csrf_token() }}';
             },
             dataSrc: function(json) {
-                archivedTableData = json.data;
+                reportFormData = json.data;
                 return json.data;
             }
         },
@@ -80,9 +80,10 @@
                 title: 'Action',
                 className: 'text-nowrap p-3 align-middle text-center sticky-action',
                 render: function(data, type, row) {
+                    let cleanedType = row.typeOfRecord.replace(/report/i, "").trim().toLowerCase();
                     return `
                         <div class="d-flex gap-2">
-                            <button class="btn btn-warning editRecord" data-record_id="${row.record_id}">
+                            <button class="btn btn-warning editRecord" data-table="archive" data-type="${cleanedType}" data-record_id="${row.record_id}">
                                 <i class="bi bi-pencil-square"></i>
                                 Edit
                             </button>

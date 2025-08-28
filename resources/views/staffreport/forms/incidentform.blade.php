@@ -38,14 +38,14 @@
         <div class="col-3">
             <div class="form-group">
                 <label for="" class="mb-1">Designation</label>
-                <input type="text" name="designation" id="designation_incident"
+                <input type="text"  id="designation_incident"
                     value="{{ auth()->user()->designation }}" class="form-control" readonly>
             </div>
         </div>
         <div class="col-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Contact</label>
-                <input type="text" name="phone_num" id="phone_num_incident" value="{{ auth()->user()->phone_num }}"
+                <input type="text" id="phone_num_incident" value="{{ auth()->user()->phone_num }}"
                     class="form-control" readonly>
             </div>
         </div>
@@ -110,3 +110,4 @@
             </div>
         </div>
     </div>
+</div>

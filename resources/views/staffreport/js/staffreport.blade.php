@@ -1,7 +1,7 @@
 <script>
     let staffreportOptions;
     let staffreportTable;
-    let staffreportData = [];
+    let reportFormData = [];
     let selectedstaffreportId = null;
 
     staffreportOptions = {
@@ -16,7 +16,7 @@
                 d._token = '{{ csrf_token() }}';
             },
             dataSrc: function(json) {
-                staffreportData = json.data;
+                reportFormData = json.data;
                 return json.data;
             }
         },
@@ -34,6 +34,13 @@
                     return row.fullname;
                 }
             },
+            // {
+            //     title: 'Brgy Test',
+            //     className: 'text-nowrap p-3 align-middle text-center',
+            //     render: function(data, type, row) {
+            //         return row.barangay;
+            //     }
+            // },
             {
                 title: 'Designation',
                 className: 'text-nowrap p-3 align-middle text-center',
@@ -80,9 +87,10 @@
                 title: 'Action',
                 className: 'text-nowrap p-3 align-middle text-center sticky-action',
                 render: function(data, type, row) {
+                    let cleanedType = row.typeOfRecord.replace(/report/i, "").trim().toLowerCase();
                     return `
                         <div class="d-flex gap-2">
-                            <button class="btn btn-warning editRecord" data-record_id="${row.record_id}">
+                            <button class="btn btn-warning editRecord" data-table="staff" data-type="${cleanedType}" data-record_id="${row.record_id}">
                                 <i class="bi bi-pencil-square"></i>
                                 Edit
                             </button>

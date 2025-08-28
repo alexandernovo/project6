@@ -1,7 +1,7 @@
 <script>
     let progressreportOptions;
     let progressreportTable;
-    let progressreportData = [];
+    let reportFormData = [];
     let selectedprogressreportId = null;
 
     progressreportOptions = {
@@ -17,7 +17,7 @@
                 d.typeOfRecord = "PROGRESSREPORT";
             },
             dataSrc: function(json) {
-                progressreportData = json.data;
+                reportFormData = json.data;
                 return json.data;
             }
         },
@@ -116,7 +116,7 @@
                 render: function(data, type, row) {
                     return `
                         <div class="d-flex gap-2">
-                            <button class="btn btn-warning editRecord" data-record_id="${row.record_id}">
+                            <button class="btn btn-warning editRecord"  data-type="progress" data-record_id="${row.record_id}">
                                 <i class="bi bi-pencil-square"></i>
                                 Edit
                             </button>

@@ -1,7 +1,7 @@
 <script>
     let inventoryreportOptions;
     let inventoryreportTable;
-    let inventoryreportData = [];
+    let reportFormData = [];
     let selectedinventoryreportId = null;
 
     inventoryreportOptions = {
@@ -17,7 +17,7 @@
                 d.typeOfRecord = "INVENTORYREPORT";
             },
             dataSrc: function(json) {
-                inventoryreportData = json.data;
+                reportFormData = json.data;
                 return json.data;
             }
         },
@@ -104,7 +104,7 @@
                 render: function(data, type, row) {
                     return `
                         <div class="d-flex gap-2">
-                            <button class="btn btn-warning editRecord" data-record_id="${row.record_id}">
+                            <button class="btn btn-warning editRecord" data-type="inventory" data-record_id="${row.record_id}">
                                 <i class="bi bi-pencil-square"></i>
                                 Edit
                             </button>

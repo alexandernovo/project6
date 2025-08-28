@@ -1,6 +1,7 @@
 @extends('layout.mainlayout')
 @section('content')
     @include('situationalreport.css.situationalreport')
+    @include('staffreport.modals.situationalmodal')
     <div class="row mx-auto">
         <div class="card-body px-2 py-1">
             <div class="row align-items-center">
@@ -48,4 +49,5 @@
 
 @section('js')
     @include('situationalreport.js.situationalreport')
+    @include('staffreport.js.reportformupdate')
 @endsection

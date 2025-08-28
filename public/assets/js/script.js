@@ -168,7 +168,7 @@ function populateForm(data, formId, alias = "", callback = null) {
             value = "";
         }
 
-        let field = $(`#${formId} #${key}${alias}`);
+        let field = $(`#${formId} #${key}${alias}, .${formId} #${key}${alias}`);
         if (field.length > 0) {
             if (field.is("textarea")) {
                 field.val(value);
@@ -186,6 +186,14 @@ function populateForm(data, formId, alias = "", callback = null) {
                     value.match(/^\d{4}-\d{2}-\d{2}/)
                 ) {
                     value = value.substring(0, 10);
+                    field.val(value);
+                }
+            } else if (field.attr("type") === "datetime-local") {
+                if (
+                    typeof value === "string" &&
+                    value.match(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}(\.\d+)?$/)
+                ) {
+                    value = value.substring(0, 16).replace(" ", "T");
                     field.val(value);
                 }
             } else if (field.is("select")) {
@@ -349,7 +357,9 @@ function statusBadge(data) {
 
 function formReset(formId) {
     $(`#${formId}, .${formId}`)[0].reset();
-    $(`#${formId} input[type='hidden'], .${formId} input[type='hidden']`).val(0);
+    $(`#${formId} input[type='hidden'], .${formId} input[type='hidden']`).val(
+        0
+    );
 }
 
 function formatRecordType(type) {

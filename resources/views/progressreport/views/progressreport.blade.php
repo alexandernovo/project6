@@ -1,6 +1,7 @@
 @extends('layout.mainlayout')
 @section('content')
     @include('progressreport.css.progressreport')
+    @include('staffreport.modals.progressmodal')
     <div class="row mx-auto">
         <div class="card-body px-2 py-1">
             <div class="row align-items-center">
@@ -49,4 +50,5 @@
 
 @section('js')
     @include('progressreport.js.progressreport')
+    @include('staffreport.js.reportformupdate')
 @endsection

@@ -22,7 +22,7 @@
                             <div class="form-group mb-1">
                                 <label for="" class="mb-1">Designation</label>
                                 <input type="text" class="form-control" autocomplete="off" required
-                                    name="designation" id="designation">
+                                     id="designation">
                             </div>
 
                         </div>
@@ -47,7 +47,7 @@
                             </div>
                             <div class="form-group mb-1">
                                 <label for="" class="mb-1">Phone Number</label>
-                                <input type="text" class="form-control" autocomplete="off" required name="phone_num"
+                                <input type="text" class="form-control" autocomplete="off" required
                                     id="phone_num">
                             </div>
 

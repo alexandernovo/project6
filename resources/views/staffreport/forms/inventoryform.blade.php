@@ -38,14 +38,14 @@
         <div class="col-3">
             <div class="form-group">
                 <label for="" class="mb-1">Designation</label>
-                <input type="text" name="designation" id="designation_inventory"
-                    value="{{ auth()->user()->designation }}" class="form-control" readonly>
+                <input type="text" id="designation_inventory" value="{{ auth()->user()->designation }}"
+                    class="form-control" readonly>
             </div>
         </div>
         <div class="col-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Quantity</label>
-                <input type="number" name="quantity" id="quantity_inventory" class="form-control" >
+                <input type="number" name="quantity" id="quantity_inventory" class="form-control">
             </div>
         </div>
         <div class="col-3">
@@ -63,7 +63,7 @@
         <div class="col-3 mt-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Date Acquired</label>
-                <input type="datetime-local" name="dateacquired" id="dateacquired_inventory" required
+                <input type="date" name="dateacquired" id="dateacquired_inventory" required
                     class="form-control">
             </div>
         </div>
@@ -86,3 +86,4 @@
             </div>
         </div>
     </div>
+</div>

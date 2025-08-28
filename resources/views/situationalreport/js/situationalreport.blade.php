@@ -1,7 +1,7 @@
 <script>
     let situationalreportOptions;
     let situationalreportTable;
-    let situationalreportData = [];
+    let reportFormData = [];
     let selectedsituationalreportId = null;
 
     situationalreportOptions = {
@@ -17,7 +17,7 @@
                 d.typeOfRecord = "SITUATIONALREPORT";
             },
             dataSrc: function(json) {
-                situationalreportData = json.data;
+                reportFormData = json.data;
                 return json.data;
             }
         },
@@ -109,7 +109,7 @@
                 render: function(data, type, row) {
                     return `
                         <div class="d-flex gap-2">
-                            <button class="btn btn-warning editRecord" data-record_id="${row.record_id}">
+                            <button class="btn btn-warning editRecord" data-type="situational" data-record_id="${row.record_id}">
                                 <i class="bi bi-pencil-square"></i>
                                 Edit
                             </button>

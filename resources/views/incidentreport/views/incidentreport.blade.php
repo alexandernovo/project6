@@ -1,6 +1,7 @@
 @extends('layout.mainlayout')
 @section('content')
     @include('incidentreport.css.incidentreport')
+    @include('staffreport.modals.incidentmodal')
     <div class="row mx-auto">
         <div class="card-body px-2 py-1">
             <div class="row align-items-center">
@@ -49,4 +50,5 @@
 
 @section('js')
     @include('incidentreport.js.incidentreport')
+    @include('staffreport.js.reportformupdate')
 @endsection
