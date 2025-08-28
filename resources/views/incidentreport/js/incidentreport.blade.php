@@ -3,6 +3,8 @@
     let incidentreportTable;
     let reportFormData = [];
     let selectedincidentreportId = null;
+    let dateFrom = "";
+    let dateTo = "";
 
     incidentreportOptions = {
         processing: false,
@@ -15,6 +17,8 @@
             data: function(d) {
                 d._token = '{{ csrf_token() }}';
                 d.typeOfRecord = "INCIDENTREPORT";
+                d.dateFrom = dateFrom;
+                d.dateTo = dateTo;
             },
             dataSrc: function(json) {
                 reportFormData = json.data;
@@ -148,6 +152,7 @@
 
     $(document).on("click", "#reloadincidentreportBtn", function() {
         reloadButtonLoading(true);
+        resetDate();
         reloadincidentreportTable();
         setTimeout(() => {
             reloadButtonLoading(false);
@@ -169,6 +174,7 @@
             renderincidentreportTable();
         }
     }
+
 
     function appendButtonsincidentreport() {
         $('#incidentreportTable_wrapper .row .dt-length').append(`
@@ -210,6 +216,22 @@
                 Reload
             `);
         }
+    }
+
+    $(document).on('click', '#filterDateBtn', function() {
+        dateFrom = $("#dateFromFilter").val();
+        dateTo = $("#dateToFilter").val();
+        incidentreportOptions.ajax.data.dateFrom = dateFrom;
+        incidentreportOptions.ajax.data.dateTo = dateTo;
+        reloadincidentreportTable();
+    });
+
+    function resetDate() {
+        dateFrom = "";
+        dateTo = "";
+
+        incidentreportOptions.ajax.data.dateFrom = dateFrom;
+        incidentreportOptions.ajax.data.dateTo = dateTo;
     }
 
     $(document).on('click', '.deleteRecord', function() {

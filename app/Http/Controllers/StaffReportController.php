@@ -94,12 +94,14 @@ class StaffReportController extends Controller
         $start = $request->input('start');
         $searchValue = $request->input('search.value');
         $typeOfRecord = $request->input('typeOfRecord');
+        $dateFrom = $request->input('dateFrom');
+        $dateTo = $request->input('dateTo');
 
         $query = DB::table('records')
             ->leftJoin('users', 'records.staff_id', '=', 'users.id')
             ->select(
-                'records.*',
                 'users.*',
+                'records.*',
                 DB::raw("
                     CONCAT(
                         users.firstname, ' ',
@@ -127,6 +129,13 @@ class StaffReportController extends Controller
 
         if (!empty($typeOfRecord)) {
             $query->where("records.typeOfRecord", $typeOfRecord);
+        }
+
+        if (!empty($dateFrom) && !empty($dateTo)) {
+            $dateFrom = date("Y-m-d", strtotime($dateFrom));
+            $dateTo = date("Y-m-d", strtotime($dateTo));
+            $query->where(DB::raw("CAST(records.created_at AS DATE)"), ">=", $dateFrom)
+                ->where(DB::raw("CAST(records.created_at AS DATE)"), "<=", $dateTo);
         }
 
         $totalData = $query->count();

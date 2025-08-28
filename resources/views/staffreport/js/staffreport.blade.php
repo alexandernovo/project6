@@ -3,6 +3,8 @@
     let staffreportTable;
     let reportFormData = [];
     let selectedstaffreportId = null;
+    let dateFrom = "";
+    let dateTo = "";
 
     staffreportOptions = {
         processing: false,
@@ -14,6 +16,8 @@
             dataType: 'json',
             data: function(d) {
                 d._token = '{{ csrf_token() }}';
+                d.dateFrom = dateFrom;
+                d.dateTo = dateTo;
             },
             dataSrc: function(json) {
                 reportFormData = json.data;
@@ -121,6 +125,7 @@
     }
 
     $(document).on("click", "#reloadstaffreportBtn", function() {
+        resetDate();
         reloadButtonLoading(true);
         reloadstaffreportTable();
         setTimeout(() => {
@@ -185,6 +190,23 @@
             `);
         }
     }
+
+    $(document).on('click', '#filterDateBtn', function() {
+        dateFrom = $("#dateFromFilter").val();
+        dateTo = $("#dateToFilter").val();
+        staffreportOptions.ajax.data.dateFrom = dateFrom;
+        staffreportOptions.ajax.data.dateTo = dateTo;
+        reloadstaffreportTable();
+    });
+
+    function resetDate() {
+        dateFrom = "";
+        dateTo = "";
+
+        staffreportOptions.ajax.data.dateFrom = dateFrom;
+        staffreportOptions.ajax.data.dateTo = dateTo;
+    }
+
     $(document).on('click', '.deleteRecord', function() {
         let record_id = $(this).data("record_id");
         Swal.fire({

@@ -3,6 +3,8 @@
     let inventoryreportTable;
     let reportFormData = [];
     let selectedinventoryreportId = null;
+    let dateFrom = "";
+    let dateTo = "";
 
     inventoryreportOptions = {
         processing: false,
@@ -15,6 +17,8 @@
             data: function(d) {
                 d._token = '{{ csrf_token() }}';
                 d.typeOfRecord = "INVENTORYREPORT";
+                d.dateFrom = dateFrom;
+                d.dateTo = dateTo;
             },
             dataSrc: function(json) {
                 reportFormData = json.data;
@@ -135,6 +139,7 @@
     }
 
     $(document).on("click", "#reloadinventoryreportBtn", function() {
+        resetDate();
         reloadButtonLoading(true);
         reloadinventoryreportTable();
         setTimeout(() => {
@@ -198,6 +203,22 @@
                 Reload
             `);
         }
+    }
+
+    $(document).on('click', '#filterDateBtn', function() {
+        dateFrom = $("#dateFromFilter").val();
+        dateTo = $("#dateToFilter").val();
+        inventoryreportOptions.ajax.data.dateFrom = dateFrom;
+        inventoryreportOptions.ajax.data.dateTo = dateTo;
+        reloadinventoryreportTable();
+    });
+
+    function resetDate() {
+        dateFrom = "";
+        dateTo = "";
+
+        inventoryreportOptions.ajax.data.dateFrom = dateFrom;
+        inventoryreportOptions.ajax.data.dateTo = dateTo;
     }
 
     $(document).on('click', '.deleteRecord', function() {

@@ -1,3 +1,7 @@
+@php
+    $barangayincident = config('barangay');
+@endphp
+
 <input type="hidden" name="record_id" id="record_id_incident" value="0">
 <input type="hidden" name="typeOfRecord" id="typeOfRecord_incident" value="INCIDENTREPORT">
 <input type="hidden" name="staff_id" id="staff_id_incident" value="{{ auth()->user()->id }}">
@@ -38,8 +42,8 @@
         <div class="col-3">
             <div class="form-group">
                 <label for="" class="mb-1">Designation</label>
-                <input type="text"  id="designation_incident"
-                    value="{{ auth()->user()->designation }}" class="form-control" readonly>
+                <input type="text" id="designation_incident" value="{{ auth()->user()->designation }}"
+                    class="form-control" readonly>
             </div>
         </div>
         <div class="col-3">
@@ -58,7 +62,12 @@
         <div class="col-3">
             <div class="form-group">
                 <label for="" class="mb-1">Barangay</label>
-                <input type="text" name="barangay" id="barangay_incident" class="form-control" required>
+                <input type="search" name="barangay" id="barangay_incident" class="form-control" required list="incidentbarangay">
+                <datalist id="incidentbarangay">
+                    @foreach ($barangayincident as $b)
+                        <option>{{ $b }}</option>
+                    @endforeach
+                </datalist>
             </div>
         </div>
         <div class="col-3 mt-3">

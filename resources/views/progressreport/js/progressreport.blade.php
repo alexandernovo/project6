@@ -3,6 +3,8 @@
     let progressreportTable;
     let reportFormData = [];
     let selectedprogressreportId = null;
+    let dateFrom = "";
+    let dateTo = "";
 
     progressreportOptions = {
         processing: false,
@@ -15,6 +17,8 @@
             data: function(d) {
                 d._token = '{{ csrf_token() }}';
                 d.typeOfRecord = "PROGRESSREPORT";
+                d.dateFrom = dateFrom;
+                d.dateTo = dateTo;
             },
             dataSrc: function(json) {
                 reportFormData = json.data;
@@ -147,6 +151,7 @@
     }
 
     $(document).on("click", "#reloadprogressreportBtn", function() {
+        resetDate();
         reloadButtonLoading(true);
         reloadprogressreportTable();
         setTimeout(() => {
@@ -210,6 +215,22 @@
                 Reload
             `);
         }
+    }
+
+    $(document).on('click', '#filterDateBtn', function() {
+        dateFrom = $("#dateFromFilter").val();
+        dateTo = $("#dateToFilter").val();
+        progressreportOptions.ajax.data.dateFrom = dateFrom;
+        progressreportOptions.ajax.data.dateTo = dateTo;
+        reloadprogressreportTable();
+    });
+
+    function resetDate() {
+        dateFrom = "";
+        dateTo = "";
+
+        progressreportOptions.ajax.data.dateFrom = dateFrom;
+        progressreportOptions.ajax.data.dateTo = dateTo;
     }
 
     $(document).on('click', '.deleteRecord', function() {

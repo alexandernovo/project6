@@ -1,3 +1,6 @@
+@php
+    $barangayprogress = config('barangay');
+@endphp
 <input type="hidden" name="record_id" id="record_id_progress" value="0">
 <input type="hidden" name="typeOfRecord" id="typeOfRecord_progress" value="PROGRESSREPORT">
 <input type="hidden" name="staff_id" id="staff_id_progress" value="{{ auth()->user()->id }}">
@@ -52,7 +55,12 @@
         <div class="col-6">
             <div class="form-group">
                 <label for="" class="mb-1">Barangay</label>
-                <input type="text" name="barangay" id="barangay_progress" class="form-control" required>
+                <input type="search" name="barangay" id="barangay_progress" class="form-control" required list="progressbarangay">
+                <datalist id="progressbarangay">
+                    @foreach ($barangayprogress as $b)
+                        <option>{{ $b }}</option>
+                    @endforeach
+                </datalist>
             </div>
         </div>
         <div class="col-3">

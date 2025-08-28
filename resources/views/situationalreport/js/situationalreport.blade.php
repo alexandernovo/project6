@@ -3,6 +3,8 @@
     let situationalreportTable;
     let reportFormData = [];
     let selectedsituationalreportId = null;
+    let dateFrom = "";
+    let dateTo = "";
 
     situationalreportOptions = {
         processing: false,
@@ -15,6 +17,8 @@
             data: function(d) {
                 d._token = '{{ csrf_token() }}';
                 d.typeOfRecord = "SITUATIONALREPORT";
+                d.dateFrom = dateFrom;
+                d.dateTo = dateTo;
             },
             dataSrc: function(json) {
                 reportFormData = json.data;
@@ -140,6 +144,7 @@
     }
 
     $(document).on("click", "#reloadsituationalreportBtn", function() {
+        resetDate();
         reloadButtonLoading(true);
         reloadsituationalreportTable();
         setTimeout(() => {
@@ -203,6 +208,22 @@
                 Reload
             `);
         }
+    }
+
+    $(document).on('click', '#filterDateBtn', function() {
+        dateFrom = $("#dateFromFilter").val();
+        dateTo = $("#dateToFilter").val();
+        situationalreportOptions.ajax.data.dateFrom = dateFrom;
+        situationalreportOptions.ajax.data.dateTo = dateTo;
+        reloadsituationalreportTable();
+    });
+
+    function resetDate() {
+        dateFrom = "";
+        dateTo = "";
+
+        situationalreportOptions.ajax.data.dateFrom = dateFrom;
+        situationalreportOptions.ajax.data.dateTo = dateTo;
     }
 
     $(document).on('click', '.deleteRecord', function() {

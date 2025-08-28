@@ -1,3 +1,7 @@
+@php
+    $barangaysituational = config('barangay');
+@endphp
+
 <input type="hidden" name="record_id" id="record_id_situational" value="0">
 <input type="hidden" name="typeOfRecord" id="typeOfRecord_situational" value="SITUATIONALREPORT">
 <input type="hidden" name="staff_id" id="staff_id_situational" value="{{ auth()->user()->id }}">
@@ -52,7 +56,12 @@
         <div class="col-6">
             <div class="form-group">
                 <label for="" class="mb-1">Barangay</label>
-                <input type="text" name="barangay" id="barangay_situational" class="form-control" required>
+                <input type="search" name="barangay" id="barangay_situational" class="form-control" required list="situationalbarangay">
+                <datalist id="situationalbarangay">
+                    @foreach ($barangaysituational as $b)
+                        <option>{{ $b }}</option>
+                    @endforeach
+                </datalist>
             </div>
         </div>
         <div class="col-3">

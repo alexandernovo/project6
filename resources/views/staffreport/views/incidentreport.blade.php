@@ -25,7 +25,7 @@
             <form class="reportform">
                 @include('staffreport.forms.incidentform')
                 <hr>
-                <div class="d-flex justify-content-end gap-2">
+                <div class="d-flex justify-content-end gap-2 pb-3 px-3">
                     <button class="btn btn-success">
                         <i class="bi bi-send-fill"></i>
                         Send
