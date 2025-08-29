@@ -55,6 +55,9 @@ Route::post('/staffreport/save_new_staffreport', [StaffReportController::class, 
 //report
 Route::get('/report/view', [ReportController::class, 'report_view'])->name('report_view');
 Route::get('/report/incidentreportPrint', [ReportController::class, 'incidentreportPrint'])->name('incidentreportPrint');
+Route::get('/report/situationalreportPrint', [ReportController::class, 'situationalreportPrint'])->name('situationalreportPrint');
+Route::get('/report/progressreportPrint', [ReportController::class, 'progressreportPrint'])->name('progressreportPrint');
+Route::get('/report/inventoryreportPrint', [ReportController::class, 'inventoryreportPrint'])->name('inventoryreportPrint');
 
 //user
 Route::get('/user/view', [UserController::class, 'user_view'])->name('user_view');

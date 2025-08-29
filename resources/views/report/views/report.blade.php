@@ -7,9 +7,21 @@
                 'class' => 'bg-red',
                 'route' => route('incidentreportPrint'),
             ],
-            ['title' => 'SITUATIONAL RECORD REPORT', 'class' => 'bg-orange', 'route' => ''],
-            ['title' => 'PROGRESS RECORD REPORT', 'class' => 'bg-blue', 'route' => ''],
-            ['title' => 'INVENTORY RECORD REPORT', 'class' => 'bg-green', 'route' => ''],
+            [
+                'title' => 'SITUATIONAL RECORD REPORT',
+                'class' => 'bg-orange',
+                'route' => route('situationalreportPrint'),
+            ],
+            [
+                'title' => 'PROGRESS RECORD REPORT',
+                'class' => 'bg-blue',
+                'route' => route('progressreportPrint'),
+            ],
+            [
+                'title' => 'INVENTORY RECORD REPORT',
+                'class' => 'bg-green',
+                'route' => route('inventoryreportPrint'),
+            ],
         ];
     @endphp
     <div class="row mx-auto">

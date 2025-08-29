@@ -17,6 +17,54 @@ class ReportController extends Controller
 
     public function incidentreportPrint(Request $request)
     {
+        $monthyear = $request->query('monthyear');
+        $result = $this->getPrintQuery($monthyear, "INCIDENTREPORT");
+
+        $data = [
+            'data' => $result
+        ];
+
+        return view('report.views.incidentreportPrint', $data);
+    }
+
+    public function situationalreportPrint(Request $request)
+    {
+        $monthyear = $request->query('monthyear');
+        $result = $this->getPrintQuery($monthyear, "SITUATIONALREPORT");
+
+        $data = [
+            'data' => $result
+        ];
+
+        return view('report.views.situationalreportPrint', $data);
+    }
+
+    public function progressreportPrint(Request $request)
+    {
+        $monthyear = $request->query('monthyear');
+        $result = $this->getPrintQuery($monthyear, "PROGRESSREPORT");
+
+        $data = [
+            'data' => $result
+        ];
+
+        return view('report.views.progressreportPrint', $data);
+    }
+
+    public function inventoryreportPrint(Request $request)
+    {
+        $monthyear = $request->query('monthyear');
+        $result = $this->getPrintQuery($monthyear, "INVENTORYREPORT");
+
+        $data = [
+            'data' => $result
+        ];
+
+        return view('report.views.inventoryreportPrint', $data);
+    }
+
+    private function getPrintQuery($monthyear, $type)
+    {
         $query = DB::table('records')
             ->leftJoin('users', 'records.staff_id', '=', 'users.id')
             ->select(
@@ -34,20 +82,15 @@ class ReportController extends Controller
                     ) AS fullname
                 ")
             )
-            ->where("records.typeOfRecord", "INCIDENTREPORT");
+            ->where("records.typeOfRecord", $type);
 
-        if (!empty($request->query('monthyear'))) {
-            $monthYear = $request->query('monthyear');
+        if (!empty($monthyear)) {
 
-            $query->whereRaw("FORMAT(records.created_at, 'yyyy-MM') = ?", [$monthYear]);
+            $query->whereRaw("FORMAT(records.created_at, 'yyyy-MM') = ?", [$monthyear]);
         }
 
         $result = $query->get();
 
-        $data = [
-            'data' => $result
-        ];
-
-        return view('report.views.incidentreportPrint', $data);
+        return $result;
     }
 }
