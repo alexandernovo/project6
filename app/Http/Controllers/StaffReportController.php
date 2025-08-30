@@ -137,6 +137,11 @@ class StaffReportController extends Controller
             $query->where(DB::raw("CAST(records.created_at AS DATE)"), ">=", $dateFrom)
                 ->where(DB::raw("CAST(records.created_at AS DATE)"), "<=", $dateTo);
         }
+        $userData = Auth::user();
+        
+        if ($userData->usertype == "STAFF") {
+            $query->where('staff_id', $userData->id);
+        }
 
         $totalData = $query->count();
 
