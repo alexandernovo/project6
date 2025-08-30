@@ -25,7 +25,7 @@
                 if (response.status == "error") {
                     Swal.fire({
                         title: "Failed",
-                        text: reponse.error,
+                        text: response.error,
                         icon: "error",
                         showCancelButton: false,
                     })

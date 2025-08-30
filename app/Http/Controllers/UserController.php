@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Mail\SendUpdateMail;
 use App\Models\Record;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -114,6 +116,11 @@ class UserController extends Controller
         $status = $request->status == "ACTIVE" ? "INACTIVE" : "ACTIVE";
 
         User::where('id', $id)->update(['status' => $status]);
+        $user = User::where('id', $id)->first();
+        $message = "Dear {$user['firstname']} {$user['lastname']},\n Your Account in Tibiao MDRRMO Portal has been "
+            . ($status == "ACTIVE" ? "Activated" : "Deactivated").".";
+
+        Mail::to([$user['email']])->send(new SendUpdateMail($message));
 
         return response()->json([
             'status' => 'success'

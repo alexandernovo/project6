@@ -176,12 +176,14 @@
     }
 
     $(document).on('click', '#newStaff', function() {
+        $("#password, #confirm_password").attr("required", true);
         formReset("userForm");
         $(".tipPassword").addClass("d-none");
         $("#userModal").modal("show");
     });
 
     $(document).on('click', '.edit_user', function() {
+        $("#password, #confirm_password").attr("required", false);
         let user_id = $(this).data("user_id");
         $(".tipPassword").removeClass("d-none");
         formReset("userForm");
@@ -194,6 +196,7 @@
     });
 
     $(document).on('click', '.deactivate_user', function() {
+
         let user_id = $(this).data("user_id");
         let status = $(this).attr("data-status");
         let message = status == "ACTIVE" ? "Deactivate" : "Activate";
@@ -204,11 +207,24 @@
             showCancelButton: true
         }).then((result) => {
             if (result.isConfirmed) {
+                Swal.fire({
+                    title: ` ${status == "ACTIVE" ? "Deactivating" : "Activating"}`,
+                    text: `Sending Email and ${status == "ACTIVE" ? "Deactivating" : "Activating"} this Account...`,
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
                 postRequest("{{ route('activatedeactivate') }}", {
                     id: user_id,
                     status: status
                 }, (response) => {
                     if (response.status == "success") {
+                        Swal.fire({
+                            title: `Success`,
+                            text: `${status == "ACTIVE" ? "Deactivated Successfully" : "Activated Successfully"}`,
+                            allowOutsideClick: false,
+                        });
                         reloaduserTable();
                     }
                 })

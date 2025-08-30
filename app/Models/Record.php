@@ -37,5 +37,7 @@ class Record extends Model
         'dateacquired',
         'amount',
         'typeOfRecord',
+        'profile',
+        'background',
     ];
 }
