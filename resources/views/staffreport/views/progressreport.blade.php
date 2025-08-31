@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="card w-100 px-0 mb-0">
-            <form class="reportform">
+            <form class="reportform" enctype="multipart/form-data">
                 @include('staffreport.forms.progressform')
                 <hr>
                 <div class="d-flex justify-content-end gap-2">

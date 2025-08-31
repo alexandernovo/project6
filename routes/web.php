@@ -17,7 +17,9 @@ use App\Http\Controllers\WasteCollectController;
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/signup', [HomeController::class, 'signup'])->name('signup');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/contact_message', [HomeController::class, 'contact_message'])->name('contact_message');
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 Route::middleware(["userchecker"])->group(function () {

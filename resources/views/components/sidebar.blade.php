@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <hr class="border-top border-white">
-                @if (auth()->user()->usertype == 'ADMIN')
+                @if (auth()->user() && auth()->user()->usertype == 'ADMIN')
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('incidentreport_view') }}" aria-expanded="false">
                             <span>

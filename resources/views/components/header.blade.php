@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link nav-icon-hover px-2 cursor-pointer text-white fw-semibold"
+                        <a href="{{ route('contact') }}" class="nav-link nav-icon-hover px-2 cursor-pointer text-white fw-semibold"
                             style="font-size: 13px">
                             <i class="bi bi-telephone-fill me-1"></i>
                             Contact
