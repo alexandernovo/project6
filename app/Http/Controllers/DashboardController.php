@@ -69,4 +69,21 @@ class DashboardController extends Controller
             "data" => $data
         ]);
     }
+
+    public function getIncidentReport(Request $request)
+    {
+        $year = now()->year; // current year, or get from $request if needed
+
+        $counts = Record::where('typeOfRecord', 'INCIDENTREPORT')
+            ->selectRaw('MONTH(created_at) as month, typeincident, COUNT(*) as total')
+            ->whereYear('created_at', $year)
+            ->groupByRaw('MONTH(created_at), typeincident')
+            ->orderByRaw('MONTH(created_at)')
+            ->get();
+
+        return response()->json([
+            "status" => 'success',
+            "counts" => $counts
+        ]);
+    }
 }

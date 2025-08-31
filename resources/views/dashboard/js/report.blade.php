@@ -84,7 +84,6 @@
             }
         ],
         initComplete: function(settings, json) {
-            appendButtonsreport();
             $('[data-bs-toggle="tooltip"]').tooltip();
         }
     };

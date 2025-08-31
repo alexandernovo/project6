@@ -80,7 +80,12 @@
         @if (auth()->user()->usertype == 'ADMIN')
             <div class="card mt-3">
                 <div class="card-body p-3">
-                    <p class="mb-2 fw-semibold" style="font-size: 16px">MONTHLY REPORT DATA CHART</p>
+                    <p class="mb-2 fw-semibold" style="font-size: 16px">STATISTICS DATA CHART</p>
+                    <div class="px-4">
+                        <div id="incidentreportChart">
+                         
+                        </div>
+                    </div>
                 </div>
             </div>
         @endif
@@ -89,4 +94,5 @@
 
 @section('js')
     @include('dashboard.js.report')
+    @include('dashboard.js.graph')
 @endsection

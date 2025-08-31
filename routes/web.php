@@ -24,6 +24,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 Route::middleware(["userchecker"])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard_view'])->name('dashboard');
+    Route::post('/dashboard/getIncidentReport', [DashboardController::class, 'getIncidentReport'])->name('dashboard.getIncidentReport');
     //waste collection
     Route::get('/wastecollect/view', [WasteCollectController::class, 'wastecollect_view'])->name('wastecollect_view');
     Route::post('/wastecollect/save_new_wastecollect', [WasteCollectController::class, 'save_new_wastecollect'])->name('save_new_wastecollect');
