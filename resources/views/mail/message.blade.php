@@ -44,6 +44,7 @@
             line-height: 25px;
             color: #141414;
             margin: 20px 0;
+            white-space: pre-wrap;
         }
 
         .button {
@@ -114,9 +115,7 @@
         <div class="header-div">
             <p class="title">Tibiao MDRRMO Portal</p>
         </div>
-        <p class="message">
-            {!! $content ?? '' !!}
-        </p>
+        <p class="message">{!! $content ?? '' !!}</p>
     </div>
 </body>
 

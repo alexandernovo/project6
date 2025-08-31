@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class StaffReportController extends Controller
 {
@@ -59,6 +60,11 @@ class StaffReportController extends Controller
 
             if (!empty($all['dateacquired'])) {
                 $all['dateacquired'] = date('Y-m-d', strtotime($all['dateacquired']));
+            }
+            
+            if ($request->hasFile('filesubmitted') && $request->file('filesubmitted')->isValid()) {
+                $filename = $this->moveFile($request->file('filesubmitted'), "filesubmitted");
+                $all['filesubmitted'] = $filename;
             }
 
             if ($record_id == 0) {
@@ -138,7 +144,7 @@ class StaffReportController extends Controller
                 ->where(DB::raw("CAST(records.created_at AS DATE)"), "<=", $dateTo);
         }
         $userData = Auth::user();
-        
+
         if ($userData->usertype == "STAFF") {
             $query->where('staff_id', $userData->id);
         }
@@ -166,5 +172,17 @@ class StaffReportController extends Controller
         return response()->json([
             'status' => 'success',
         ]);
+    }
+
+    private function moveFile($file, $paths)
+    {
+        $newFileName = Str::random(40) . '.' . $file->getClientOriginalExtension();
+        $path = $file->move(public_path($paths), $newFileName);
+
+        if ($path) {
+            return $paths . '/' . $newFileName;
+        }
+
+        return false;
     }
 }

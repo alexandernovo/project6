@@ -17,6 +17,7 @@
 /public/hot
 /public/storage
 /public/profile
+/public/filesubmitted
 /storage/*.key
 /storage/pail
 /vendor
