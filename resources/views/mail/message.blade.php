@@ -116,6 +116,10 @@
             <p class="title">Tibiao MDRRMO Portal</p>
         </div>
         <p class="message">{!! $content ?? '' !!}</p>
+        <div class="credits">
+            This is an automated message from Tibiao MDRRMO Portal. Please do not reply directly to this
+            email.
+        </div>
     </div>
 </body>
 
