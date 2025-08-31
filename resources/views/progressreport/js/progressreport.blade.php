@@ -104,7 +104,12 @@
                 title: 'File<br>Submitted',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return "";
+                    if (row.filesubmitted) {
+                        let fileUrl = "{{ asset('') }}" + row
+                            .filesubmitted;
+                        return `<a href="${fileUrl}" download><i style="font-size: 18px" class="bi bi-file-earmark-break"></i></a>`;
+                    }
+                    return 'N/A';
                 }
             },
             {

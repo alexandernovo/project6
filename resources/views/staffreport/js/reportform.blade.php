@@ -1,6 +1,14 @@
 <script>
     $(document).on('submit', '.reportform', function(e) {
         e.preventDefault();
+        Swal.fire({
+            title: `Saving..`,
+            text: `Please wait...`,
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
         const formData = new FormData(this);
         saveupdateForm(formData);
     });
@@ -15,12 +23,14 @@
             success: function(response) {
                 if (response.status == "success") {
                     formReset('reportform');
-                    Swal.fire({
-                        title: "Success",
-                        text: response.message,
-                        icon: "success",
-                        allowOutsideClick: false
-                    });
+                    setTimeout(() => {
+                        Swal.fire({
+                            title: "Success",
+                            text: response.message,
+                            icon: "success",
+                            allowOutsideClick: false
+                        });
+                    }, 500);
                 }
                 if (response.status == "error") {
                     Swal.fire({

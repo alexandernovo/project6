@@ -3,6 +3,14 @@
     let typeTable = "";
     $(document).on('submit', '.reportform', function(e) {
         e.preventDefault();
+        Swal.fire({
+            title: `Saving..`,
+            text: `Please wait...`,
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
         const formData = new FormData(this);
         let form = $(this);
         let typeLogin = form.find('input[name="typeLogin"]').val();
@@ -45,13 +53,15 @@
                     } else if (typeTable == "archive") {
                         reloadarchivedTable();
                     }
+                    setTimeout(() => {
+                        Swal.fire({
+                            title: "Success",
+                            text: response.message,
+                            icon: "success",
+                            allowOutsideClick: false
+                        });
+                    }, 500);
 
-                    Swal.fire({
-                        title: "Success",
-                        text: response.message,
-                        icon: "success",
-                        allowOutsideClick: false
-                    });
                 }
                 if (response.status == "error") {
                     Swal.fire({
