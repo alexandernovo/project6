@@ -9,7 +9,7 @@
                 </h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form class="reportform">
+            <form class="reportform" enctype="multipart/form-data">
                 <div class="modal-body">
                     @include('staffreport.forms.situationalform')
                 </div>
