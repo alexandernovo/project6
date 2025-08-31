@@ -81,6 +81,8 @@
     }
 
     $(document).ready(function() {
-        getIncidentReport();
+        if ("{{ auth()->user()->usertype == 'ADMIN' }}") {
+            getIncidentReport();
+        }
     })
 </script>
