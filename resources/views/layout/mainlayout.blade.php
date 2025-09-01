@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/datatablesbootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('template_assets/css/icons/tabler-icons/tabler-icons.css') }}" />
     <link rel="stylesheet" href="{{ asset('template_assets/css/styles.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/js/leaflet/leaflet.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/js/leaflet/geocoder.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/select2.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/style2.css') }}" />
@@ -64,6 +66,10 @@
     <script src="{{ asset('assets/js/html2canvas.min.js') }}"></script>
     <script src="{{ asset('assets/js/xlsx.full.min.js') }}"></script>
     <script src="{{ asset('assets/js/socket.io.js') }}"></script>
+    <script src="{{ asset('assets/js/leaflet/leaflet.js') }}"></script>
+    <script src="{{ asset('assets/js/leaflet/leaflet-src.js') }}"></script>
+    <script src="{{ asset('assets/js/leaflet/geocoder.js') }}"></script>
+    <script src="{{ asset('assets/js/leaflet/googlemutant.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
     @include('layout.js.layoutjs')
     @yield('js')

@@ -370,3 +370,8 @@
 .bg-blue {
     background-color: #1565c0; /* vivid blue */
 }
+
+.mapLeaflet {
+    height: 500px;
+    width: 100%;
+}

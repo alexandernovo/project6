@@ -1,6 +1,7 @@
 @extends('layout.mainlayout')
 @section('content')
     @include('staffreport.css.staffreport')
+    @include('staffreport.modals.mapmodal')
     <div class="row mx-auto">
         <div class="card-body px-2 py-1">
             <div class="row align-items-center">
@@ -38,8 +39,10 @@
             </form>
         </div>
     </div>
-    </div>
 @endsection
 @section('js')
     @include('staffreport.js.reportform')
+    @if (env('SECOND_VERSION') == true)
+        @include('staffreport.js.map')
+    @endif
 @endsection

@@ -38,7 +38,6 @@
             </form>
         </div>
     </div>
-    </div>
 @endsection
 @section('js')
     @include('staffreport.js.reportform')

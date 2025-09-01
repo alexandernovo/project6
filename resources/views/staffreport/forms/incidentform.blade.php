@@ -62,7 +62,8 @@
         <div class="col-3">
             <div class="form-group">
                 <label for="" class="mb-1">Barangay</label>
-                <input type="search" name="barangay" id="barangay_incident" class="form-control" required list="incidentbarangay">
+                <input type="search" name="barangay" id="barangay_incident" class="form-control" required
+                    list="incidentbarangay">
                 <datalist id="incidentbarangay">
                     @foreach ($barangayincident as $b)
                         <option>{{ $b }}</option>
@@ -118,5 +119,16 @@
                 <textarea rows="3" name="detaileddesc" id="detaileddesc_incident" required class="form-control"></textarea>
             </div>
         </div>
+        @if (env('SECOND_VERSION') == true)
+            <div class="col-12 mt-3">
+                <button type="button" class="btn btn-success">
+                    <i class="bi bi-plus-circle me-1"></i>
+                    Add Data
+                </button>
+            </div>
+            <div class="divDataClone px-0">
+               
+            </div>
+        @endif
     </div>
 </div>
