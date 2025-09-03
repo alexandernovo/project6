@@ -1,10 +1,13 @@
 <script>
     let mapData = [];
+    let deletedmapData = [];
     let indexSelected;
     let map;
     let marker;
     let defaultCoords = [11.2784, 122.0421];
+
     let defaultMapSingleData = {
+        "map_id": 0,
         "image": "",
         "map_url": ""
     };
@@ -70,7 +73,10 @@
         });
 
         // Default marker
-        marker = L.marker(defaultCoords, { icon: customIcon, draggable: true })
+        marker = L.marker(defaultCoords, {
+                icon: customIcon,
+                draggable: true
+            })
             .addTo(map)
             .bindPopup("Drag or click map to change marker.")
             .openPopup();
@@ -151,9 +157,16 @@
 
     // Remove row
     $(document).on("click", ".remove-row", function() {
-        let i = $(this).data("index");
-        mapData.splice(i, 1);
-        populateMap();
+        let indexSelected = $(this).data("index");
+        let findData = mapData[indexSelected];
+        if (findData) {
+            if (findData.map_id != 0) {
+                deletedmapData.push(findData);
+            }
+            mapData.splice(indexSelected, 1);
+            populateMap();
+        }
+
     });
 
     // Handle file upload
