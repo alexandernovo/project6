@@ -121,7 +121,7 @@
         </div>
         @if (env('SECOND_VERSION') == true)
             <div class="col-12 mt-3">
-                <button type="button" class="btn btn-success">
+                <button type="button" class="btn btn-success" id="addMapDataBtn">
                     <i class="bi bi-plus-circle me-1"></i>
                     Add Data
                 </button>

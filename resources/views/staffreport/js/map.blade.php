@@ -2,6 +2,8 @@
     let mapData = [];
     let indexSelected;
     let map;
+    let marker;
+    let defaultCoords = [11.2784, 122.0421];
     let defaultMapSingleData = {
         "image": "",
         "map_url": ""
@@ -9,22 +11,24 @@
 
     function populateMap() {
         let htmlJoinMapData = mapData.map((x, index) => {
+            let fileLabel = x.image ? `${x.image.name}` : "";
             return `
-                <div class="row mx-auto px-0 align-items-end mt-1">
+                <div class="row mx-auto px-0 align-items-start mb-4 mt-1">
                     <div class="col-5">
-                        <div class="form-group">
-                            <label for="" class="mb-0">Image</label>
-                            <input type="file" class="form-control">
+                        <div class="form-group position-relative">
+                            <label class="mb-0">Image</label>
+                            <input type="file" accept="image/*" class="form-control file-input" data-index="${index}">
+                            ${fileLabel ? `<small class="position-absolute text-success" style="bottom: -20px">File: ${fileLabel}</small>` : ``}
                         </div>
                     </div>
                     <div style="flex: 1">
                         <div class="form-group">
-                            <label for="" class="mb-0">Specific Location</label>
+                            <label class="mb-0">Specific Location</label>
                             <input type="text" placeholder="Click here to open map" value="${x.map_url}" data-index="${index}" class="form-control specific_location_map" readonly>
                         </div>
                     </div>
-                    <div class="col-1 mb-2 d-flex justify-conten-center">
-                        <i class="bi bi-x-lg"></i>
+                    <div class="col-1 mb-2 d-flex justify-content-center align-self-end">
+                        <i class="bi bi-x-lg remove-row text-danger" data-index="${index}" style="cursor:pointer;"></i>
                     </div>
                 </div>
             `;
@@ -34,31 +38,30 @@
     }
 
     function initialMapHtml() {
-        mapData.push(defaultMapSingleData);
+        mapData.push(cloneData(defaultMapSingleData));
         populateMap();
     }
 
     initialMapHtml();
 
-    function showMap() {
-        const tibiaoCoords = [11.2784, 122.0421];
+    function initMap() {
+        if (map) return; // already initialized
 
-        map = L.map('mapIncident').setView(tibiaoCoords, 20);
+        map = L.map('mapIncident').setView(defaultCoords, 20);
 
+        // Base layers
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
             subdomains: 'abcd',
             maxZoom: 18
         }).addTo(map);
 
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
             subdomains: 'abcd',
             maxZoom: 18,
             pane: 'overlayPane'
         }).addTo(map);
 
-        // Custom Icon
+        // Custom icon
         const customIcon = L.icon({
             iconUrl: '{{ asset('assets/images/marker-icon.png') }}',
             iconSize: [28, 38],
@@ -66,49 +69,59 @@
             popupAnchor: [0, -35]
         });
 
-        // Default Marker
-        let marker = L.marker(tibiaoCoords, {
-                icon: customIcon,
-                draggable: true
-            })
+        // Default marker
+        marker = L.marker(defaultCoords, { icon: customIcon, draggable: true })
             .addTo(map)
-            .bindPopup("<b>Tibiao, Antique</b><br>Drag or click map to change marker.")
+            .bindPopup("Drag or click map to change marker.")
             .openPopup();
 
+        // Click to move marker
         map.on('click', function(e) {
-            const {
-                lat,
-                lng
-            } = e.latlng;
-            marker.setLatLng([lat, lng])
-                .bindPopup(`📍 Pinned at:<br>${lat.toFixed(5)}, ${lng.toFixed(5)}`)
+            marker.setLatLng(e.latlng)
+                .bindPopup(`📍 ${e.latlng.lat.toFixed(5)}, ${e.latlng.lng.toFixed(5)}`)
                 .openPopup();
         });
 
+        // Satellite imagery
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Earthstar Geographics, etc.'
+            attribution: 'Tiles &copy; Esri'
         }).addTo(map);
 
+        // Geocoder
         L.Control.geocoder({
-                defaultMarkGeocode: false
-            })
-            .on('markgeocode', function(e) {
-                const bbox = e.geocode.bbox;
-                const center = e.geocode.center;
-
-                marker.setLatLng(center)
-                    .bindPopup(`📍 ${e.geocode.name}<br>${center.lat.toFixed(5)}, ${center.lng.toFixed(5)}`)
-                    .openPopup();
-
-                map.fitBounds(bbox);
-            })
-            .addTo(map);
+            defaultMarkGeocode: false
+        }).on('markgeocode', function(e) {
+            const center = e.geocode.center;
+            marker.setLatLng(center)
+                .bindPopup(`📍 ${e.geocode.name}<br>${center.lat.toFixed(5)}, ${center.lng.toFixed(5)}`)
+                .openPopup();
+            map.fitBounds(e.geocode.bbox);
+        }).addTo(map);
     }
 
+    function showMap() {
+        initMap(); // ensure map is created
+
+        let findData = mapData[indexSelected];
+        let coords = defaultCoords;
+
+        if (findData && findData.map_url) {
+            let parts = findData.map_url.split(",");
+            if (parts.length === 2) {
+                coords = [parseFloat(parts[0]), parseFloat(parts[1])];
+            }
+        }
+
+        // update view + marker
+        map.setView(coords, 20);
+        marker.setLatLng(coords);
+    }
+
+    // Save selected map position
     $('#incidentMapSelect').on('click', function() {
-        const center = map.getCenter();
-        const lat = center.lat;
-        const lng = center.lng;
+        let center = marker.getLatLng();
+        let lat = center.lat;
+        let lng = center.lng;
         let findData = mapData[indexSelected];
         if (findData) {
             findData.map_url = `${lat}, ${lng}`;
@@ -117,14 +130,51 @@
         }
     });
 
+    // When user clicks location field
     $(document).on("click", ".specific_location_map", function() {
         indexSelected = $(this).data("index");
         $(".mapModal").modal("show");
-    })
+    });
 
+    // Open map modal
     $(document).on("show.bs.modal", ".mapModal", function() {
         setTimeout(() => {
             showMap();
         }, 500);
-    })
+    });
+
+    // Add new row
+    $(document).on("click", "#addMapDataBtn", function() {
+        mapData.push(cloneData(defaultMapSingleData));
+        populateMap();
+    });
+
+    // Remove row
+    $(document).on("click", ".remove-row", function() {
+        let i = $(this).data("index");
+        mapData.splice(i, 1);
+        populateMap();
+    });
+
+    // Handle file upload
+    $(document).on("change", ".file-input", function(e) {
+        let index = $(this).data("index");
+        let file = e.target.files[0];
+        if (file) {
+            // store file name + base64
+            let reader = new FileReader();
+            reader.onload = function(evt) {
+                mapData[index].image = {
+                    name: file.name,
+                    data: evt.target.result
+                };
+                populateMap(); // refresh UI to show filename
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    function cloneData(data) {
+        return JSON.parse(JSON.stringify(data));
+    }
 </script>
