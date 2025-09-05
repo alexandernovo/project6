@@ -375,3 +375,21 @@
     height: 500px;
     width: 100%;
 }
+
+.pdf-button {
+    font-size: 25px;
+    color: rgb(204, 20, 20);
+    cursor: pointer;
+}
+
+.word-button {
+    font-size: 25px;
+    color: rgb(14, 14, 186);
+    cursor: pointer;
+}
+
+.excel-button {
+    font-size: 25px;
+    color: rgb(18, 125, 18);
+    cursor: pointer;
+}

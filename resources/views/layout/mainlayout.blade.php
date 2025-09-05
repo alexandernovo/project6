@@ -70,6 +70,7 @@
     <script src="{{ asset('assets/js/leaflet/leaflet-src.js') }}"></script>
     <script src="{{ asset('assets/js/leaflet/geocoder.js') }}"></script>
     <script src="{{ asset('assets/js/leaflet/googlemutant.js') }}"></script>
+    <script src="{{ asset('assets/js/html2pdf.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
     @include('layout.js.layoutjs')
     @yield('js')
