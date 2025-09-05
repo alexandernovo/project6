@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style2.css') }}" />
 </head>
 
-<body class="position-relative">
+<body class="position-relative" style="visibility: hidden">
     <div class="">
         <div class="page-wrapper flex-1" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6"
             data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
