@@ -372,3 +372,22 @@ function formatRecordType(type) {
 
     return map[type] || type;
 }
+
+$(document).on("click", ".file-link", function (e) {
+    e.preventDefault(); // prevent default navigation
+    console.log("hello");
+    const fileUrl = $(this).attr("href");
+    const ext = fileUrl.split(".").pop().toLowerCase();
+
+    if (ext === "pdf") {
+        $("#filePreview").attr("src", fileUrl);
+        const fileModal = new bootstrap.Modal($("#fileModal")[0]);
+        fileModal.show();
+    } else {
+        // For other files, download
+        const a = document.createElement("a");
+        a.href = fileUrl;
+        a.download = "";
+        a.click();
+    }
+});

@@ -73,7 +73,7 @@
                     if (row.filesubmitted) {
                         let fileUrl = "{{ asset('') }}" + row
                         .filesubmitted; 
-                        return `<a href="${fileUrl}" download><i style="font-size: 18px" class="bi bi-file-earmark-break"></i></a>`;
+                        return `<a href="${fileUrl}" class="file-link"><i style="font-size: 18px" class="bi bi-file-earmark-break"></i></a>`;
                     }
                     return 'N/A';
                 }
