@@ -11,8 +11,13 @@
     </div>
     <div class="offcanvas-body">
         <div class="d-flex flex-column justify-content-center align-items-center mt-4">
-            <img src="{{ asset('assets/images/logo.jpg') }}" class="rounded-circle" alt=""
-                style="width: 120px; height: 120px">
+            <div class="d-flex gap-2">
+                <img src="{{ asset('assets/images/logo2.png') }}" class="rounded-circle" alt=""
+                    style="width: 120px; height: 120px">
+                <img src="{{ asset('assets/images/logo1.png') }}" class="rounded-circle" alt=""
+                    style="width: 120px; height: 120px">
+            </div>
+
             <div class="w-100 px-3 mt-4">
                 <form id="login_form">
                     <input type="hidden" name="typeLogin" id="typeLogin" value="ADMIN">

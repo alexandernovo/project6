@@ -61,7 +61,7 @@ class StaffReportController extends Controller
             if (!empty($all['dateacquired'])) {
                 $all['dateacquired'] = date('Y-m-d', strtotime($all['dateacquired']));
             }
-            
+
             if ($request->hasFile('filesubmitted') && $request->file('filesubmitted')->isValid()) {
                 $filename = $this->moveFile($request->file('filesubmitted'), "filesubmitted");
                 $all['filesubmitted'] = $filename;
@@ -154,6 +154,7 @@ class StaffReportController extends Controller
         $data = $query
             ->offset($start)
             ->limit($length)
+            ->orderBy('records.created_at', 'DESC')
             ->get();
 
         return response()->json([

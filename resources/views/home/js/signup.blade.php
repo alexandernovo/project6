@@ -25,7 +25,7 @@
                     $(`#signup_form_staff`)[0].reset();
                     Swal.fire({
                         title: "Success",
-                        text: "Sign-up successful! Please wait for an admin to activate your account. You will be notified via email."
+                        text: "Sign-up successful! Please wait for an admin to activate your account. You will be notified via email.",
                         icon: "success",
                         allowOutsideClick: false
                     });
@@ -33,7 +33,7 @@
                 if (response.status == "error") {
                     Swal.fire({
                         title: "Failed",
-                        text: error.error,
+                        text: response.error,
                         icon: "error",
                         showCancelButton: false,
                     })

@@ -56,7 +56,7 @@
         <div class="col-6">
             <div class="form-group">
                 <label for="" class="mb-1">Barangay</label>
-                <input type="search" name="barangay" id="barangay_situational" class="form-control" required list="situationalbarangay">
+                <input type="search" name="barangay" id="barangay_situational" autocomplete="off" class="form-control" required list="situationalbarangay">
                 <datalist id="situationalbarangay">
                     @foreach ($barangaysituational as $b)
                         <option>{{ $b }}</option>

@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="form-group mb-2">
                                     <label for="" class="mb-1">Contact No.</label>
-                                    <input type="text" id="phone_num" class="form-control" required>
+                                    <input type="text" id="phone_num" name="phone_num" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -73,7 +73,7 @@
                             <div class="col-6">
                                 <div class="form-group mb-2">
                                     <label for="" class="mb-1">Designation</label>
-                                    <select type="text" id="designation"  class="form-select">
+                                    <select type="text" id="designation" name="designation"  class="form-select">
                                         @foreach ($designations as $designation)
                                             <option>{{ $designation }}</option>
                                         @endforeach

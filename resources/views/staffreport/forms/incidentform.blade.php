@@ -62,7 +62,7 @@
         <div class="col-3">
             <div class="form-group">
                 <label for="" class="mb-1">Barangay</label>
-                <input type="search" name="barangay" id="barangay_incident" class="form-control" required
+                <input type="search" name="barangay" autocomplete="off" id="barangay_incident" class="form-control" required
                     list="incidentbarangay">
                 <datalist id="incidentbarangay">
                     @foreach ($barangayincident as $b)

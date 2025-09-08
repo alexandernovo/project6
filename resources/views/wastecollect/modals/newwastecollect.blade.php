@@ -25,7 +25,7 @@
                         <div class="col-6">
                             <div class="form-group mb-1">
                                 <label for="" class="mb-1">Barangay</label>
-                                <input type="text" name="barangay" id="barangay" class="form-control" required>
+                                <input type="text" name="barangay" id="barangay" autocomplete="off" class="form-control" required>
                             </div>
                             <div class="form-group mb-1">
                                 <label for="" class="mb-1">Schedule From</label>

@@ -21,6 +21,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/contact_message', [HomeController::class, 'contact_message'])->name('contact_message');
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+Route::post('/user/save_new_user', [UserController::class, 'save_new_user'])->name('save_new_user');
 
 Route::middleware(["userchecker"])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard_view'])->name('dashboard');
@@ -65,7 +66,6 @@ Route::middleware(["userchecker"])->group(function () {
 
     //user
     Route::get('/user/view', [UserController::class, 'user_view'])->name('user_view');
-    Route::post('/user/save_new_user', [UserController::class, 'save_new_user'])->name('save_new_user');
     Route::post('/user/getusers', [UserController::class, 'getusers'])->name('getuser');
     Route::post('/user/activatedeactivate', [UserController::class, 'activatedeactivate'])->name('activatedeactivate');
 

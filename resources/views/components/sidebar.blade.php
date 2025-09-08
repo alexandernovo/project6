@@ -64,7 +64,7 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ route('report_view') }}" aria-expanded="false">
+                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['incidentreportPrint', 'situationalreportPrint', 'progressreportPrint', 'inventoryreportPrint']) ? 'active' : '' }}" href="{{ route('report_view') }}" aria-expanded="false">
                             <span>
                                 <i class="bi bi-folder2-open"></i>
                             </span>
@@ -81,7 +81,8 @@
                     </li>
                 @else
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ route('submitreportdashboard') }}" aria-expanded="false">
+                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['incidentreport_staff', 'situationalreport_staff', 'progressreport_staff', 'inventoryreport_staff']) ? 'active' : '' }}"
+                            href="{{ route('submitreportdashboard') }}" aria-expanded="false">
                             <span>
                                 <i class="bi bi-folder-symlink"></i>
                             </span>
