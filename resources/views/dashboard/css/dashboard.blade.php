@@ -18,4 +18,10 @@
     td {
         padding: 2px !important
     }
+
+    .apexcharts-datalabel {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        white-space: nowrap;
+    }
 </style>

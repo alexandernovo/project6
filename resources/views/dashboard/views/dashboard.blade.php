@@ -82,8 +82,20 @@
                 <div class="card-body p-3">
                     <p class="mb-2 fw-semibold" style="font-size: 16px">STATISTICS DATA CHART</p>
                     <div class="px-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="col-2">
+                                <select id="yearSelect" class="form-select">
+                                    @php $currentYear = now()->year; @endphp
+                                    @for ($year = $currentYear; $year >= $currentYear - 5; $year--)
+                                        <option value="{{ $year }}" {{ $year == $currentYear ? 'selected' : '' }}>
+                                            {{ $year }}
+                                        </option>
+                                    @endfor
+                                </select>
+                            </div>
+                        </div>
                         <div id="incidentreportChart">
-                         
+
                         </div>
                     </div>
                 </div>

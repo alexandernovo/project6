@@ -72,7 +72,7 @@ class DashboardController extends Controller
 
     public function getIncidentReport(Request $request)
     {
-        $year = now()->year; // current year, or get from $request if needed
+        $year = $request->input('year', now()->year);
 
         $counts = Record::where('typeOfRecord', 'INCIDENTREPORT')
             ->selectRaw('MONTH(created_at) as month, typeincident, COUNT(*) as total')

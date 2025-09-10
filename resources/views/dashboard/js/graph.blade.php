@@ -1,18 +1,14 @@
 <script>
     let barChartIncidentChart;
 
-    function barchartIncident(data) {
-
+    function barchartIncident(data, year) {
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
         const months = Array.from({
             length: 12
         }, (_, i) => i + 1);
 
-        // Get all unique incident types
         const types = [...new Set(data.map(x => x.typeincident))];
 
-        // Build series where each type has 12 values (per month)
         const seriesData = types.map(type => {
             return {
                 name: type,
@@ -25,14 +21,17 @@
 
         const categories = months.map(m => monthNames[m - 1]);
 
-        console.log("Prepared series:", seriesData);
+        // 🔹 Find the highest value among all data
+        const allValues = seriesData.flatMap(s => s.data);
+        const maxValue = allValues.length ? Math.max(...allValues) : 0;
+        const yMax = maxValue + 1; // leave headroom
 
         let options = {
             series: seriesData,
             chart: {
                 type: "bar",
                 height: 400,
-                stacked: false // 🔹 Inline, not stacked
+                stacked: false
             },
             plotOptions: {
                 bar: {
@@ -40,25 +39,46 @@
                     columnWidth: "55%",
                     borderRadius: 6,
                     dataLabels: {
-                        position: "top"
+                        position: "center" // ✅ display inside bar
                     }
                 }
             },
             dataLabels: {
-                enabled: false
+                enabled: true,
+                formatter: function(val) {
+                    return val > 0 ? val : "";
+                },
+                style: {
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    colors: ['#fff'] // good contrast
+                },
+                offsetY: 0
             },
             xaxis: {
                 categories: categories,
+                labels: {
+                    rotate: -45,
+                    style: {
+                        fontSize: '12px'
+                    }
+                },
                 title: {
-                    text: `Incident Report - ${new Date().getFullYear()}`
+                    text: `Incident Report - ${year}`
                 }
             },
             yaxis: {
                 min: 0,
-                forceNiceScale: true
+                max: yMax,
+                forceNiceScale: true,
+                labels: {
+                    formatter: function(val) {
+                        return val.toFixed(0);
+                    }
+                }
             },
             tooltip: {
-                shared: true, // show grouped tooltip
+                shared: true,
                 intersect: false
             },
             legend: {
@@ -67,22 +87,35 @@
             }
         };
 
-        let chart = new ApexCharts(document.querySelector("#incidentreportChart"), options);
-        chart.render();
+
+        // destroy previous chart before rendering new one
+        if (barChartIncidentChart) {
+            barChartIncidentChart.destroy();
+        }
+
+        barChartIncidentChart = new ApexCharts(document.querySelector("#incidentreportChart"), options);
+        barChartIncidentChart.render();
     }
 
-    function getIncidentReport() {
-        postRequest("{{ route('dashboard.getIncidentReport') }}", {}, (response) => {
+    function getIncidentReport(year) {
+        postRequest("{{ route('dashboard.getIncidentReport') }}", {
+            year: year
+        }, (response) => {
             if (response.status == 'success') {
-                let countData = response.counts;
-                barchartIncident(countData);
+                barchartIncident(response.counts, year);
             }
         })
     }
 
     $(document).ready(function() {
         if ("{{ auth()->user()->usertype == 'ADMIN' }}") {
-            getIncidentReport();
+            let defaultYear = $("#yearSelect").val();
+            getIncidentReport(defaultYear);
+
+            $("#yearSelect").on("change", function() {
+                let selectedYear = $(this).val();
+                getIncidentReport(selectedYear);
+            });
         }
     })
 </script>
