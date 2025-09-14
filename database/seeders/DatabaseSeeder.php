@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             'phone_num'   => '09123456789',
             'status'      => 'ACTIVE',
             'usertype'      => 'ADMIN',
-            'password'    => Hash::make('admin123'),
+            'password'    => Hash::make('admin'),
             'created_at'  => now(),
             'updated_at'  => now(),
         ]);
