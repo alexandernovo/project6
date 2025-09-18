@@ -24,16 +24,22 @@
                         <input type="hidden"name="typeLogin" id="typeLogin" value="STAFF">
                         <div class="form-group mb-2">
                             <label for="" class="mb-1">Username</label>
-                            <input type="text" id="username" name="username" class="form-control">
+                            <input type="text" id="username" placeholder="Username" name="username" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="" class="mb-1">Password</label>
-                            <input type="password" id="password" name="password" class="form-control">
+                            <div class="position-relative">
+                                <input type="password" name="password" id="password_staff" class="form-control bg-white"
+                                    placeholder="Password">
+                                <i class="bi bi-eye-fill position-absolute toggle-password" data-target="password_staff"
+                                    style="top: 50%; cursor: pointer; transform: translateY(-50%); right: 20px"></i>
+                            </div>
                             <p id="error_login_staff" class="text-danger mt-1 d-none mb-0 error-class"></p>
                         </div>
                         <div class="form-group mt-3">
                             <button type="submit" class="btn btn-prime w-100">Log in</button>
-                            <p class="mb-0 text-center mt-2" style="font-size: 12px">No Account? <a href="{{ route('signup') }}">Sign up Here</a></p>
+                            <p class="mb-0 text-center mt-2" style="font-size: 12px">No Account? <a
+                                    href="{{ route('signup') }}">Sign up Here</a></p>
                         </div>
                     </form>
                 </div>

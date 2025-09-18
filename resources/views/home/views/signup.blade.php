@@ -73,7 +73,7 @@
                             <div class="col-6">
                                 <div class="form-group mb-2">
                                     <label for="" class="mb-1">Designation</label>
-                                    <select type="text" id="designation" name="designation"  class="form-select">
+                                    <select type="text" id="designation" name="designation" class="form-select">
                                         @foreach ($designations as $designation)
                                             <option>{{ $designation }}</option>
                                         @endforeach
@@ -83,7 +83,13 @@
                             <div class="col-6">
                                 <div class="form-group mb-2">
                                     <label for="" class="mb-1">Password</label>
-                                    <input type="password" id="password_var" name="password" class="form-control" required>
+                                    <div class="position-relative">
+                                        <input type="password" name="password" id="password_var"
+                                            class="form-control bg-white" placeholder="Password" required>
+                                        <i class="bi bi-eye-fill position-absolute toggle-password"
+                                            data-target="password_var"
+                                            style="top: 50%; cursor: pointer; transform: translateY(-50%); right: 20px"></i>
+                                    </div>
                                     <p class="text-danger mb-0 d-none" id="errorPassword" style="font-size: 12px">
                                         Password do not match!
                                     </p>
@@ -92,7 +98,13 @@
                             <div class="col-6">
                                 <div class="form-group mb-2">
                                     <label for="" class="mb-1">Confirm Password</label>
-                                    <input type="password" id="confirm_password" class="form-control" required>
+                                    <div class="position-relative">
+                                        <input type="password"  id="confirm_password"
+                                            class="form-control bg-white" placeholder="Password" required>
+                                        <i class="bi bi-eye-fill position-absolute toggle-password"
+                                            data-target="confirm_password"
+                                            style="top: 50%; cursor: pointer; transform: translateY(-50%); right: 20px"></i>
+                                    </div>
                                 </div>
                             </div>
 

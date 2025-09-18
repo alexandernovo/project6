@@ -28,8 +28,12 @@
                     </div>
                     <div class="form-group">
                         <label for="" class="mb-1 text-white">Password</label>
-                        <input type="password" name="password" id="password" class="form-control bg-white"
-                            placeholder="Password">
+                        <div class="position-relative">
+                            <input type="password" name="password" id="password" class="form-control bg-white"
+                                placeholder="Password">
+                            <i class="bi bi-eye-fill position-absolute toggle-password" data-target="password"
+                                style="top: 50%; cursor: pointer; transform: translateY(-50%); right: 20px"></i>
+                        </div>
                         <p id="error_login" class="text-warning mt-1 d-none mb-0 error-class"></p>
                     </div>
                     <div class="form-group mt-4">

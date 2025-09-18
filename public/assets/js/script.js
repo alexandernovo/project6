@@ -391,3 +391,26 @@ $(document).on("click", ".file-link", function (e) {
         a.click();
     }
 });
+
+function togglePasswordVisibility(targetId, icon) {
+    const input = document.getElementById(targetId);
+
+    if (!input) return;
+
+    if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("bi-eye-fill");
+        icon.classList.add("bi-eye-slash-fill");
+    } else {
+        input.type = "password";
+        icon.classList.remove("bi-eye-slash-fill");
+        icon.classList.add("bi-eye-fill");
+    }
+}
+
+// Attach event listener for all icons with data-target
+document.querySelectorAll(".toggle-password").forEach((icon) => {
+    icon.addEventListener("click", () => {
+        togglePasswordVisibility(icon.dataset.target, icon);
+    });
+});

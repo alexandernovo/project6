@@ -43,9 +43,10 @@
                                     value="{{ auth()->user()->username }}">
                             </div>
                             <div class="form-group bg-white rounded position-relative mb-1">
-                                <i class="bi bi-eye-slash-fill position-absolute"
-                                    style="left: 15px; top: 50%; transform: translateY(-50%);"></i>
-                                <input type="text" name="password" class="form-control" style="text-indent: 20px"
+                                <i class="bi bi-eye-slash-fill position-absolute toggle-password"
+                                    style="left: 15px; top: 50%; transform: translateY(-50%);"
+                                    data-target="profile_pass"></i>
+                                <input type="text" name="password" id="profile_pass" class="form-control" style="text-indent: 20px"
                                     placeholder="********">
                             </div>
                             <div class="form-group bg-white rounded position-relative mb-1">
