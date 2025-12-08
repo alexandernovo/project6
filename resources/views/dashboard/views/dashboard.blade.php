@@ -5,33 +5,36 @@
         $countDash = $countDash->pluck('total', 'typeOfRecord')->toArray();
         $counts = [
             [
-                'title' => 'Incident Report | Month',
+                'title' => 'Incident Report',
                 'class' => 'bg-red',
+                'style' => 'background-color: #19460E',
                 'route' => '',
                 'id' => 'incidentreportcount',
                 'count' => $countDash['INCIDENTREPORT'] ?? 0,
             ],
             [
-                'title' => 'Situational Report | Month',
+                'title' => 'Situational Report',
                 'class' => 'bg-orange',
+                'style' => 'background-color: #B3420E',
                 'route' => '',
                 'id' => 'situationalreportcount',
                 'count' => $countDash['SITUATIONALREPORT'] ?? 0,
             ],
             [
-                'title' => 'Progress Report | Month',
+                'title' => 'Progress Report',
                 'class' => 'bg-blue',
+                'style' => 'background-color: #110783',
                 'route' => '',
                 'id' => 'progressreportcount',
                 'count' => $countDash['PROGRESSREPORT'] ?? 0,
             ],
-            [
-                'title' => 'Inventory Report | Month',
-                'class' => 'bg-green',
-                'route' => '',
-                'id' => 'inventoryreportcount',
-                'count' => $countDash['INVENTORYREPORT'] ?? 0,
-            ],
+            // [
+            //     'title' => 'Inventory Report',
+            //     'class' => 'bg-green',
+            //     'route' => '',
+            //     'id' => 'inventoryreportcount',
+            //     'count' => $countDash['INVENTORYREPORT'] ?? 0,
+            // ],
         ];
     @endphp
     <div class="row mx-auto">
@@ -47,10 +50,11 @@
         </div>
         <div class="d-flex justify-content-between px-0">
             @foreach ($counts as $count)
-                <div class="border p-3 {{ $count['class'] }}" style="width: 24%; border-radius: 13px">
-                    <p class="mb-1 text-white text-center" style="font-size: 18px">{{ $count['title'] }}</p>
-                    <p class="mb-1 text-white text-center" style="font-size: 30px">
-                        <i class="bi bi-journal-text text-white" style="font-size: 30px"></i>
+                <div class="border d-flex gap-3 justify-content-center align-items-center p-3" style="width: 32%; border-radius: 13px;  {{ $count['style'] }}">
+                    <p class="mb-0 text-white text-center" style="font-size: 23px">{{ $count['title'] }}</p>
+                    <p class="mb-0 text-white text-center" style="font-size: 35px">
+                        |
+                        <i class="bi bi-journal-text text-white" style="font-size: 33px"></i>
                         {{ $count['count'] }}
                     </p>
                 </div>

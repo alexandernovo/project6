@@ -16,7 +16,7 @@
     #userTable.dataTable>thead>tr>th:last-child {
         position: sticky !important;
         right: 0 !important;
-        background: white !important;
+        background: #3a0000 !important;
         z-index: 3;
         width: 150px;
     }
@@ -35,7 +35,7 @@
     .sticky-action {
         position: sticky !important;
         right: 0 !important;
-        background: white !important;
+        background:  white !important;
         z-index: 3;
         width: 80px !important;
     }

@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>TIBIAO MDRRMO Portal</title>
+
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logo1.png') }}" />
     <link rel="stylesheet" href="{{ asset('assets/bootstrap-icons/font/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/twitterbootstrap.css') }}">
@@ -32,11 +33,11 @@
             @endif
             @if (!in_array(Route::currentRouteName(), $excludedRoutes))
                 <div class="body-wrapper vh-100 d-flex flex-column justify-content-between">
-                    @include('components.header')
+                    @include('components.header2')
                     <div class="px-3 pb-3 mt-3 flex-1">
                         @yield('content')
                     </div>
-                    @include('components.footer')
+                    @include('components.footer2')
                 </div>
             @else
                 <div class="vh-100 d-flex flex-column justify-content-between">

@@ -329,9 +329,18 @@
 }
 
 .header-footer-bg {
-    background-color: black;
+    background-color: #3a0000;
 }
 
+.dataTable th {
+    background-color: #3a0000 !important;
+    color: white !important;
+    padding: 8px 5px !important;
+    text-transform: uppercase !important;
+}
+.header-footer-bg2 {
+    background-color: #343434;
+}
 .flex-1 {
     flex: 1;
 }
@@ -342,17 +351,23 @@
 
 .sidebar-nav ul .sidebar-item.selected > .sidebar-link,
 .sidebar-nav ul .sidebar-item.selected > .sidebar-link.active,
-.sidebar-nav ul .sidebar-item > .sidebar-link.active {
-    background-color: #acabab !important;
-    color: #fff;
+.sidebar-nav ul .sidebar-item.selected > .sidebar-link:hover,
+.sidebar-nav ul .sidebar-item > .sidebar-link.active,
+.sidebar-nav ul .sidebar-item > .sidebar-link:hover {
+    background-color: #630f0f !important;
+    color: white !important;
 }
 
 .btn-prime,
 .btn-prime:active,
 .btn-prime:focus,
 .btn-prime:hover {
-    background-color: #555554 !important;
+    background-color: #3a0000 !important;
     color: white !important;
+}
+
+.bg-prime {
+    background-color: #3a0000 !important;
 }
 
 .bg-green {
@@ -392,4 +407,33 @@
     font-size: 25px;
     color: rgb(18, 125, 18);
     cursor: pointer;
+}
+input,
+select,
+textarea {
+    color: black !important;
+}
+.label-out {
+    color: white;
+}
+.input-out,
+.input-out:focus {
+    background-color: white;
+}
+.btn-closing,
+.btn-closing:hover,
+.btn-closing:active,
+.btn-closing:focus {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    border-radius: 100%;
+    border: 3px solid white;
+    font-weight: bold;
+    text-shadow: 1px 0 currentColor, -1px 0 currentColor, 0 1px currentColor,
+        0 -1px currentColor;
 }

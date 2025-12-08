@@ -1,17 +1,16 @@
 <div class="offcanvas offcanvas-end" style="background-color: #545454" data-bs-backdrop="static" tabindex="-1"
     id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title text-white" id="staticBackdropLabel">
-            <i class="bi bi-person-lock me-1" style="font-size: 20px"></i>
-            Admin Login
-        </h5>
-        <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+    <div class="d-flex justify-content-end mt-3 me-3">
+        <button type="button" class="btn btn-closing" data-bs-dismiss="offcanvas" aria-label="Close">
             <i class="bi bi-x-lg text-white"></i>
         </button>
     </div>
     <div class="offcanvas-body">
         <div class="d-flex flex-column justify-content-center align-items-center mt-4">
-            <div class="d-flex gap-2">
+            <h5 class="offcanvas-title text-white mb-4" style="font-size: 24px" id="staticBackdropLabel">
+                Admin Login
+            </h5>
+            <div class="d-flex gap-2 mb-3">
                 <img src="{{ asset('assets/images/logo2.png') }}" class="rounded-circle" alt=""
                     style="width: 120px; height: 120px">
                 <img src="{{ asset('assets/images/logo1.png') }}" class="rounded-circle" alt=""
@@ -26,7 +25,7 @@
                         <input type="text" name="username" id="username" class="form-control bg-white"
                             placeholder="Username">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-4">
                         <label for="" class="mb-1 text-white">Password</label>
                         <div class="position-relative">
                             <input type="password" name="password" id="password" class="form-control bg-white"
@@ -37,7 +36,7 @@
                         <p id="error_login" class="text-warning mt-1 d-none mb-0 error-class"></p>
                     </div>
                     <div class="form-group mt-4">
-                        <button class="btn w-100 text-white" style="background-color: gray">Log in</button>
+                        <button class="btn btn-prime w-100 text-white" style="font-size: 18px">Log in</button>
                     </div>
                 </form>
             </div>

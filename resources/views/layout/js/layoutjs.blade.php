@@ -9,11 +9,11 @@
             showCancelButton: true,
             confirmButtonText: "Yes, Logout",
             cancelButtonText: "No, Stay Login",
-            reverseButtons: true,
+            reverseButtons: false,
             backdrop: true,
             allowOutsideClick: false,
             customClass: {
-                confirmButton: 'btn btn-danger ms-2',
+                confirmButton: 'btn btn-danger me-2',
                 cancelButton: 'btn btn-secondary'
             },
             buttonsStyling: false

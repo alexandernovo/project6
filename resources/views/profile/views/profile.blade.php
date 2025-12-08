@@ -32,7 +32,7 @@
                         <p class="mb-0" style="font-size: 18px">
                             {{ auth()->user()->designation }}
                         </p>
-                        <img src="{{ asset('assets/images/logo1.png') }}" alt="" style="height: 35px; width: 35px">
+                        <img src="{{ asset('assets/images/logo.jpg') }}" alt="" style="height: 35px; width: 35px">
                     </div>
                     <div class="mt-3">
                         <form id="userUpdateForm">
@@ -96,7 +96,7 @@
                         <div class="ms-3 justify-content-center align-items-center h-100 d-flex gap-3">
                             <img src="{{ asset('assets/images/logo2.png') }}" alt=""
                                 style="width: 320px; height: 320px">
-                            <img src="{{ asset('assets/images/logo1.png') }}" alt=""
+                            <img src="{{ asset('assets/images/logo.jpg') }}" alt=""
                                 style="width: 320px; height: 320px">
                         </div>
                     @endif

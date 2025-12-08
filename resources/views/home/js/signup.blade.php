@@ -30,6 +30,14 @@
                         allowOutsideClick: false
                     });
                 }
+                if (response.status == "failed") {
+                    Swal.fire({
+                        title: "Failed",
+                        text: response.message,
+                        icon: "error",
+                        showCancelButton: false,
+                    })
+                }
                 if (response.status == "error") {
                     Swal.fire({
                         title: "Failed",

@@ -23,6 +23,12 @@ class UserController extends Controller
     {
         try {
             DB::beginTransaction();
+            if ($request->post('username') == "admin") {
+                return response()->json([
+                    'status' => 'failed',
+                    'message' => "This username is already taken."
+                ]);
+            }
 
             $all = $request->all();
             $user_id = $all['id'];
@@ -118,7 +124,7 @@ class UserController extends Controller
         User::where('id', $id)->update(['status' => $status]);
         $user = User::where('id', $id)->first();
         $message = "Dear {$user['firstname']} {$user['lastname']},\n Your Account in Tibiao MDRRMO Portal has been "
-            . ($status == "ACTIVE" ? "Activated" : "Deactivated").".";
+            . ($status == "ACTIVE" ? "Activated" : "Deactivated") . ".";
 
         Mail::to([$user['email']])->send(new SendUpdateMail($message));
 

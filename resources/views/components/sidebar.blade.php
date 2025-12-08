@@ -1,4 +1,4 @@
-<aside class="left-sidebar" style="background-color: #545454">
+<aside class="left-sidebar bg-prime">
     <div class="h-100">
         <div class="mt-3 mb-4">
             <div class="d-flex justify-content-center gap-2 align-items-center mb-2">
@@ -46,15 +46,17 @@
                             <span class="hide-menu">Progress Report</span>
                         </a>
                     </li>
+                    <hr class="border-top border-white mb-2">
                     <li class="sidebar-item">
+                        <span class="hide-menu ms-2 text-white" style="font-size: 15px">INVENTORY</span>
                         <a class="sidebar-link" href="{{ route('inventoryreport_view') }}" aria-expanded="false">
                             <span>
-                                <i class="bi bi-journals"></i>
+                                <i class="bi bi-box2-fill"></i>
                             </span>
-                            <span class="hide-menu">Inventory Report</span>
+                            <span class="hide-menu">Equipment</span>
                         </a>
                     </li>
-                    <hr class="border-top border-white">
+                    <hr class="border-top border-white mt-2">
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('staffreport_view') }}" aria-expanded="false">
                             <span>
@@ -64,7 +66,8 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['incidentreportPrint', 'situationalreportPrint', 'progressreportPrint', 'inventoryreportPrint']) ? 'active' : '' }}" href="{{ route('report_view') }}" aria-expanded="false">
+                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['incidentreportPrint', 'situationalreportPrint', 'progressreportPrint', 'inventoryreportPrint']) ? 'active' : '' }}"
+                            href="{{ route('report_view') }}" aria-expanded="false">
                             <span>
                                 <i class="bi bi-folder2-open"></i>
                             </span>
@@ -99,14 +102,14 @@
                     </li>
                 @endif
 
-                <li class="sidebar-item">
+                {{-- <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('profile_view') }}" aria-expanded="false">
                         <span>
                             <i class="bi bi-person-circle"></i>
                         </span>
                         <span class="hide-menu">Profile</span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </nav>
     </div>
