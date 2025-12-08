@@ -33,24 +33,10 @@
                 }
             },
             {
-                title: 'Staff<br>Name',
+                title: 'Description',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
-                    return row.fullname;
-                }
-            },
-            {
-                title: 'Designation',
-                className: 'text-nowrap p-3 align-middle text-center',
-                render: function(data, type, row) {
-                    return row.designation;
-                }
-            },
-            {
-                title: 'Quantity',
-                className: 'text-nowrap p-3 align-middle text-center',
-                render: function(data, type, row) {
-                    return row.quantity;
+                    return row.description;
                 }
             },
             {
@@ -58,13 +44,6 @@
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return row.unit;
-                }
-            },
-            {
-                title: 'Description',
-                className: 'text-nowrap p-3 align-middle text-center',
-                render: function(data, type, row) {
-                    return row.description;
                 }
             },
             {
@@ -82,31 +61,45 @@
                 }
             },
             {
+                title: 'Remarks',
+                className: 'text-nowrap p-3 align-middle text-center',
+                render: function(data, type, row) {
+                    return row.remarks;
+                }
+            },
+            {
                 title: 'Amount',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return "₱" + row.amount;
                 }
             },
-            {
-                title: 'File<br>Submitted',
-                className: 'text-nowrap p-3 align-middle text-center',
-                render: function(data, type, row) {
-                    if (row.filesubmitted) {
-                        let fileUrl = "{{ asset('') }}" + row
-                            .filesubmitted;
-                        return `<a href="${fileUrl}" class="file-link"><i style="font-size: 18px" class="bi bi-file-earmark-break"></i></a>`;
-                    }
-                    return 'N/A';
-                }
-            },
-            {
-                title: 'Date<br>Submitted',
-                className: 'text-nowrap p-3 align-middle text-center',
-                render: function(data, type, row) {
-                    return formatDateToStr(row.created_at);
-                }
-            },
+            // {
+            //     title: 'Quantity',
+            //     className: 'text-nowrap p-3 align-middle text-center',
+            //     render: function(data, type, row) {
+            //         return row.quantity;
+            //     }
+            // },
+            // {
+            //     title: 'File<br>Submitted',
+            //     className: 'text-nowrap p-3 align-middle text-center',
+            //     render: function(data, type, row) {
+            //         if (row.filesubmitted) {
+            //             let fileUrl = "{{ asset('') }}" + row
+            //                 .filesubmitted;
+            //             return `<a href="${fileUrl}" class="file-link"><i style="font-size: 18px" class="bi bi-file-earmark-break"></i></a>`;
+            //         }
+            //         return 'N/A';
+            //     }
+            // },
+            // {
+            //     title: 'Date<br>Submitted',
+            //     className: 'text-nowrap p-3 align-middle text-center',
+            //     render: function(data, type, row) {
+            //         return formatDateToStr(row.created_at);
+            //     }
+            // },
             {
                 title: 'Action',
                 className: 'text-nowrap p-3 align-middle text-center sticky-action',

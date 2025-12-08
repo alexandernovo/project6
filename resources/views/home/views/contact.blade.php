@@ -4,8 +4,9 @@
     @include('home.components.login')
     <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 bg-home"
         style="height: calc(100vh - 122px);">
-        <div class="card col-6" style="border-radius: 14px">
+        <div class="card col-6 text-white" style="border-radius: 14px; background-color: #545454">
             <div class="card-body p-0">
+
                 <div class="row mx-auto">
                     <div class="col-6 p-4" style="border-right: 1px solid lightgray">
                         <p class="mb-0 text-center fw-semibold" style="font-size: 22px">Let's Get in Touch!</p>
@@ -32,23 +33,28 @@
                         </div>
                     </div>
                     <div class="col-6 p-4">
+                        <div class="d-flex justify-content-end">
+                            <a href="{{ route('home') }}" type="button" class="btn btn-closing">
+                                <i class="bi bi-x-lg text-white"></i>
+                            </a>
+                        </div>
                         <p class="mb-0 text-start fw-semibold" style="font-size: 22px">Contact Us</p>
                         <form id="contactForm">
                             <div class="form-group mb-2 mt-4">
                                 <label for="" class="mb-1">Name</label>
-                                <input type="text" name="name" class="form-control" required>
+                                <input type="text" name="name" class="form-control input-out" required>
                             </div>
                             <div class="form-group mb-2">
                                 <label for="" class="mb-1">Address</label>
-                                <input type="text" name="address" class="form-control" required>
+                                <input type="text" name="address" class="form-control input-out" required>
                             </div>
                             <div class="form-group mb-2">
                                 <label for="" class="mb-1">Contact</label>
-                                <input type="text" name="contact" class="form-control" required>
+                                <input type="text" name="contact" class="form-control input-out" required>
                             </div>
                             <div class="form-group mb-2">
                                 <label for="" class="mb-1">Message</label>
-                                <textarea name="message" rows="4" class="form-control" required></textarea>
+                                <textarea name="message" rows="4" class="form-control input-out" required></textarea>
                             </div>
                             <div class="form-group mt-1 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-prime">

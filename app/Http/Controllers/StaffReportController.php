@@ -23,7 +23,28 @@ class StaffReportController extends Controller
 
     public function submitreportdashboard()
     {
-        return view('staffreport.views.submitreportdashboard');
+        $incidentReport = Record::where('typeOfRecord', "INCIDENTREPORT");
+        $situationReport = Record::where('typeOfRecord', "SITUATIONALREPORT");
+        $progressReport = Record::where('typeOfRecord', "PROGRESSREPORT");
+
+        $userData = Auth::user();
+
+        if ($userData->usertype == "STAFF") {
+            $incidentReport->where('staff_id', $userData->id);
+            $situationReport->where('staff_id', $userData->id);
+            $progressReport->where('staff_id', $userData->id);
+        }
+
+        $incidentReportCount = $incidentReport->count();
+        $situationReportCount = $situationReport->count();
+        $progressReportCount = $progressReport->count();
+
+        $data = [
+            "incidentReportCount" => $incidentReportCount,
+            "situationReportCount" => $situationReportCount,
+            "progressReportCount" => $progressReportCount,
+        ];
+        return view('staffreport.views.submitreportdashboard', $data);
     }
 
     public function incidentreport_staff()
@@ -143,7 +164,7 @@ class StaffReportController extends Controller
             $query->where(DB::raw("CAST(records.created_at AS DATE)"), ">=", $dateFrom)
                 ->where(DB::raw("CAST(records.created_at AS DATE)"), "<=", $dateTo);
         }
-        
+
         $userData = Auth::user();
 
         if ($userData->usertype == "STAFF") {

@@ -50,7 +50,8 @@
                     <hr class="border-top border-white mb-2">
                     <li class="sidebar-item">
                         <span class="hide-menu ms-2 text-white fw-semibold" style="font-size: 14px">INVENTORY</span>
-                        <a class="sidebar-link" href="{{ route('inventoryreport_view') }}" aria-expanded="false">
+                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['inventoryreport_view', 'inventoryreportPrint', 'inventoryreport_staff']) ? 'active' : '' }}"
+                            href="{{ route('inventoryreport_view') }}" aria-expanded="false">
                             <span>
                                 <i class="bi bi-box2-fill"></i>
                             </span>
@@ -68,7 +69,7 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['incidentreportPrint', 'situationalreportPrint', 'progressreportPrint', 'inventoryreportPrint']) ? 'active' : '' }}"
+                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['incidentreportPrint', 'situationalreportPrint', 'progressreportPrint']) ? 'active' : '' }}"
                             href="{{ route('report_view') }}" aria-expanded="false">
                             <span>
                                 <i class="bi bi-folder2-open"></i>
@@ -87,20 +88,20 @@
                     </li>
                 @else
                     <li class="sidebar-item">
-                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['incidentreport_staff', 'situationalreport_staff', 'progressreport_staff', 'inventoryreport_staff']) ? 'active' : '' }}"
+                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['incidentreport_staff', 'situationalreport_staff', 'progressreport_staff']) ? 'active' : '' }}"
                             href="{{ route('submitreportdashboard') }}" aria-expanded="false">
                             <span>
-                                <i class="bi bi-folder-symlink"></i>
+                                <i class="bi bi-journals"></i>
                             </span>
-                            <span class="hide-menu">Submit Report</span>
+                            <span class="hide-menu">Add Report</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('archive_view') }}" aria-expanded="false">
                             <span>
-                                <i class="bi bi-folder-plus"></i>
+                                <i class="bi bi-folder-symlink-fill"></i>
                             </span>
-                            <span class="hide-menu">Archive</span>
+                            <span class="hide-menu">Submitted Report</span>
                         </a>
                     </li>
                 @endif

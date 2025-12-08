@@ -52,6 +52,8 @@
                         reloadstaffreportTable();
                     } else if (typeTable == "archive") {
                         reloadarchivedTable();
+                    } else if (typeTable == "dashboard") {
+                        reloadreportTable();
                     }
                     setTimeout(() => {
                         Swal.fire({

@@ -5,21 +5,24 @@
     @include('staffreport.modals.situationalmodal')
     @include('staffreport.modals.progressmodal')
     @include('staffreport.modals.inventorymodal')
-    
+
     <div class="row mx-auto">
         <div class="card-body px-2 py-1">
             <div class="row align-items-center">
                 <div class="col-12">
                     <div
                         class="d-flex align-items-center mb-2 flex-wrap text-lg-start text-sm-center gap-2 title-tips-class">
-                        <h4 class="fw-semibold mb-0 text-nowrap">Archive</h4>
+                        <h4 class="fw-semibold mb-0 text-nowrap">
+                            <i class="bi bi-folder-symlink-fill"></i>
+                            Submitted Report
+                        </h4>
                     </div>
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
                         <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item">
                                 <a class="text-muted text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item" aria-current="page">Archive</li>
+                            <li class="breadcrumb-item" aria-current="page">Submitted Report</li>
                         </ol>
                     </nav>
                 </div>

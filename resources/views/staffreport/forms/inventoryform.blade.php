@@ -13,7 +13,7 @@
         <hr>
     </div>
     <div class="row mx-auto align-items-end">
-        <div class="col-3">
+        {{-- <div class="col-3">
             <div class="form-group">
                 <label for="" class="mb-1">Firstname</label>
                 <input type="text" value="{{ auth()->user()->firstname }}" id="firstname_inventory"
@@ -41,7 +41,7 @@
                 <input type="text" id="designation_inventory" value="{{ auth()->user()->designation }}"
                     class="form-control" readonly>
             </div>
-        </div>
+        </div> --}}
         <div class="col-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Quantity</label>
@@ -63,8 +63,7 @@
         <div class="col-3 mt-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Date Acquired</label>
-                <input type="date" name="dateacquired" id="dateacquired_inventory" required
-                    class="form-control">
+                <input type="date" name="dateacquired" id="dateacquired_inventory" required class="form-control">
             </div>
         </div>
         <div class="col-3 mt-3">
@@ -73,10 +72,20 @@
                 <input type="number" name="amount" id="amount_inventory" required class="form-control">
             </div>
         </div>
-        <div class="col-3 mt-3">
+        {{-- <div class="col-3 mt-3">
             <div class="form-group">
                 <label for="" class="mb-1">File Submitted</label>
                 <input type="file" name="filesubmitted" class="form-control">
+            </div>
+        </div> --}}
+        <div class="col-3 mt-3">
+            <div class="form-group mt-1">
+                <label for="" class="mb-1">Remarks</label>
+                <select name="remarks" id="remarks_inventory" class="form-select rounded">
+                    <option value="Serviceable">Serviceable</option>
+                    <option value="Unserviceable">Unserviceable</option>
+                    <option value="Consumable">Consumable</option>
+                </select>
             </div>
         </div>
         <div class="col-12">

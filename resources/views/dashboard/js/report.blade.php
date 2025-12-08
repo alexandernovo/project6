@@ -1,7 +1,6 @@
 <script>
     let reportOptions;
     let reportTable;
-    let reportData = [];
     let selectedreportId = null;
 
     reportOptions = {
@@ -17,7 +16,7 @@
                 d._token = '{{ csrf_token() }}';
             },
             dataSrc: function(json) {
-                reportData = json.data;
+                reportFormData = json.data;
                 return json.data;
             }
         },
@@ -81,6 +80,23 @@
                 render: function(data, type, row) {
                     return formatDateToStr(row.created_at);
                 }
+            },
+            {
+                title: 'Action',
+                className: 'text-nowrap p-3 align-middle text-center sticky-action',
+                render: function(data, type, row) {
+                    let cleanedType = row.typeOfRecord.replace(/report/i, "").trim().toLowerCase();
+                    return `
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-orange editRecord" data-table="dashboard" data-type="${cleanedType}" data-record_id="${row.record_id}">
+                                <i class="bi bi-pencil-square"></i>
+                            </button>
+                            <button class="btn btn-red deleteRecord" data-record_id="${row.record_id}">
+                                <i class="bi bi-trash3-fill"></i>
+                            </button>
+                        <div>
+                    `;
+                }
             }
         ],
         initComplete: function(settings, json) {
@@ -137,4 +153,25 @@
             `);
         }
     }
+
+    $(document).on('click', '.deleteRecord', function() {
+        let record_id = $(this).data("record_id");
+        Swal.fire({
+            title: `Delete this Staff Report?`,
+            text: `Are you sure you want to delete this Staff Report?`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: "Delete"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                postRequest("{{ route('deleteRecord') }}", {
+                    record_id: record_id,
+                }, (response) => {
+                    if (response.status == "success") {
+                        reloadreportTable();
+                    }
+                })
+            }
+        });
+    });
 </script>

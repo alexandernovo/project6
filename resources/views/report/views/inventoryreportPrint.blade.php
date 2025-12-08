@@ -6,14 +6,14 @@
                 <div class="col-12">
                     <div
                         class="d-flex align-items-center mb-2 flex-wrap text-lg-start text-sm-center gap-2 title-tips-class">
-                        <h4 class="fw-semibold mb-0 text-nowrap">Records Report | Inventory</h4>
+                        <h4 class="fw-semibold mb-0 text-nowrap">Inventory | Equipment</h4>
                     </div>
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
                         <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item">
                                 <a class="text-muted text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item" aria-current="page">Records Report | Inventory</li>
+                            <li class="breadcrumb-item" aria-current="page">Inventory | Equipment</li>
                         </ol>
                     </nav>
                 </div>
@@ -66,7 +66,9 @@
                         <img src="{{ asset('assets/images/logo1.png') }}" class="bg-white rounded-circle" width=""
                             alt="" style="width: 78px; height: 78px" />
                     </div>
-
+                    <p class="mb-2 mt-4 text-center fw-semibold" style="font-size: 16px; color: black">
+                        Data and Inventory of Tibiao MDRRMO Resources/Logistics/Assets
+                    </p>
                     <p class="mb-2 mt-4 text-center fw-semibold text-uppercase" style="font-size: 20px; color: black">
                         INVENTORY REPORT AS OF
                         {{ date('F Y', strtotime(request('monthyear', date('Y-m')) . '-01')) }}

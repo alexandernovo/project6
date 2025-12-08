@@ -25,22 +25,30 @@
                 </div>
             </div>
         </div>
+        <div class="d-flex justify-content-end gap-2">
+            <a href="{{ route('inventoryreportPrint') }}" class="btn btn-prime">
+                <i class="bi bi-journals"></i>
+                Report
+            </a>
+            <a href="{{ route('inventoryreport_staff') }}" class="btn btn-prime">
+                <i class="bi bi-plus-circle"></i>
+                Add Item
+            </a>
+        </div>
         <div class="card w-100 px-0 mb-0">
             <div class="card-body p-3">
                 <table id="inventoryreportTable" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Staff Name</th>
-                            <th>Designation</th>
-                            <th>Quantity</th>
-                            <th>Unit</th>
                             <th>Description</th>
+                            <th>Unit</th>
                             <th>Property No.</th>
                             <th>Date Acquired</th>
+                            <th>Remarks</th>
                             <th>Amount</th>
-                            <th>File Submitted</th>
-                            <th>Date Submitted</th>
+                            {{-- <th>Quantity</th> --}}
+                            {{-- <th>Date Submitted</th> --}}
                             <th>Action</th>
                         </tr>
                     </thead>

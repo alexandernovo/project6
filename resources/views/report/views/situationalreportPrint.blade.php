@@ -6,14 +6,17 @@
                 <div class="col-12">
                     <div
                         class="d-flex align-items-center mb-2 flex-wrap text-lg-start text-sm-center gap-2 title-tips-class">
-                        <h4 class="fw-semibold mb-0 text-nowrap">Records Report | Situational</h4>
+                        <h4 class="fw-semibold mb-0 text-nowrap">
+                            <i class="bi bi-journals"></i>
+                            Monthly Report | Situational
+                        </h4>
                     </div>
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
                         <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item">
                                 <a class="text-muted text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item" aria-current="page">Records Report | Situational</li>
+                            <li class="breadcrumb-item" aria-current="page">Monthly Report | Situational</li>
                         </ol>
                     </nav>
                 </div>

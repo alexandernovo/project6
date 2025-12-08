@@ -465,8 +465,31 @@ textarea {
     outline: 3px solid rgba(44, 113, 1, 0.3);
     outline-offset: 2px;
 }
+
 .bg-green {
     background-color: #256101;
+}
+
+.btn-gray {
+    background-color: #545656;
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.15s ease-in-out;
+}
+.btn-gray:hover {
+    background-color: #545656;
+}
+.btn-gray:active {
+    background-color: #545656;
+    transform: scale(0.97);
+}
+.btn-gray:focus {
+    outline: 3px solid rgba(135, 135, 135, 0.3);
+    outline-offset: 2px;
 }
 
 /* RED BUTTON (#830202) */

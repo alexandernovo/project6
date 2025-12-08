@@ -1,9 +1,13 @@
 @extends('layout.mainlayout')
 @section('content')
+    <h4 class="mb-3">
+        <i class="bi bi-person-circle"></i>
+        Profile
+    </h4>
     <div class="card">
         <div class="card-body p-0">
             <div class="row mx-auto">
-                <div class="col-4 border-end p-4 pb-3" style="border-right: 1px solid #555554; background-color: #F1F2F2">
+                <div class="col-4 border-end p-4 pb-3 bg-prime" style="border-right: 1px solid #555554;">
                     <div class="d-flex justify-content-center">
                         <div class="border rounded-circle bg-white position-relative" style="width: 150px; height: 150px">
                             <img src="{{ asset(auth()->user()->profile) }}"
@@ -18,21 +22,22 @@
                             </button>
                         </div>
                     </div>
-                    <p class="mb-2 text-center mt-1">
+                    <p class="mb-2 text-center mt-1 text-white">
                         {{ '@' . auth()->user()->username }}
                     </p>
-                    <p class="mb-1 text-center mt-1 fw-semibold" style="font-size: 20px">
+                    <p class="mb-1 text-center mt-1 fw-semibold text-white" style="font-size: 20px">
                         {{ auth()->user()->firstname }}
                         {{ auth()->user()->middlename ? strtoupper(substr(auth()->user()->middlename, 0, 1)) . '.' : '' }}
                         {{ auth()->user()->lastname }}
                     </p>
-                    <div class="primary-bg-new gap-3 p-2 px-3 text-white d-flex justify-content-between align-items-center"
-                        style="border-radius: 20px">
+                    <div class="gap-3 p-2 px-3 text-white d-flex justify-content-between align-items-center"
+                        style="border-radius: 20px; background-color: #630F0F">
                         <img src="{{ asset('assets/images/logo2.png') }}" alt="" style="height: 35px; width: 35px">
                         <p class="mb-0" style="font-size: 18px">
                             {{ auth()->user()->designation }}
                         </p>
-                        <img src="{{ asset('assets/images/logo.jpg') }}" alt="" style="height: 35px; width: 35px">
+                        <img src="{{ asset('assets/images/logo.jpg') }}" alt="" class="rounded-circle"
+                            style="height: 35px; width: 35px">
                     </div>
                     <div class="mt-3">
                         <form id="userUpdateForm">
@@ -46,8 +51,8 @@
                                 <i class="bi bi-eye-slash-fill position-absolute toggle-password"
                                     style="left: 15px; top: 50%; transform: translateY(-50%);"
                                     data-target="profile_pass"></i>
-                                <input type="text" name="password" id="profile_pass" class="form-control" style="text-indent: 20px"
-                                    placeholder="********">
+                                <input type="text" name="password" id="profile_pass" class="form-control"
+                                    style="text-indent: 20px" placeholder="********">
                             </div>
                             <div class="form-group bg-white rounded position-relative mb-1">
                                 <i class="bi bi-house-door-fill position-absolute"
@@ -69,7 +74,10 @@
                             </div>
 
                             <div class="d-flex justify-content-between mt-2">
-                                <button type="submit" class="btn btn-prime">Save</button>
+                                <button type="submit" class="btn btn-gray">
+                                    <i class="bi bi-pencil"></i>
+                                    Save
+                                </button>
                             </div>
                         </form>
                     </div>

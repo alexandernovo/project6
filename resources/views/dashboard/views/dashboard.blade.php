@@ -1,6 +1,10 @@
 @extends('layout.mainlayout')
 @section('content')
     @include('dashboard.css.dashboard')
+    @include('staffreport.modals.incidentmodal')
+    @include('staffreport.modals.situationalmodal')
+    @include('staffreport.modals.progressmodal')
+    @include('staffreport.modals.inventorymodal')
     @php
         $countDash = $countDash->pluck('total', 'typeOfRecord')->toArray();
         $counts = [
@@ -50,7 +54,8 @@
         </div>
         <div class="d-flex justify-content-between px-0">
             @foreach ($counts as $count)
-                <div class="border d-flex gap-3 justify-content-center align-items-center p-3" style="width: 32%; border-radius: 13px;  {{ $count['style'] }}">
+                <div class="border d-flex gap-3 justify-content-center align-items-center p-3"
+                    style="width: 32%; border-radius: 13px;  {{ $count['style'] }}">
                     <p class="mb-0 text-white text-center" style="font-size: 23px">{{ $count['title'] }}</p>
                     <p class="mb-0 text-white text-center" style="font-size: 35px">
                         |
@@ -74,6 +79,7 @@
                             <th>Contact</th>
                             <th>File Submitted</th>
                             <th>Date & Time Submitted</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -111,4 +117,5 @@
 @section('js')
     @include('dashboard.js.report')
     @include('dashboard.js.graph')
+    @include('staffreport.js.reportformupdate')
 @endsection
