@@ -89,7 +89,6 @@
                         <div class="d-flex gap-2">
                             <button class="btn btn-info edit_user" data-user_id="${row.id}">
                                 <i class="bi bi-pencil-square"></i>
-                                Edit
                             </button>
                             <button class="btn deactivate_user ${row.status=="ACTIVE" ? 'btn-danger' : 'btn-success'}" data-user_id="${row.id}" data-status="${row.status}"> 
                                 <i class="bi bi-power"></i>

@@ -20,6 +20,7 @@
                     </a>
                 </li>
                 <hr class="border-top border-white">
+                <span class="hide-menu ms-2 text-white fw-semibold" style="font-size: 14px">DOCUMENT</span>
                 @if (auth()->user() && auth()->user()->usertype == 'ADMIN')
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('incidentreport_view') }}" aria-expanded="false">
@@ -48,7 +49,7 @@
                     </li>
                     <hr class="border-top border-white mb-2">
                     <li class="sidebar-item">
-                        <span class="hide-menu ms-2 text-white" style="font-size: 15px">INVENTORY</span>
+                        <span class="hide-menu ms-2 text-white fw-semibold" style="font-size: 14px">INVENTORY</span>
                         <a class="sidebar-link" href="{{ route('inventoryreport_view') }}" aria-expanded="false">
                             <span>
                                 <i class="bi bi-box2-fill"></i>
@@ -57,12 +58,13 @@
                         </a>
                     </li>
                     <hr class="border-top border-white mt-2">
+                    <span class="hide-menu ms-2 text-white fw-semibold" style="font-size: 14px">REPORT</span>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('staffreport_view') }}" aria-expanded="false">
                             <span>
                                 <i class="bi bi-folder2-open"></i>
                             </span>
-                            <span class="hide-menu">Staff's Submit Report</span>
+                            <span class="hide-menu">Submitted Report</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
@@ -71,15 +73,16 @@
                             <span>
                                 <i class="bi bi-folder2-open"></i>
                             </span>
-                            <span class="hide-menu">Records Report</span>
+                            <span class="hide-menu">Monthly Report</span>
                         </a>
                     </li>
+                    <hr class="border-top border-white mt-2 mb-1">
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('user_view') }}" aria-expanded="false">
                             <span>
                                 <i class="bi bi-people-fill"></i>
                             </span>
-                            <span class="hide-menu">Staff User</span>
+                            <span class="hide-menu">Staff</span>
                         </a>
                     </li>
                 @else

@@ -5,15 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Record;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
     public function dashboard_view()
     {
+        $userData = Auth::user();
+
         $recordCounts = DB::table('records')
             ->select('typeOfRecord', DB::raw('COUNT(*) as total'))
-            ->groupBy('typeOfRecord')
-            ->get();
+            ->groupBy('typeOfRecord');
+
+        if ($userData->usertype == "STAFF") {
+            $recordCounts->where('staff_id', $userData->id);
+        }
+
+        $recordCounts->get();
+
         $data = ["countDash" => $recordCounts];
 
         return view('dashboard.views.dashboard', $data);
@@ -53,6 +62,11 @@ class DashboardController extends Controller
                     ->orWhereRaw("(users.firstname + ' ' + users.lastname) LIKE ?", ["%{$searchValue}%"])
                     ->orWhereRaw("(users.lastname + ', ' + users.firstname) LIKE ?", ["%{$searchValue}%"]);
             });
+        }
+        $userData = Auth::user();
+
+        if ($userData->usertype == "STAFF") {
+            $query->where('staff_id', $userData->id);
         }
 
         $totalData = $query->count();

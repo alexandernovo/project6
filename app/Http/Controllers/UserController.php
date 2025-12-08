@@ -104,6 +104,7 @@ class UserController extends Controller
         $totalData = $query->count();
 
         $data = $query
+            ->orderBy("created_at", "DESC")
             ->offset($start)
             ->limit($length)
             ->get();

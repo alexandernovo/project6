@@ -101,11 +101,9 @@
                         <div class="d-flex gap-2">
                             <button class="btn btn-warning editRecord" data-table="staff" data-type="${cleanedType}" data-record_id="${row.record_id}">
                                 <i class="bi bi-pencil-square"></i>
-                                Edit
                             </button>
                             <button class="btn btn-danger deleteRecord" data-record_id="${row.record_id}">
                                 <i class="bi bi-trash3-fill"></i>
-                                Delete
                             </button>
                         <div>
                     `;
