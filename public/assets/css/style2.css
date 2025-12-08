@@ -539,3 +539,7 @@ textarea {
     outline: 3px solid rgba(213, 71, 0, 0.3);
     outline-offset: 2px;
 }
+#reportTable th,
+#reportTable td {
+    font-size: 16px !important;
+}
