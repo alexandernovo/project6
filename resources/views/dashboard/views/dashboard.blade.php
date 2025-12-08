@@ -56,7 +56,7 @@
             @foreach ($counts as $count)
                 <div class="border d-flex gap-3 justify-content-center align-items-center p-3"
                     style="width: 32%; border-radius: 13px;  {{ $count['style'] }}">
-                    <p class="mb-0 text-white text-center" style="font-size: 23px">{{ $count['title'] }}</p>
+                    <p class="mb-0 text-white text-center text-uppercase" style="font-size: 23px">{{ $count['title'] }}</p>
                     <p class="mb-0 text-white text-center" style="font-size: 35px">
                         |
                         <i class="bi bi-journal-text text-white" style="font-size: 33px"></i>

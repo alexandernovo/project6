@@ -7,21 +7,18 @@
                 'class' => 'bg-red',
                 'route' => route('incidentreportPrint'),
                 'style' => 'background-color: #19460E',
-                'count' => $incidentReportCount,
             ],
             [
                 'title' => 'SITUATIONAL REPORT',
                 'class' => 'bg-orange',
                 'route' => route('situationalreportPrint'),
                 'style' => 'background-color: #B3420E',
-                'count' => $situationReportCount,
             ],
             [
                 'title' => 'PROGRESS REPORT',
                 'class' => 'bg-blue',
                 'route' => route('progressreportPrint'),
                 'style' => 'background-color: #110783',
-                'count' => $progressReportCount,
             ],
             // [
             //     'title' => 'INVENTORY RECORD REPORT',
