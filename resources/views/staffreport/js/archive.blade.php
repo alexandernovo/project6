@@ -92,10 +92,10 @@
                     let cleanedType = row.typeOfRecord.replace(/report/i, "").trim().toLowerCase();
                     return `
                         <div class="d-flex gap-2">
-                            <button class="btn btn-warning editRecord" data-table="archive" data-type="${cleanedType}" data-record_id="${row.record_id}">
+                            <button class="btn btn-orange editRecord" data-table="archive" data-type="${cleanedType}" data-record_id="${row.record_id}">
                                 <i class="bi bi-pencil-square"></i>
                             </button>
-                            <button class="btn btn-danger deleteRecord" data-record_id="${row.record_id}">
+                            <button class="btn btn-red deleteRecord" data-record_id="${row.record_id}">
                                 <i class="bi bi-trash3-fill"></i>
                             </button>
                         <div>

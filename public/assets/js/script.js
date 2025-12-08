@@ -349,9 +349,9 @@ function statusBadgeRenderer(data) {
 
 function statusBadge(data) {
     if (data === "ACTIVE") {
-        return `<span class="badge bg-success text-white px-3 py-1 rounded-pill" style="font-size: 12px">Active</span>`;
+        return `<span class="badge bg-green text-white px-3 py-1 rounded-pill" style="font-size: 12px; border-radius: 7px !important; padding: 7px 14px !important">Active</span>`;
     } else {
-        return `<span class="badge bg-danger text-white px-3 py-1 rounded-pill" style="font-size: 12px">Inactive</span>`;
+        return `<span class="badge bg-red text-white px-3 py-1 rounded-pill" style="font-size: 12px; border-radius: 7px !important; padding: 7px 14px !important">Inactive</span>`;
     }
 }
 

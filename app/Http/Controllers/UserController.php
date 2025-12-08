@@ -23,11 +23,14 @@ class UserController extends Controller
     {
         try {
             DB::beginTransaction();
-            if ($request->post('username') == "admin") {
-                return response()->json([
-                    'status' => 'failed',
-                    'message' => "This username is already taken."
-                ]);
+            if ($request->post('username')) {
+                $find = User::where('username', $request->post('username'))->first();
+                if ($find) {
+                    return response()->json([
+                        'status' => 'failed',
+                        'message' => "This username is already taken."
+                    ]);
+                }
             }
 
             $all = $request->all();

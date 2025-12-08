@@ -8,7 +8,10 @@
                 <div class="col-12">
                     <div
                         class="d-flex align-items-center mb-2 flex-wrap text-lg-start text-sm-center gap-2 title-tips-class">
-                        <h4 class="fw-semibold mb-0 text-nowrap">Situational Report</h4>
+                        <h4 class="fw-semibold mb-0 text-nowrap">
+                            <i class="bi bi-journals"></i>
+                            Situational Report
+                        </h4>
                     </div>
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
                         <ol class="breadcrumb mb-1">

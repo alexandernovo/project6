@@ -87,10 +87,7 @@
                 render: function(data, type, row) {
                     return `
                         <div class="d-flex gap-2">
-                            <button class="btn btn-info edit_user" data-user_id="${row.id}">
-                                <i class="bi bi-pencil-square"></i>
-                            </button>
-                            <button class="btn deactivate_user ${row.status=="ACTIVE" ? 'btn-danger' : 'btn-success'}" data-user_id="${row.id}" data-status="${row.status}"> 
+                            <button class="btn deactivate_user ${row.status=="ACTIVE" ? 'btn-red' : 'btn-green'}" data-user_id="${row.id}" data-status="${row.status}"> 
                                 <i class="bi bi-power"></i>
                                 ${row.status=="ACTIVE" ? 'Deactivate' : 'Activate'}
                             </button>
@@ -143,12 +140,7 @@
     function appendButtonsuser() {
         $('#userTable_wrapper .row .dt-length').append(`
             <div class="d-flex gap-2 ms-2 align-items-center userBtnSm">
-                <button class="btn btn-success d-flex flex-nowrap align-items-center gap-2" id="newStaff">
-                    <span>
-                        <i class="bi bi-person-fill-add"></i>
-                    </span>
-                    New Staff
-                </button>
+           
                 <button class="btn btn-info d-flex flex-nowrap align-items-center gap-2" id="reloaduserBtn">
                     <span>
                         <i class="bi bi-arrow-clockwise"></i>
@@ -158,7 +150,16 @@
             </div>
         `);
     }
+    //  <button class="btn btn-success d-flex flex-nowrap align-items-center gap-2" id="newStaff">
+    //     <span>
+    //         <i class="bi bi-person-fill-add"></i>
+    //     </span>
+    //     New Staff
+    // </button>
 
+//     <button class="btn btn-info edit_user" data-user_id="${row.id}">
+//     <i class="bi bi-pencil-square"></i>
+// </button>
     function reloadButtonLoading(isLoading) {
         if (isLoading) {
             $("#reloaduserBtn").html(`

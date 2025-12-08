@@ -36,7 +36,8 @@
                         </button>
                         <i class="bi bi-file-earmark-pdf-fill text-danger download-btn pdf-button" data-type="pdf"></i>
                         <i class="bi bi-file-earmark-word-fill text-primary download-btn word-button" data-type="word"></i>
-                        <i class="bi bi-file-earmark-excel-fill text-success download-btn excel-button" data-type="excel"></i>
+                        <i class="bi bi-file-earmark-excel-fill text-success download-btn excel-button"
+                            data-type="excel"></i>
                     </div>
                 </div>
                 <hr class="my-2">
@@ -70,7 +71,7 @@
                         SITUATIONAL REPORT AS OF
                         {{ date('F Y', strtotime(request('monthyear', date('Y-m')) . '-01')) }}
                     </p>
-                    <table class="table-bordered border-dark table mt-3">
+                    <table class="table-bordered border-dark table mt-3 table-report">
                         <thead>
                             <tr>
                                 <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">No.
@@ -138,6 +139,13 @@
                             @endif
                         </tbody>
                     </table>
+
+                    <div class="d-flex justify-content-end">
+                        <div class="text-end mt-2 d-flex justify-content-center text-dark align-items-center flex-column">
+                            <p class="fw-semibold mb-0">NORMAN L. ALABADO</p>
+                            <p class="mb-0">MDRRMO</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
