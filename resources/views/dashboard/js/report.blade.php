@@ -67,10 +67,28 @@
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     if (row.filesubmitted) {
-                        let fileUrl = "{{ asset('') }}" + row
-                            .filesubmitted;
-                        return `<a href="${fileUrl}" class="file-link"><i style="font-size: 18px" class="bi bi-file-earmark-break"></i></a>`;
+
+                        let fileUrl = "{{ asset('') }}" + row.filesubmitted;
+
+                        let ext = row.filesubmitted.split('.').pop().toLowerCase();
+
+                        if (ext === 'pdf') {
+                            return `
+                                <a href="${fileUrl}" class="file-link">
+                                    <img src="{{ asset('assets/images/pdf.png') }}" 
+                                        style="width: 20px; height: auto;">
+                                </a>
+                            `;
+                        }
+
+                        // Otherwise → show normal icon
+                        return `
+                            <a href="${fileUrl}" class="file-link">
+                                <i style="font-size: 18px" class="bi bi-file-earmark-break"></i>
+                            </a>
+                        `;
                     }
+
                     return 'N/A';
                 }
             },
