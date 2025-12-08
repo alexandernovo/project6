@@ -68,7 +68,7 @@
         <div class="card mt-3 mb-0">
             <div class="card-body p-3">
                 <p class="mb-2 fw-semibold" style="font-size: 16px">REPORT | THIS MONTH</p>
-                <table id="reportTable" class="table table-bordered">
+                <table id="reportTable" class="data_table table table-bordered dataTable">
                     <thead>
                         <tr>
                             <th>No.</th>
