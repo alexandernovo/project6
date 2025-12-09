@@ -22,14 +22,20 @@
                     <input type="hidden" name="typeLogin" id="typeLogin" value="ADMIN">
                     <div class="form-group mb-2">
                         <label for="" class="mb-1 text-white">Username</label>
-                        <input type="text" name="username" id="username" class="form-control bg-white"
-                            placeholder="Username">
+                        <div class="position-relative">
+                            <i class="bi bi-person-circle position-absolute text-dark"
+                                style="top: 50%; cursor: pointer; transform: translateY(-50%); left: 15px"></i>
+                            <input type="text" name="username" id="username" class="form-control bg-white"
+                                style="text-indent: 20px" placeholder="Username">
+                        </div>
                     </div>
                     <div class="form-group mt-4">
                         <label for="" class="mb-1 text-white">Password</label>
                         <div class="position-relative">
+                            <i class="bi bi-lock-fill position-absolute text-dark"
+                                style="top: 50%; cursor: pointer; transform: translateY(-50%); left: 15px"></i>
                             <input type="password" name="password" id="password" class="form-control bg-white"
-                                placeholder="Password">
+                                placeholder="Password" style="text-indent: 20px">
                             <i class="bi bi-eye-fill position-absolute toggle-password" data-target="password"
                                 style="top: 50%; cursor: pointer; transform: translateY(-50%); right: 20px"></i>
                         </div>

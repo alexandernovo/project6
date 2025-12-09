@@ -562,3 +562,7 @@ textarea {
 .dataTable td {
     padding: 5px !important;
 }
+::placeholder {
+    color: #333 !important; /* dark gray */
+    opacity: 1; /* ensures full visibility */
+}

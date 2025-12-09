@@ -30,21 +30,29 @@
                         <input type="hidden"name="typeLogin" id="typeLogin" value="STAFF">
                         <div class="form-group mb-2">
                             <label for="" class="mb-1 label-out">Username</label>
-                            <input type="text" id="username" placeholder="Username" name="username"
-                                class="form-control input-out">
+                            <div class="position-relative">
+                                <i class="bi bi-person-circle position-absolute text-dark"
+                                    style="top: 50%; cursor: pointer; transform: translateY(-50%); left: 15px"></i>
+                                <input type="text" id="username" placeholder="Username" name="username"
+                                    class="form-control input-out"style="text-indent: 20px">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="mb-1 label-out">Password</label>
                             <div class="position-relative">
+                                <i class="bi bi-lock-fill position-absolute text-dark"
+                                    style="top: 50%; cursor: pointer; transform: translateY(-50%); left: 15px"></i>
                                 <input type="password" name="password" id="password_staff"
-                                    class="form-control bg-white input-out" placeholder="Password">
+                                    class="form-control bg-white input-out" placeholder="Password"
+                                    style="text-indent: 20px">
                                 <i class="bi bi-eye-fill position-absolute toggle-password" data-target="password_staff"
                                     style="top: 50%; cursor: pointer; transform: translateY(-50%); right: 20px"></i>
                             </div>
                             <p id="error_login_staff" class="text-danger mt-1 d-none mb-0 error-class"></p>
                         </div>
                         <div class="form-group mt-3">
-                            <button type="submit" class="btn btn-prime w-100" style="background-color: #630F0F !important">Log in</button>
+                            <button type="submit" class="btn btn-prime w-100"
+                                style="background-color: #630F0F !important">Log in</button>
                             <p class="mb-0 text-center mt-2 text-white" style="font-size: 12px">No Account? <a
                                     href="{{ route('signup') }}">Sign up Here</a></p>
                         </div>

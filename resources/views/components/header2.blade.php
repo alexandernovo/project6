@@ -1,5 +1,5 @@
-<header class="app-header position-sticky top-0 w-100 header-footer-bg2" style="border-bottom: 0 !important;">
-    <nav class="navbar navbar-expand-lg navbar-light">
+<header class="app-header position-sticky top-0 w-100 header-footer-bg2" style="border-bottom: 3px solid #3B0100 !important;">
+    <nav class="navbar navbar-expand-lg ">
         <ul class="navbar-nav">
             @if (!in_array(Route::currentRouteName(), $excludedRoutes))
                 <li class="nav-item">
