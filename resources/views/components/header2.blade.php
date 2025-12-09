@@ -1,4 +1,4 @@
-<header class="app-header position-sticky top-0 w-100 header-footer-bg2" style="border-bottom: 1px solid black;">
+<header class="app-header position-sticky top-0 w-100 header-footer-bg2" style="border-bottom: 0 !important;">
     <nav class="navbar navbar-expand-lg navbar-light">
         <ul class="navbar-nav">
             @if (!in_array(Route::currentRouteName(), $excludedRoutes))
