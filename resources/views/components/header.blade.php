@@ -1,4 +1,4 @@
-<header class="app-header position-sticky top-0 w-100 header-footer-bg" style="border-bottom: 1px solid black;">
+<header class="app-header position-sticky top-0 w-100 header-footer-bg">
     <nav class="navbar navbar-expand-lg navbar-light">
         <ul class="navbar-nav">
             @if (!in_array(Route::currentRouteName(), $excludedRoutes))
@@ -13,7 +13,7 @@
                     <div class="brand-logo d-flex align-items-center justify-content-between ps-0">
                         <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-2">
                             <div class=" d-flex align-items-center" style="width: 40px; height: 40px">
-                                <img src="{{ asset('template_assets/images/profile/user-1.jpg') }}"
+                                <img src="{{ asset('assets/images/logo1.png') }}"
                                     class="rounded-circle w-100 h-100 object-fit-cover">
                             </div>
                             <span style="font-size: 28px; letter-spacing: 4px; font-weight: 600;"

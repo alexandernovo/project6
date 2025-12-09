@@ -4,7 +4,7 @@
     @include('home.components.login')
     <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 bg-home"
         style="height: calc(100vh - 122px);">
-        <div class="card col-4" style="border-radius: 14px; background-color: #545454">
+        <div class="card col-3" style="border-radius: 14px; background-color: #343434">
             <div class="card-body">
                 <div class="d-flex justify-content-end">
                     <a href="{{ route('home') }}" type="button" class="btn btn-closing">

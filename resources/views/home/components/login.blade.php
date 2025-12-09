@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-end" style="background-color: #545454" data-bs-backdrop="static" tabindex="-1"
+<div class="offcanvas offcanvas-end" style="background-color: #343434" data-bs-backdrop="static" tabindex="-1"
     id="staticBackdrop" aria-labelledby="staticBackdropLabel">
     <div class="d-flex justify-content-end mt-3 me-3">
         <button type="button" class="btn btn-closing" data-bs-dismiss="offcanvas" aria-label="Close">
