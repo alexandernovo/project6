@@ -22,7 +22,7 @@
                         <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item">
                                 <a class="text-muted text-decoration-none"
-                                    href="{{ route('submitreportdashboard') }}">Submit Report</a>
+                                    href="{{ route('submitreportdashboard') }}">Inventory | Equipment</a>
                             </li>
                             <li class="breadcrumb-item" aria-current="page">Inventory | Equipment</li>
                         </ol>
