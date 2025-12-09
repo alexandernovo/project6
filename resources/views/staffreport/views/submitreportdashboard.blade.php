@@ -62,10 +62,10 @@
                     style="width: 24%; min-height: 300px; border-radius: 10px; {{ $report['style'] }}">
                     <i class="bi bi-journal-text" style="font-size: 100px"></i>
                     <p class="mb-2 fw-semibold text-center text-uppercase" style="font-size: 16px">{{ $report['title'] }}</p>
-                    <div class="w-100 py-2 bg-white">
+                    {{-- <div class="w-100 py-2 bg-white">
                         <p class="mb-0 fw-semibold text-center" style="font-size: 37px;{{ $report['style1'] }}">
                             {{ $report['count'] }}</p>
-                    </div>
+                    </div> --}}
                     <a href="{{ $report['route'] }}" class="btn w-100 mt-3 text-white"
                         style="border: 1px solid white">View</a>
                 </div>
