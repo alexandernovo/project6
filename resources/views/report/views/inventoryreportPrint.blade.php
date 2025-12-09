@@ -76,21 +76,21 @@
                     <table class="table-bordered border-dark table mt-3 table-report">
                         <thead>
                             <tr>
-                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">No.
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">No.
                                 </th>
-                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
                                     Quantity</th>
-                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
                                     Unit
                                 </th>
-                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
                                     Description</th>
-                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
                                     Property Number</th>
-                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
                                     Date
                                     Acquired</th>
-                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
                                     Amount
                                 </th>
                             </tr>
