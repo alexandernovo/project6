@@ -5,7 +5,18 @@
     let selectedstaffreportId = null;
     let dateFrom = "";
     let dateTo = "";
+    let typeReport = "{{ request('from') }}";
 
+    let typesReports = {
+        'Incident': 'INCIDENTREPORT',
+        'Situational': 'SITUATIONALREPORT',
+        'Progress': 'PROGRESSREPORT'
+    };
+
+    function getReportType(key) {
+        return typesReports[key] ?? null;
+    }
+    console.log("hello");
     staffreportOptions = {
         processing: false,
         serverSide: true,
@@ -15,9 +26,11 @@
             type: 'POST',
             dataType: 'json',
             data: function(d) {
+                typeReport = getReportType(typeReport);
                 d._token = '{{ csrf_token() }}';
                 d.dateFrom = dateFrom;
                 d.dateTo = dateTo;
+                d.typeOfRecord = typeReport;
             },
             dataSrc: function(json) {
                 reportFormData = json.data;
@@ -187,7 +200,7 @@
                         Filter
                     </button>
                 </div>
-                <button class="btn btn-info d-flex flex-nowrap align-items-center gap-2" id="reloadstaffreportBtn">
+                <button class="btn btn-gray-new d-flex flex-nowrap align-items-center gap-2" id="reloadstaffreportBtn">
                     <span>
                         <i class="bi bi-arrow-clockwise"></i>
                     </span>

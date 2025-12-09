@@ -152,7 +152,7 @@
                     </span>
                     Share
                 </button>
-                <button class="btn btn-info d-flex flex-nowrap align-items-center gap-2" id="reloadwastecollectBtn">
+                <button class="btn btn-gray-new d-flex flex-nowrap align-items-center gap-2" id="reloadwastecollectBtn">
                     <span>
                         <i class="bi bi-arrow-clockwise"></i>
                     </span>

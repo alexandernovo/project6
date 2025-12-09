@@ -1,6 +1,12 @@
 @extends('layout.mainlayout')
 @section('content')
     @include('staffreport.css.staffreport')
+    <style>
+        label,
+        p {
+            color: white !important;
+        }
+    </style>
     <div class="row mx-auto">
         <div class="card-body px-2 py-1">
             <div class="row align-items-center">
@@ -21,21 +27,28 @@
                 </div>
             </div>
         </div>
-        <div class="card w-100 px-0 mb-0">
-            <form class="reportform" enctype="multipart/form-data">
-                @include('staffreport.forms.progressform')
-                <hr>
-                <div class="d-flex justify-content-end gap-2">
-                    <button class="btn btn-success">
-                        <i class="bi bi-send-fill"></i>
-                        Send
-                    </button>
-                    <button class="btn btn-danger">
-                        <i class="bi bi-ban"></i>
-                        Cancel
-                    </button>
+        <div class="d-flex justify-content-center">
+            <div class="card px-0 mb-0 pt-2" style="width: 40vw !important; background-color: #343434">
+                <div class="d-flex justify-content-end pe-3 pt-1">
+                    <a href="{{ route('submitreportdashboard') }}" type="button" class="btn btn-closing">
+                        <i class="bi bi-x-lg text-white"></i>
+                    </a>
                 </div>
-            </form>
+                <form class="reportform" enctype="multipart/form-data">
+                    @include('staffreport.forms.progressform')
+                    <hr>
+                    <div class="d-flex justify-content-end gap-2 px-3 pb-3">
+                        <button class="btn btn-success">
+                            <i class="bi bi-send-fill"></i>
+                            Send
+                        </button>
+                        <button class="btn btn-danger">
+                            <i class="bi bi-ban"></i>
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 @endsection

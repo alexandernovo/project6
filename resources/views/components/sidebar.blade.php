@@ -61,7 +61,7 @@
                     <hr class="border-top border-white mt-2">
                     <span class="hide-menu ms-2 text-white fw-semibold" style="font-size: 14px">REPORT</span>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ route('staffreport_view') }}" aria-expanded="false">
+                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['submitreportdashboardadmin', 'staffreport_view']) ? 'active' : '' }}" href="{{ route('submitreportdashboardadmin') }}" aria-expanded="false">
                             <span>
                                 <i class="bi bi-folder2-open"></i>
                             </span>

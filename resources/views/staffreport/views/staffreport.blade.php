@@ -12,8 +12,8 @@
                     <div
                         class="d-flex align-items-center mb-2 flex-wrap text-lg-start text-sm-center gap-2 title-tips-class">
                         <h4 class="fw-semibold mb-0 text-nowrap">
-                            <i class="bi-bi-journals"></i>
-                            Submitted Report
+                            <i class="bi bi-folder2-open"></i>
+                            Submitted Report {{ request('from') ? ' | ' . request('from') : '' }}
                         </h4>
                     </div>
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
@@ -21,7 +21,7 @@
                             <li class="breadcrumb-item">
                                 <a class="text-muted text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item" aria-current="page">Staff's Submit Report</li>
+                            <li class="breadcrumb-item" aria-current="page">Submitted Report{{ request('from') ? ' | ' . request('from') : '' }}</li>
                         </ol>
                     </nav>
                 </div>

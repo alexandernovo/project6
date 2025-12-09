@@ -46,6 +46,32 @@ class StaffReportController extends Controller
         ];
         return view('staffreport.views.submitreportdashboard', $data);
     }
+    
+    public function submitreportdashboardadmin()
+    {
+        $incidentReport = Record::where('typeOfRecord', "INCIDENTREPORT");
+        $situationReport = Record::where('typeOfRecord', "SITUATIONALREPORT");
+        $progressReport = Record::where('typeOfRecord', "PROGRESSREPORT");
+
+        $userData = Auth::user();
+
+        if ($userData->usertype == "STAFF") {
+            $incidentReport->where('staff_id', $userData->id);
+            $situationReport->where('staff_id', $userData->id);
+            $progressReport->where('staff_id', $userData->id);
+        }
+
+        $incidentReportCount = $incidentReport->count();
+        $situationReportCount = $situationReport->count();
+        $progressReportCount = $progressReport->count();
+
+        $data = [
+            "incidentReportCount" => $incidentReportCount,
+            "situationReportCount" => $situationReportCount,
+            "progressReportCount" => $progressReportCount,
+        ];
+        return view('staffreport.views.submitreportdashboardadmin', $data);
+    }
 
     public function incidentreport_staff()
     {

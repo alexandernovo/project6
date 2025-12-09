@@ -15,8 +15,10 @@
         font-size: 11px !important
     }
 
-    td {
-        padding: 2px !important
+    td {}
+
+    #reportTable_wrapper td {
+        padding: 5px !important
     }
 
     .apexcharts-datalabel {

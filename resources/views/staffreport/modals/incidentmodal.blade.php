@@ -1,6 +1,6 @@
 <div class="modal fade reportFormModal" id="incidentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="incidentModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-xl" style="max-width: 40vw">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="incidentModalLabel">

@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label for="" class="mb-1">Firstname</label>
                 <input type="text" value="{{ auth()->user()->firstname }}" id="firstname_inventory"
-                    class="form-control" readonly>
+                    class="form-control input-out" readonly>
             </div>
 
         </div>
@@ -25,63 +25,63 @@
             <div class="form-group">
                 <label for="" class="mb-1">Middlename</label>
                 <input type="text" id="middlename_inventory" value="{{ auth()->user()->middlename }}"
-                    class="form-control" readonly>
+                    class="form-control input-out" readonly>
             </div>
         </div>
         <div class="col-3">
             <div class="form-group">
                 <label for="" class="mb-1">Lastname</label>
                 <input type="text" id="lastname_inventory" value="{{ auth()->user()->lastname }}"
-                    class="form-control" readonly>
+                    class="form-control input-out" readonly>
             </div>
         </div>
         <div class="col-3">
             <div class="form-group">
                 <label for="" class="mb-1">Designation</label>
                 <input type="text" id="designation_inventory" value="{{ auth()->user()->designation }}"
-                    class="form-control" readonly>
+                    class="form-control input-out" readonly>
             </div>
         </div> --}}
-        <div class="col-3">
+        <div class="col-6">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Quantity</label>
-                <input type="number" name="quantity" id="quantity_inventory" class="form-control">
+                <input type="number" name="quantity" id="quantity_inventory" class="form-control input-out">
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-6">
             <div class="form-group">
                 <label for="" class="mb-1">Unit</label>
-                <input type="text" name="unit" id="unit_inventory" class="form-control" required>
+                <input type="text" name="unit" id="unit_inventory" class="form-control input-out" required>
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-6">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Property No.</label>
-                <input type="text" name="propertyno" id="propertyno_inventory" class="form-control" required>
+                <input type="text" name="propertyno" id="propertyno_inventory" class="form-control input-out" required>
             </div>
         </div>
-        <div class="col-3 mt-3">
+        <div class="col-6 mt-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Date Acquired</label>
-                <input type="date" name="dateacquired" id="dateacquired_inventory" required class="form-control">
+                <input type="date" name="dateacquired" id="dateacquired_inventory" required class="form-control input-out">
             </div>
         </div>
-        <div class="col-3 mt-3">
+        <div class="col-6 mt-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Amount</label>
-                <input type="number" name="amount" id="amount_inventory" required class="form-control">
+                <input type="number" name="amount" id="amount_inventory" required class="form-control input-out">
             </div>
         </div>
         {{-- <div class="col-3 mt-3">
             <div class="form-group">
                 <label for="" class="mb-1">File Submitted</label>
-                <input type="file" name="filesubmitted" class="form-control">
+                <input type="file" name="filesubmitted" class="form-control input-out">
             </div>
         </div> --}}
-        <div class="col-3 mt-3">
+        <div class="col-6 mt-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Remarks</label>
-                <select name="remarks" id="remarks_inventory" class="form-select rounded">
+                <select name="remarks" id="remarks_inventory" class="form-select rounded input-out">
                     <option value="Serviceable">Serviceable</option>
                     <option value="Unserviceable">Unserviceable</option>
                     <option value="Consumable">Consumable</option>
@@ -91,7 +91,7 @@
         <div class="col-12">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Description</label>
-                <textarea rows="3" name="description" id="description_inventory" required class="form-control"></textarea>
+                <textarea rows="3" name="description" id="description_inventory" required class="form-control input-out"></textarea>
             </div>
         </div>
     </div>

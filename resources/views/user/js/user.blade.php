@@ -141,7 +141,7 @@
         $('#userTable_wrapper .row .dt-length').append(`
             <div class="d-flex gap-2 ms-2 align-items-center userBtnSm">
            
-                <button class="btn btn-info d-flex flex-nowrap align-items-center gap-2" id="reloaduserBtn">
+                <button class="btn btn-gray-new d-flex flex-nowrap align-items-center gap-2" id="reloaduserBtn">
                     <span>
                         <i class="bi bi-arrow-clockwise"></i>
                     </span>

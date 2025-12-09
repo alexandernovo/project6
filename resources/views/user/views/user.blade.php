@@ -18,7 +18,7 @@
                             <li class="breadcrumb-item">
                                 <a class="text-muted text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item" aria-current="page">Staff User Data</li>
+                            <li class="breadcrumb-item" aria-current="page">Staff</li>
                         </ol>
                     </nav>
                 </div>

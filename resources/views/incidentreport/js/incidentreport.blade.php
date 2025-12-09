@@ -215,7 +215,7 @@
                         Filter
                     </button>
                 </div>
-                <button class="btn btn-info d-flex flex-nowrap align-items-center gap-2" id="reloadincidentreportBtn">
+                <button class="btn btn-gray-new d-flex flex-nowrap align-items-center gap-2" id="reloadincidentreportBtn">
                     <span>
                         <i class="bi bi-arrow-clockwise"></i>
                     </span>

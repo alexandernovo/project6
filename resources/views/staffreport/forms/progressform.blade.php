@@ -20,7 +20,7 @@
             <div class="form-group">
                 <label for="" class="mb-1">Firstname</label>
                 <input type="text" value="{{ auth()->user()->firstname }}" id="firstname_progress"
-                    class="form-control" readonly>
+                    class="form-control input-out" readonly>
             </div>
 
         </div>
@@ -28,13 +28,13 @@
             <div class="form-group">
                 <label for="" class="mb-1">Middlename</label>
                 <input type="text" id="middlename_progress" value="{{ auth()->user()->middlename }}"
-                    class="form-control" readonly>
+                    class="form-control input-out" readonly>
             </div>
         </div>
         <div class="col-3">
             <div class="form-group">
                 <label for="" class="mb-1">Lastname</label>
-                <input type="text" id="lastname_progress" value="{{ auth()->user()->lastname }}" class="form-control"
+                <input type="text" id="lastname_progress" value="{{ auth()->user()->lastname }}" class="form-control input-out"
                     readonly>
             </div>
         </div>
@@ -42,20 +42,20 @@
             <div class="form-group">
                 <label for="" class="mb-1">Designation</label>
                 <input type="text" id="designation_progress" value="{{ auth()->user()->designation }}"
-                    class="form-control" readonly>
+                    class="form-control input-out" readonly>
             </div>
         </div>
         <div class="col-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Contact</label>
                 <input type="text" id="phone_num_progress" value="{{ auth()->user()->phone_num }}"
-                    class="form-control" readonly>
+                    class="form-control input-out" readonly>
             </div>
         </div>
         <div class="col-6">
             <div class="form-group">
                 <label for="" class="mb-1">Barangay</label>
-                <input type="search" name="barangay" autocomplete="off" id="barangay_progress" class="form-control" required list="progressbarangay">
+                <input type="search" name="barangay" autocomplete="off" id="barangay_progress" class="form-control input-out" required list="progressbarangay">
                 <datalist id="progressbarangay">
                     @foreach ($barangayprogress as $b)
                         <option>{{ $b }}</option>
@@ -66,17 +66,17 @@
         <div class="col-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Affected Families</label>
-                <input type="number" id="affectedfamilies_progress" name="affectedfamilies" class="form-control"
+                <input type="number" id="affectedfamilies_progress" name="affectedfamilies" class="form-control input-out"
                     required>
             </div>
         </div>
         <div class="col-3 mt-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Person/Individuals</label>
-                <input type="number" name="individuals" id="individuals_progress" required class="form-control">
+                <input type="number" name="individuals" id="individuals_progress" required class="form-control input-out">
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-6">
             <div class="row mx-auto">
                 <div class="col-12">
                     <label for="" class="mb-0 mt-1">(Evacuation Centers/Outside)</label>
@@ -85,14 +85,14 @@
                     <div class="form-group">
                         <label for="" class="mb-1">Families</label>
                         <input type="number" name="evacuationfamilies" id="evacuationfamilies_progress"
-                            value="0" class="form-control" required>
+                            value="0" class="form-control input-out" required>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
                         <label for="" class="mb-1">Individuals</label>
                         <input type="number" name="evacuationindividuals" id="evacuationindividuals_progress"
-                            value="0" class="form-control" required>
+                            value="0" class="form-control input-out" required>
                     </div>
                 </div>
             </div>
@@ -101,19 +101,19 @@
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Clearing Operations</label>
                 <input type="text" name="clearingoperations" id="clearingoperations_progress" required
-                    class="form-control">
+                    class="form-control input-out">
             </div>
         </div>
-        <div class="col-3 mt-3">
+        <div class="col-6 mt-3">
             <div class="form-group">
                 <label for="" class="mb-1">File Submitted</label>
-                <input type="file" name="filesubmitted" class="form-control">
+                <input type="file" name="filesubmitted" class="form-control input-out">
             </div>
         </div>
         <div class="col-12">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Remarks</label>
-                <textarea rows="3" name="remarks" id="remarks_progress" required class="form-control"></textarea>
+                <textarea rows="3" name="remarks" id="remarks_progress" required class="form-control input-out"></textarea>
             </div>
         </div>
     </div>

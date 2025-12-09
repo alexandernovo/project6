@@ -350,6 +350,7 @@
 .header-footer-bg2 {
     background-color: #343434;
 }
+
 .flex-1 {
     flex: 1;
 }
@@ -372,6 +373,20 @@
 .btn-prime:focus,
 .btn-prime:hover {
     background-color: #3a0000 !important;
+    color: white !important;
+}
+.btn-green2,
+.btn-green2:active,
+.btn-green2:focus,
+.btn-green2:hover {
+    background-color: #19460e !important;
+    color: white !important;
+}
+.btn-gray-new,
+.btn-gray-new:active,
+.btn-gray-new:focus,
+.btn-gray-new:hover {
+    background-color: #343434 !important;
     color: white !important;
 }
 
@@ -541,5 +556,9 @@ textarea {
 }
 #reportTable_wrapper thead tr th .dt-column-header .dt-column-title,
 #reportTable_wrapper td {
-    font-size: 16px !important;
+    font-size: 15px !important;
+}
+
+.dataTable td {
+    padding: 5px !important;
 }

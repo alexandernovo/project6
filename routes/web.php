@@ -49,6 +49,7 @@ Route::middleware(["userchecker"])->group(function () {
     Route::get('/staffreport/view', [StaffReportController::class, 'staffreport_view'])->name('staffreport_view');
     Route::get('/staffreport/archive', [StaffReportController::class, 'archive_view'])->name('archive_view');
     Route::get('/staffreport/submitreportdashboard', [StaffReportController::class, 'submitreportdashboard'])->name('submitreportdashboard');
+    Route::get('/staffreport/submitreportdashboardadmin', [StaffReportController::class, 'submitreportdashboardadmin'])->name('submitreportdashboardadmin');
     Route::get('/staffreport/incidentreport_staff', [StaffReportController::class, 'incidentreport_staff'])->name('incidentreport_staff');
     Route::get('/staffreport/situationalreport_staff', [StaffReportController::class, 'situationalreport_staff'])->name('situationalreport_staff');
     Route::get('/staffreport/progressreport_staff', [StaffReportController::class, 'progressreport_staff'])->name('progressreport_staff');
