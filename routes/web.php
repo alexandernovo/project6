@@ -13,6 +13,7 @@ use App\Http\Controllers\SituationalReportController;
 use App\Http\Controllers\StaffReportController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WasteCollectController;
+use App\Http\Controllers\ForgotPasswordController;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/login', [HomeController::class, 'login'])->name('login');
@@ -22,6 +23,11 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/contact_message', [HomeController::class, 'contact_message'])->name('contact_message');
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::post('/user/save_new_user', [UserController::class, 'save_new_user'])->name('save_new_user');
+Route::get('/forgot-password', [ForgotPasswordController::class, 'viewForgotPassword'])->name('forgot.password');
+Route::post('/forgot-password/send', [ForgotPasswordController::class, 'sendForgotPassword'])->name('forgot.password.send');
+Route::post('/forgot-password/verify', [ForgotPasswordController::class, 'verifyCode'])->name('forgot.password.verify');
+Route::post('/forgot-password/reset', [ForgotPasswordController::class, 'resetPassword'])->name('forgot.password.reset');
+
 
 Route::middleware(["userchecker"])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard_view'])->name('dashboard');

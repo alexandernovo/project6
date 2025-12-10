@@ -32,7 +32,15 @@ class UserController extends Controller
                     ]);
                 }
             }
-
+            if ($request->post('email')) {
+                $find = User::where('email', $request->post('email'))->first();
+                if ($find) {
+                    return response()->json([
+                        'status' => 'failed',
+                        'message' => "This email is already taken."
+                    ]);
+                }
+            }
             $all = $request->all();
             $user_id = $all['id'];
             unset($all['id']);

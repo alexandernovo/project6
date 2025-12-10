@@ -41,6 +41,7 @@
                         </div>
                         <p id="error_login" class="text-warning mt-1 d-none mb-0 error-class"></p>
                     </div>
+                    <a href="{{ route('forgot.password') }}" class="text-white">Forgot password?</a>
                     <div class="form-group mt-4">
                         <button class="btn btn-prime w-100 text-white" style="font-size: 18px">Log in</button>
                     </div>

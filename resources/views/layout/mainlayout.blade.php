@@ -1,5 +1,5 @@
 @php
-    $excludedRoutes = ['home', 'login', 'signup', 'contact'];
+    $excludedRoutes = ['home', 'login', 'signup', 'contact', 'forgot.password'];
 @endphp
 
 <!doctype html>

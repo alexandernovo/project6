@@ -16,73 +16,73 @@
     @include('home.components.login')
     <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 bg-home overflow-y-auto"
         style="height: calc(100vh - 122px);">
-        <div class="card col-4 mt-3 glass-box" style="border-radius: 14px;">
-            <div class="card-body">
+        <div class="card col-4 mt-3 glass-box p-0" style="border-radius: 14px;">
+            <div class="card-body p-3">
                 <div class="d-flex justify-content-end">
                     <a href="{{ route('home') }}" type="button" class="btn btn-closing">
                         <i class="bi bi-x-lg text-white"></i>
                     </a>
                 </div>
-                <div class="mt-3 mb-2">
+                <div class="mt-2 mb-1">
                     <div class="d-flex justify-content-center gap-2 align-items-center mb-2">
                         <img src="{{ asset('assets/images/logo2.png') }}" class="bg-white rounded-circle" width=""
                             alt="" style="width: 78px; height: 78px" />
                         <img src="{{ asset('assets/images/logo1.png') }}" class="bg-white rounded-circle" width=""
                             alt="" style="width: 78px; height: 78px" />
                     </div>
-                    <p class="mb-3 text-center fw-semibold text-white" style="font-size: 19px;">TIBIAO MDRRMO PORTAL</p>
-                    <hr>
+                    <p class="mb-2 text-center fw-semibold text-white" style="font-size: 19px;">TIBIAO MDRRMO PORTAL</p>
+                    <hr class="my-1">
                 </div>
                 <div>
-                    <p class="mb-4 text-center fw-semibold text-white" style="font-size: 19px;">Create an Account</p>
+                    <p class="mb-2 mt-0 text-center fw-semibold text-white" style="font-size: 19px;">Create an Account</p>
                     <form id="signup_form_staff">
                         <input type="hidden" name="id" id="id" value="0">
                         <input type="hidden" name="status" id="status" value="INACTIVE">
                         <div class="row">
                             <div class="col-4">
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-1">
                                     <label for="" class="mb-1 label-out">Firstname</label>
                                     <input type="text" id="firstname" name="firstname" class="form-control input-out"
                                         required>
                                 </div>
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-1">
                                     <label for="" class="mb-1 label-out">Username</label>
                                     <input type="text" id="username" name="username" class="form-control input-out"
                                         required>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-1">
                                     <label for="" class="mb-1 label-out">Middlename</label>
                                     <input type="text" id="middlename" name="middlename" class="form-control input-out">
                                 </div>
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-1">
                                     <label for="" class="mb-1 label-out">Email</label>
                                     <input type="text" id="email" name="email" class="form-control input-out"
                                         required>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-1">
                                     <label for="" class="mb-1 label-out">Lastname</label>
                                     <input type="text" id="lastname" name="lastname" class="form-control input-out"
                                         required>
                                 </div>
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-1">
                                     <label for="" class="mb-1 label-out">Contact No.</label>
                                     <input type="text" id="phone_num" name="phone_num" class="form-control input-out"
                                         required>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-1">
                                     <label for="" class="mb-1 label-out">Address</label>
                                     <input type="text" id="address" name="address" class="form-control input-out"
                                         required>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-1">
                                     <label for="" class="mb-1 label-out">Designation</label>
                                     <select type="text" id="designation" name="designation"
                                         class="form-select input-out">
@@ -93,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-1">
                                     <label for="" class="mb-1 label-out">Password</label>
                                     <div class="position-relative">
                                         <input type="password" name="password" id="password_var"
@@ -108,7 +108,7 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group mb-2">
+                                <div class="form-group mb-1">
                                     <label for="" class="mb-1 label-out">Confirm Password</label>
                                     <div class="position-relative">
                                         <input type="password" id="confirm_password" class="form-control bg-white"
@@ -120,7 +120,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mt-3">
+                            <div class="form-group mt-1">
                                 <button type="submit" class="btn btn-prime w-100"
                                     style="background-color: #630F0F !important">Sign up</button>
                                 <p class="mb-0 text-center mt-2 text-white" style="font-size: 12px">
