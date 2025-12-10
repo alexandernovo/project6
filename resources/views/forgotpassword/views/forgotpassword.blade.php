@@ -43,7 +43,7 @@
                             </div>
                         </div>
 
-                        <div id="fpAlert" class="alert d-none"></div>
+                        <div id="fpAlert" class="alert d-none p-2"></div>
 
                         <button type="submit" class="btn btn-prime w-100" id="btnSendMail"
                             style="background-color: #630F0F !important">Send Reset Link</button>
@@ -60,7 +60,7 @@
                         <input type="text" id="verifyCode" class="form-control input-out" placeholder="123456">
                     </div>
 
-                    <div id="codeAlert" class="alert d-none"></div>
+                    <div id="codeAlert" class="alert d-none p-2"></div>
 
                     <button class="btn btn-gray-new2 w-100 mb-2" id="backToStep1">Back</button>
                     <button class="btn btn-prime w-100" id="verifyCodeBtn"
@@ -83,7 +83,7 @@
                             placeholder="Confirm password">
                     </div>
 
-                    <div id="resetAlert" class="alert d-none"></div>
+                    <div id="resetAlert" class="alert d-none py-2 px-4"></div>
 
                     <button class="btn btn-gray-new2 w-100 mb-2" id="backToStep2">Back</button>
                     <button class="btn btn-prime w-100" id="finishReset">Reset Password</button>
