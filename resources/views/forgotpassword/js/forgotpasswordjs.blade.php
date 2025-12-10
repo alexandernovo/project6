@@ -5,7 +5,7 @@
         $("#btnSendMail").prop("disabled", true).text("Sending...");
         $.post("{{ route('forgot.password.send') }}", $(this).serialize(), function(res) {
             $("#fpAlert").removeClass("d-none alert-danger").addClass("alert-success").html(res
-            .message);
+                .message);
             $("#btnSendMail").prop("disabled", false).text("Send Reset Link");
             if (res.status) {
                 $("#step1").addClass("d-none");
@@ -59,5 +59,17 @@
                     .message);
             }
         });
+    });
+
+    $("#backToStep1").click(function() {
+        $("#step2").addClass("d-none");
+        $("#step1").removeClass("d-none");
+        $("#codeAlert").addClass("d-none").html('');
+    });
+
+    $("#backToStep2").click(function() {
+        $("#step3").addClass("d-none");
+        $("#step2").removeClass("d-none");
+        $("#resetAlert").addClass("d-none").html('');
     });
 </script>

@@ -62,7 +62,7 @@
 
                     <div id="codeAlert" class="alert d-none"></div>
 
-                    <button class="btn btn-red w-100 mb-2" id="backToStep1">Back</button>
+                    <button class="btn btn-gray-new2 w-100 mb-2" id="backToStep1">Back</button>
                     <button class="btn btn-prime w-100" id="verifyCodeBtn"
                         style="background-color: #630F0F !important">Verify</button>
                 </div>
@@ -85,7 +85,7 @@
 
                     <div id="resetAlert" class="alert d-none"></div>
 
-                    <button class="btn btn-red w-100 mb-2" id="backToStep2">Back</button>
+                    <button class="btn btn-gray-new2 w-100 mb-2" id="backToStep2">Back</button>
                     <button class="btn btn-prime w-100" id="finishReset">Reset Password</button>
                 </div>
 

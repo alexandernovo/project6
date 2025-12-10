@@ -390,6 +390,14 @@
     color: white !important;
 }
 
+.btn-gray-new2,
+.btn-gray-new2:active,
+.btn-gray-new2:focus,
+.btn-gray-new2:hover {
+    background-color: #7b7a7a !important;
+    color: white !important;
+}
+
 .bg-prime {
     background-color: #3a0000 !important;
 }
