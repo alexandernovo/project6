@@ -37,7 +37,7 @@
                                     class="form-control input-out"style="text-indent: 20px">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <label for="" class="mb-1 label-out">Password</label>
                             <div class="position-relative">
                                 <i class="bi bi-lock-fill position-absolute text-prime"

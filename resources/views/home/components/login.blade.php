@@ -29,7 +29,7 @@
                                 style="text-indent: 20px" placeholder="Username">
                         </div>
                     </div>
-                    <div class="form-group mt-4">
+                    <div class="form-group mt-4 mb-2">
                         <label for="" class="mb-1 text-white">Password</label>
                         <div class="position-relative">
                             <i class="bi bi-lock-fill position-absolute text-dark"
