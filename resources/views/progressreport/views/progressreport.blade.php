@@ -16,13 +16,19 @@
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
                         <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item">
-                                <a class="text-muted text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
+                                <a class="text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item" aria-current="page">Progress Report</li>
                         </ol>
                     </nav>
                 </div>
             </div>
+        </div>
+        <div class="d-flex justify-content-end mb-2 px-0">
+            <button class="btn btn-prime openNewReport" data-type="progress" data-table="progress">
+                <i class="bi bi-plus-circle"></i>
+                Add Report
+            </button>
         </div>
         <div class="card w-100 px-0 mb-0">
             <div class="card-body p-3">

@@ -76,7 +76,7 @@
                     <li class="nav-item dropdown">
                         <a href="{{ route('home') }}"
                             class="nav-link nav-icon-hover px-2 cursor-pointer text-white fw-semibold"
-                            style="font-size: 13px">
+                            style="font-size: 16px">
                             <i class="bi bi-house-fill me-1"></i>
                             Home
                         </a>
@@ -84,7 +84,7 @@
                     <li class="nav-item dropdown">
                         <a href="{{ route('contact') }}"
                             class="nav-link nav-icon-hover px-2 cursor-pointer text-white fw-semibold"
-                            style="font-size: 13px">
+                            style="font-size: 16px">
                             <i class="bi bi-telephone-fill me-1"></i>
                             Contact
                         </a>
@@ -92,7 +92,7 @@
                     <li class="nav-item dropdown">
                         <div class="d-flex gap align-items-center">
                             <div class="d-flex flex-column justify-content-center align-items-end border-end pe-2">
-                                <p class="mb-0 fw-semibold text-white" style="font-size: 13px; line-height: 17px">
+                                <p class="mb-0 fw-semibold text-white" style="font-size: 16px; line-height: 17px">
                                     Admin
                                 </p>
                             </div>

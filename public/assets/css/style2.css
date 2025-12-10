@@ -459,6 +459,27 @@ textarea {
     text-shadow: 1px 0 currentColor, -1px 0 currentColor, 0 1px currentColor,
         0 -1px currentColor;
 }
+
+.btn-closing2,
+.btn-closing2:hover,
+.btn-closing2:active,
+.btn-closing2:focus {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    border-radius: 100%;
+    border: 3px solid #3a0000;
+    font-weight: bold;
+    text-shadow: 1px 0 currentColor, -1px 0 currentColor, 0 1px currentColor,
+        0 -1px currentColor;
+}
+.sidebar-link {
+    font-size: 17px !important;
+}
 .btn-green {
     background-color: #2c7101;
     color: #fff !important;
@@ -518,16 +539,25 @@ textarea {
     font-weight: 500;
     transition: all 0.15s ease-in-out;
 }
+
+.btn-red,
+.btn-red:active,
+.btn-red:focus,
+.btn-red:hover {
+    background-color: #830202 !important;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.15s ease-in-out;
+}
+
 .bg-red {
     background-color: #830202;
 }
-.btn-red:hover {
-    background-color: #6e0202;
-}
-.btn-red:active {
-    background-color: #590101;
-    transform: scale(0.97);
-}
+
 .btn-red:focus {
     outline: 3px solid rgba(131, 2, 2, 0.3);
     outline-offset: 2px;
@@ -565,4 +595,25 @@ textarea {
 ::placeholder {
     color: #333 !important; /* dark gray */
     opacity: 1; /* ensures full visibility */
+}
+
+.glass-box {
+    background: rgba(94, 93, 96, 0.45); /* your color with transparency */
+    border-radius: 16px;
+}
+
+.text-prime {
+    color: #3a0000 !important;
+}
+
+.reportform * {
+    color: black;
+}
+.btn-close {
+    opacity: 1 !important;
+}
+
+.text-dark-icon-title {
+    color: black !important;
+    font-weight: bold;
 }

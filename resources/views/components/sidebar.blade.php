@@ -21,32 +21,32 @@
                 </li>
                 <hr class="border-top border-white">
                 <span class="hide-menu ms-2 text-white fw-semibold" style="font-size: 14px">DOCUMENT</span>
-                @if (auth()->user() && auth()->user()->usertype == 'ADMIN')
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ route('incidentreport_view') }}" aria-expanded="false">
-                            <span>
-                                <i class="bi bi-journals"></i>
-                            </span>
-                            <span class="hide-menu">Incident Report</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ route('situationalreport_view') }}" aria-expanded="false">
-                            <span>
-                                <i class="bi bi-journals"></i>
-                            </span>
-                            <span class="hide-menu">Situational Report</span>
-                        </a>
-                    </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('incidentreport_view') }}" aria-expanded="false">
+                        <span>
+                            <i class="bi bi-journals"></i>
+                        </span>
+                        <span class="hide-menu">Incident Report</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('situationalreport_view') }}" aria-expanded="false">
+                        <span>
+                            <i class="bi bi-journals"></i>
+                        </span>
+                        <span class="hide-menu">Situational Report</span>
+                    </a>
+                </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ route('progressreport_view') }}" aria-expanded="false">
-                            <span>
-                                <i class="bi bi-journals"></i>
-                            </span>
-                            <span class="hide-menu">Progress Report</span>
-                        </a>
-                    </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('progressreport_view') }}" aria-expanded="false">
+                        <span>
+                            <i class="bi bi-journals"></i>
+                        </span>
+                        <span class="hide-menu">Progress Report</span>
+                    </a>
+                </li>
+                @if (auth()->user() && auth()->user()->usertype == 'ADMIN')
                     <hr class="border-top border-white mb-2">
                     <li class="sidebar-item">
                         <span class="hide-menu ms-2 text-white fw-semibold" style="font-size: 14px">INVENTORY</span>
@@ -61,7 +61,8 @@
                     <hr class="border-top border-white mt-2">
                     <span class="hide-menu ms-2 text-white fw-semibold" style="font-size: 14px">REPORT</span>
                     <li class="sidebar-item">
-                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['submitreportdashboardadmin', 'staffreport_view']) ? 'active' : '' }}" href="{{ route('submitreportdashboardadmin') }}" aria-expanded="false">
+                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['submitreportdashboardadmin', 'staffreport_view']) ? 'active' : '' }}"
+                            href="{{ route('submitreportdashboardadmin') }}" aria-expanded="false">
                             <span>
                                 <i class="bi bi-folder2-open"></i>
                             </span>
@@ -87,7 +88,7 @@
                         </a>
                     </li>
                 @else
-                    <li class="sidebar-item">
+                    {{-- <li class="sidebar-item">
                         <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['incidentreport_staff', 'situationalreport_staff', 'progressreport_staff']) ? 'active' : '' }}"
                             href="{{ route('submitreportdashboard') }}" aria-expanded="false">
                             <span>
@@ -103,7 +104,7 @@
                             </span>
                             <span class="hide-menu">Submitted Report</span>
                         </a>
-                    </li>
+                    </li> --}}
                 @endif
 
                 {{-- <li class="sidebar-item">

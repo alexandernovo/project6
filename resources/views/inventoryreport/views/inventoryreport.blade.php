@@ -17,7 +17,7 @@
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
                         <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item">
-                                <a class="text-muted text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
+                                <a class="text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item" aria-current="page">Inventory Report</li>
                         </ol>
@@ -25,15 +25,19 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex justify-content-end gap-2">
-            <a href="{{ route('inventoryreportPrint') }}" class="btn btn-prime">
+        <div class="d-flex justify-content-end gap-2 mb-2 px-0">
+            <a href="{{ route('inventoryreportPrint') }}" class="btn btn-red">
                 <i class="bi bi-journals"></i>
                 Report
             </a>
-            <a href="{{ route('inventoryreport_staff') }}" class="btn btn-prime">
+            <button class="btn btn-red openNewReport" data-type="inventory" data-table="inventory">
                 <i class="bi bi-plus-circle"></i>
                 Add Item
-            </a>
+            </button>
+            {{-- <a href="{{ route('inventoryreport_staff') }}" class="btn btn-prime">
+                <i class="bi bi-plus-circle"></i>
+                Add Item
+            </a> --}}
         </div>
         <div class="card w-100 px-0 mb-0">
             <div class="card-body p-3">

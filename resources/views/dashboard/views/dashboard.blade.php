@@ -47,7 +47,7 @@
                 <div class="col-12">
                     <div
                         class="d-flex align-items-center mb-2 flex-wrap text-lg-start text-sm-center gap-2 title-tips-class">
-                        <h4 class="fw-semibold mb-0 text-nowrap">
+                        <h4 class="fw-semibold mb-0 text-nowrap" style="font-size: 21px">
                             <i class="bi bi-microsoft"></i>
                             Dashboard
                         </h4>
@@ -57,7 +57,7 @@
         </div>
         <div class="d-flex justify-content-between px-0">
             @foreach ($counts as $count)
-                <div class="border  p-3"
+                <div class="p-3"
                     style="width: 32%; border-radius: 13px;  {{ $count['style'] }}">
                     <p class="mb-0 text-white text-center text-uppercase" style="font-size: 18px">{{ $count['title'] }}</p>
                     <p class="mb-0 text-white text-center" style="font-size: 30px">

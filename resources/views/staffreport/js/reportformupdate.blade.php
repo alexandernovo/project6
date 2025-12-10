@@ -1,6 +1,16 @@
 <script>
     let typeFormReport = "";
     let typeTable = "";
+
+    $(document).on("click", ".openNewReport", function() {
+        typeFormReport = $(this).data("type");
+        typeTable = $(this).data("table") ?? "";
+        $(".reportform")[0].reset();
+        $(".reportform input[name='report_id']").val(0);
+        $(`#${typeFormReport}Modal`).modal("show");
+        $(".btn-update-button").html("Submit");
+    })
+
     $(document).on('submit', '.reportform', function(e) {
         e.preventDefault();
         Swal.fire({
@@ -19,6 +29,7 @@
 
     $(document).on("click", ".editRecord", function() {
         formReset('reportform');
+        $(".btn-update-button").html("Submit");
         let record_id = $(this).data("record_id");
         typeFormReport = $(this).data("type");
         typeTable = $(this).data("table") ?? "";
@@ -54,6 +65,12 @@
                         reloadarchivedTable();
                     } else if (typeTable == "dashboard") {
                         reloadreportTable();
+                    } else if (typeTable == "incident") {
+                        reloadincidentreportTable();
+                    } else if (typeTable == "situational") {
+                        reloadsituationalreportTable();
+                    } else if (typeTable == "progress") {
+                        reloadprogressreportTable();
                     }
                     setTimeout(() => {
                         Swal.fire({

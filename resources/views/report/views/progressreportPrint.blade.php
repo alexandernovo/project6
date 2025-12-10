@@ -14,7 +14,7 @@
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
                         <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item">
-                                <a class="text-muted text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
+                                <a class="text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item" aria-current="page">Monthly Report | Progress</li>
                         </ol>
@@ -33,7 +33,7 @@
                         </div>
                     </form>
                     <div class="d-flex gap-2 align-items-center">
-                        <button class="btn btn-green2" id="printBtn">
+                        <button class="btn btn-gray" id="printBtn">
                             <i class="bi bi-printer"></i>
                             Print Report
                         </button>
@@ -77,32 +77,33 @@
                     <table class="table-bordered border-dark table mt-3 table-report">
                         <thead>
                             <tr>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">No.
+                                <th class="text-center p-1 align-middle border-end border-white" style="font-size: 12px;">
+                                    No.
                                 </th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px">
                                     Barangay</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px">
                                     Affected Families</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px">
                                     Person/Individuals</th>
-                                <th class="text-center p-0 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-0 align-middle border-white" style="font-size: 12px">
                                     <div class="d-flex flex-column h-100">
-                                        <div class="p-1" style="border-bottom: 1px solid black">
+                                        <div class="p-1" style="border-bottom: 1px solid white">
                                             Evacuation Centers/Outside
                                         </div>
                                         <div class="d-flex flex-1">
-                                            <div style="border-right: 1px solid black;" class="w-50 h-100 p-1">Families
+                                            <div style="border-right: 1px solid white;" class="w-50 h-100 p-1">Families
                                             </div>
                                             <div class="w-50 h-100 p-1">Individuals</div>
                                         </div>
                                     </div>
                                 </th>
-                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px">
                                     Remarks
                                 </th>
-                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px">
                                     Clearing Operations</th>
-                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle" style="font-size: 12px">
                                     Date
                                     Submitted</th>
                             </tr>

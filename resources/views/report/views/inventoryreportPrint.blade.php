@@ -11,7 +11,7 @@
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
                         <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item">
-                                <a class="text-muted text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
+                                <a class="text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item" aria-current="page">Inventory | Equipment</li>
                         </ol>
@@ -30,7 +30,7 @@
                         </div>
                     </form>
                     <div class="d-flex gap-2 align-items-center">
-                        <button class="btn btn-green2" id="printBtn">
+                        <button class="btn btn-gray" id="printBtn">
                             <i class="bi bi-printer"></i>
                             Print Report
                         </button>
@@ -76,21 +76,31 @@
                     <table class="table-bordered border-dark table mt-3 table-report">
                         <thead>
                             <tr>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">No.
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px"
+                                    style="font-size: 12px">No.
                                 </th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px"
+                                    style="font-size: 12px">
                                     Quantity</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px"
+                                    style="font-size: 12px">
                                     Unit
                                 </th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px"
+                                    style="font-size: 12px">
                                     Description</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px"
+                                    style="font-size: 12px">
                                     Property Number</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px"
+                                    style="font-size: 12px">
                                     Date
                                     Acquired</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px"
+                                    style="font-size: 12px">
+                                    Remarks</th>
+                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px"
+                                    style="font-size: 12px">
                                     Amount
                                 </th>
                             </tr>
@@ -114,6 +124,9 @@
                                     </td>
                                     <td class="text-center px-2 py-1 align-middle" style="font-size: 12px">
                                         {{ date('F d, Y', strtotime($d->dateacquired)) }}
+                                    </td>
+                                    <td class="text-center px-2 py-1 align-middle" style="font-size: 12px">
+                                        {{ $d->remarks }}
                                     </td>
                                     <td class="text-center px-2 py-1 align-middle" style="font-size: 12px">
                                         {{ $d->amount }}

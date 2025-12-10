@@ -3,6 +3,18 @@
 * {
     font-family: Arial, Helvetica, sans-serif !important;
 }
+body {
+    background-color: #acabab;
+}
+.breadcrumb-item {
+    color: black !important;
+}
+h4 {
+    color: black !important;
+}
+.breadcrumb-item a {
+    color: black !important;
+}
 .title-sidebar {
     font-family: "Archivo", sans-serif;
 }

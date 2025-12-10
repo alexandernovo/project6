@@ -13,7 +13,7 @@
             <img src="{{ asset('assets/images/logo1.png') }}" class="bg-white rounded-circle" width=""
                 alt="" style="width: 58px; height: 58px" />
         </div>
-        <p class="mb-3 text-center fw-semibold" style="font-size: 16px;">TIBIAO MDRRMO INCIDENT REPORT</p>
+        <p class="mb-3 text-center fw-semibold text-prime" style="font-size: 16px;">TIBIAO MDRRMO INCIDENT REPORT</p>
         <hr>
     </div>
     <div class="row mx-auto align-items-end">

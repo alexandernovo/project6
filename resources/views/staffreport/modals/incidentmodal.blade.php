@@ -4,18 +4,20 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="incidentModalLabel">
-                    <i class="bi bi-folder-fill"></i>
-                    Incident Report
+                    <i class="bi bi-folder-fill text-prime"></i>
+                    <span class="text-dark-icon-title">
+                        Incident Report
+                    </span>
                 </h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close dark-gray" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form class="reportform" enctype="multipart/form-data">
                 <div class="modal-body">
                     @include('staffreport.forms.incidentform')
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary btn-update-button btn-gray-new">Submit</button>
+                    <button type="button" class="btn btn-secondary btn-prime" data-bs-dismiss="modal">Close</button>
                 </div>
             </form>
         </div>

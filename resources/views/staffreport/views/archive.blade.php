@@ -20,7 +20,7 @@
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
                         <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item">
-                                <a class="text-muted text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
+                                <a class="text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item" aria-current="page">Submitted Report</li>
                         </ol>
