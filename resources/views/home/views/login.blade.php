@@ -11,18 +11,18 @@
                         <i class="bi bi-x-lg text-white"></i>
                     </a>
                 </div>
-                <div class="mt-3 mb-4">
+                <div class="mt-3 mb-2">
                     <div class="d-flex justify-content-center gap-2 align-items-center mb-2">
                         <img src="{{ asset('assets/images/logo2.png') }}" class="bg-white rounded-circle" width=""
                             alt="" style="width: 78px; height: 78px" />
                         <img src="{{ asset('assets/images/logo1.png') }}" class="bg-white rounded-circle" width=""
                             alt="" style="width: 78px; height: 78px" />
                     </div>
-                    <p class="mb-3 text-center fw-semibold text-white" style="font-size: 22px;">TIBIAO MDRRMO PORTAL</p>
-                    <hr>
+                    <p class="mb-2 text-center fw-semibold text-white" style="font-size: 22px;">TIBIAO MDRRMO PORTAL</p>
+                    <hr class="my-1">
                 </div>
                 <div>
-                    <p class="mb-1 text-center fw-semibold text-white" style="font-size: 22px;">Log in to your Account</p>
+                    <p class="mb-1 text-center fw-semibold text-white" style="font-size: 18px;">Log in to your Account</p>
                     {{-- <p class="text-center fw-semibold text-white" style="font-size: 15px;">Enter your username and password
                         to log in
                     </p> --}}
