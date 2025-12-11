@@ -31,7 +31,7 @@
         formReset('reportform');
         console.log(isStaff);
         if (!isStaff) {
-            $(".reportform").find("input, select, textarea, button").prop("disabled", true);
+            $(".reportform").find("input, select, textarea").prop("disabled", true);
         }
         $(".btn-update-button").html("Submit");
         let record_id = $(this).data("record_id");
