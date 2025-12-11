@@ -76,20 +76,20 @@
                     <table class="table-bordered border-dark table mt-3 table-report">
                         <thead>
                             <tr>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">No.
+                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">No.
                                 </th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
-                                    Type of Incident</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
+                                    Staff Name</th>
+                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
                                     Date & Time of Occurence</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
                                     Barangay</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
                                     Specific Location</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
                                     Detailed Description<br>of
                                     Incident</th>
-                                <th class="text-center p-0 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-0 align-middle" style="font-size: 12px" style="font-size: 12px">
                                     <div class="d-flex flex-column h-100">
                                         <div class="p-1" style="border-bottom: 1px solid white">
                                             No. of Person Involved
@@ -100,7 +100,7 @@
                                         </div>
                                     </div>
                                 </th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
                                     Date Submitted</th>
                             </tr>
                         </thead>

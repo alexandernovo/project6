@@ -34,13 +34,15 @@
             },
             {
                 title: 'Staff<br>Name',
-                className: 'text-nowrap p-3 align-middle text-center',
+                visible: !isStaff,
+                className: `text-nowrap p-3 align-middle text-center`,
                 render: function(data, type, row) {
                     return row.fullname;
                 }
             },
             {
                 title: 'Designation',
+                visible: !isStaff,
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return row.designation;
@@ -51,6 +53,13 @@
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return row.typeincident;
+                }
+            },
+            {
+                title: 'Cause of<br>Incident',
+                className: 'text-nowrap p-3 align-middle text-center',
+                render: function(data, type, row) {
+                    return row.cause;
                 }
             },
             {
@@ -144,8 +153,9 @@
                 render: function(data, type, row) {
                     return `
                         <div class="d-flex gap-2">
+                           
                             <button class="btn btn-orange editRecord" data-type="incident" data-record_id="${row.record_id}">
-                                <i class="bi bi-pencil-square"></i>
+                                <i class="bi ${isStaff ? 'bi-pencil-square' : 'bi bi-eye-fill'}"></i>
                             </button>
                             <button class="btn btn-red deleteRecord" data-record_id="${row.record_id}">
                                 <i class="bi bi-trash3-fill"></i>

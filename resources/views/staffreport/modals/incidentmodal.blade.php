@@ -16,7 +16,9 @@
                     @include('staffreport.forms.incidentform')
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary btn-update-button btn-gray-new">Submit</button>
+                    @if (auth()->user() && auth()->user()->usertype == 'STAFF')
+                        <button type="submit" class="btn btn-primary btn-update-button btn-gray-new">Submit</button>
+                    @endif
                     <button type="button" class="btn btn-secondary btn-prime" data-bs-dismiss="modal">Close</button>
                 </div>
             </form>

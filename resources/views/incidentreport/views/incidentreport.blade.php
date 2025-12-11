@@ -42,6 +42,7 @@
                             <th>Staff Name</th>
                             <th>Designation</th>
                             <th>Type of Incident</th>
+                            <th>Cause of Incident</th>
                             <th>Date & Time of Occurence</th>
                             <th>Barangay</th>
                             <th>Specific Location</th>

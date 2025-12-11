@@ -7,6 +7,11 @@
         display: none;
     }
 
+    #staffreportTable_wrapper thead tr th .dt-column-header .dt-column-title,
+    #staffreportTable_wrapper td {
+        font-size: 15px !important;
+    }
+
     #staffreportTable.dataTable>thead>tr>th,
     #staffreportTable.dataTable>thead>tr>td {
         position: relative !important;
@@ -72,7 +77,7 @@
     .sticky-action {
         position: sticky !important;
         right: 0 !important;
-        background:  white !important;
+        background: white !important;
         z-index: 3;
         width: 80px !important;
     }

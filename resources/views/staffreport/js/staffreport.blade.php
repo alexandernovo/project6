@@ -5,7 +5,7 @@
     let selectedstaffreportId = null;
     let dateFrom = "";
     let dateTo = "";
-    let typeReport = "{{ request('from') }}";
+    let typeReportParams = "{{ request('from') }}";
 
     let typesReports = {
         'Incident': 'INCIDENTREPORT',
@@ -26,7 +26,7 @@
             type: 'POST',
             dataType: 'json',
             data: function(d) {
-                typeReport = getReportType(typeReport);
+                typeReport = getReportType(typeReportParams);
                 d._token = '{{ csrf_token() }}';
                 d.dateFrom = dateFrom;
                 d.dateTo = dateTo;

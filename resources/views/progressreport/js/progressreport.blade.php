@@ -34,6 +34,7 @@
             },
             {
                 title: 'Staff<br>Name',
+                visible: !isStaff,
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return row.fullname;
@@ -41,6 +42,7 @@
             },
             {
                 title: 'Designation',
+                visible: !isStaff,
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return row.designation;
@@ -144,7 +146,7 @@
                     return `
                         <div class="d-flex gap-2">
                             <button class="btn btn-orange editRecord"  data-type="progress" data-record_id="${row.record_id}">
-                                <i class="bi bi-eye-fill"></i>
+                                <i class="bi ${isStaff ? 'bi-pencil-square' : 'bi bi-eye-fill'}"></i>
                             </button>
                             <button class="btn btn-red deleteRecord" data-record_id="${row.record_id}">
                                 <i class="bi bi-trash3-fill"></i>

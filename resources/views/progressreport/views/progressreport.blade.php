@@ -24,12 +24,14 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex justify-content-end mb-2 px-0">
-            <button class="btn btn-prime openNewReport" data-type="progress" data-table="progress">
-                <i class="bi bi-plus-circle"></i>
-                Add Report
-            </button>
-        </div>
+        @if (auth()->user() && auth()->user()->usertype == 'STAFF')
+            <div class="d-flex justify-content-end mb-2 px-0">
+                <button class="btn btn-prime openNewReport" data-type="progress" data-table="progress">
+                    <i class="bi bi-plus-circle"></i>
+                    Add Report
+                </button>
+            </div>
+        @endif
         <div class="card w-100 px-0 mb-0">
             <div class="card-body p-3">
                 <table id="progressreportTable" class="table table-bordered">

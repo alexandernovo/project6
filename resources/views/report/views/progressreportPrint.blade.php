@@ -77,16 +77,16 @@
                     <table class="table-bordered border-dark table mt-3 table-report">
                         <thead>
                             <tr>
-                                <th class="text-center p-1 align-middle border-end border-white" style="font-size: 12px;">
+                                <th class="text-center p-1 align-middle border-end" style="font-size: 12px;">
                                     No.
                                 </th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle" style="font-size: 12px">
                                     Barangay</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle" style="font-size: 12px">
                                     Affected Families</th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle" style="font-size: 12px">
                                     Person/Individuals</th>
-                                <th class="text-center p-0 align-middle border-white" style="font-size: 12px">
+                                <th class="text-center p-0 align-middle" style="font-size: 12px">
                                     <div class="d-flex flex-column h-100">
                                         <div class="p-1" style="border-bottom: 1px solid white">
                                             Evacuation Centers/Outside
@@ -98,10 +98,10 @@
                                         </div>
                                     </div>
                                 </th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle" style="font-size: 12px">
                                     Remarks
                                 </th>
-                                <th class="text-center p-1 align-middle border-white" style="font-size: 12px">
+                                <th class="text-center p-1 align-middle" style="font-size: 12px">
                                     Clearing Operations</th>
                                 <th class="text-center p-1 align-middle" style="font-size: 12px">
                                     Date

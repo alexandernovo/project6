@@ -108,6 +108,16 @@ class UserController extends Controller
                     ->orWhere('users.lastname', 'like', "%{$searchValue}%")
                     ->orWhereRaw("(users.firstname + ' ' + users.middlename + ' ' + users.lastname) LIKE ?", ["%{$searchValue}%"])
                     ->orWhereRaw("(users.firstname + ' ' + users.lastname) LIKE ?", ["%{$searchValue}%"])
+                    ->orWhereRaw("(users.lastname + ', ' + users.firstname) LIKE ?", ["%{$searchValue}%"])
+                    ->orWhere('users.firstname', 'like', "%{$searchValue}%")
+                    ->orWhere('users.middlename', 'like', "%{$searchValue}%")
+                    ->orWhere('users.lastname', 'like', "%{$searchValue}%")
+                    ->orWhere('users.username', 'like', "%{$searchValue}%")
+                    ->orWhere('users.designation', 'like', "%{$searchValue}%")
+                    ->orWhere('users.email', 'like', "%{$searchValue}%")
+                    ->orWhere('users.address', 'like', "%{$searchValue}%")
+                    ->orWhere('users.phone_num', 'like', "%{$searchValue}%")
+                    ->orWhereRaw("(users.firstname + ' ' + users.lastname) LIKE ?", ["%{$searchValue}%"])
                     ->orWhereRaw("(users.lastname + ', ' + users.firstname) LIKE ?", ["%{$searchValue}%"]);
             });
         }

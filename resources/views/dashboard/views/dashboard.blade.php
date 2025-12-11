@@ -59,7 +59,7 @@
             @foreach ($counts as $count)
                 <div class="p-3"
                     style="width: 32%; border-radius: 13px;  {{ $count['style'] }}">
-                    <p class="mb-0 text-white text-center text-uppercase" style="font-size: 18px">{{ $count['title'] }}</p>
+                    <p class="mb-0 text-white text-center text-uppercase" style="font-size: 18px">{{ $count['title'] }} | Month</p>
                     <p class="mb-0 text-white text-center" style="font-size: 30px">
                         <i class="bi bi-journal-text text-white" style="font-size: 28px"></i>
                         {{ $count['count'] }}

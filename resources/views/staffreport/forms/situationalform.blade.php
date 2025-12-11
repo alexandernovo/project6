@@ -17,46 +17,49 @@
         <hr>
     </div>
     <div class="row mx-auto align-items-end">
-        <div class="col-3">
-            <div class="form-group">
-                <label for="" class="mb-1">Firstname</label>
-                <input type="text" value="{{ auth()->user()->firstname }}" id="firstname_situational"
-                    class="form-control input-out" readonly>
-            </div>
+        @if (auth()->user() && auth()->user()->usertype != 'STAFF')
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="" class="mb-1">Firstname</label>
+                    <input type="text" value="{{ auth()->user()->firstname }}" id="firstname_situational"
+                        class="form-control input-out" readonly>
+                </div>
 
-        </div>
-        <div class="col-3">
-            <div class="form-group">
-                <label for="" class="mb-1">Middlename</label>
-                <input type="text" id="middlename_situational" value="{{ auth()->user()->middlename }}"
-                    class="form-control input-out" readonly>
             </div>
-        </div>
-        <div class="col-3">
-            <div class="form-group">
-                <label for="" class="mb-1">Lastname</label>
-                <input type="text" id="lastname_situational" value="{{ auth()->user()->lastname }}"
-                    class="form-control input-out" readonly>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="" class="mb-1">Middlename</label>
+                    <input type="text" id="middlename_situational" value="{{ auth()->user()->middlename }}"
+                        class="form-control input-out" readonly>
+                </div>
             </div>
-        </div>
-        <div class="col-3">
-            <div class="form-group">
-                <label for="" class="mb-1">Designation</label>
-                <input type="text" id="designation_situational" value="{{ auth()->user()->designation }}"
-                    class="form-control input-out" readonly>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="" class="mb-1">Lastname</label>
+                    <input type="text" id="lastname_situational" value="{{ auth()->user()->lastname }}"
+                        class="form-control input-out" readonly>
+                </div>
             </div>
-        </div>
-        <div class="col-3">
-            <div class="form-group mt-1">
-                <label for="" class="mb-1">Contact</label>
-                <input type="text" id="phone_num_situational" value="{{ auth()->user()->phone_num }}"
-                    class="form-control input-out" readonly>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="" class="mb-1">Designation</label>
+                    <input type="text" id="designation_situational" value="{{ auth()->user()->designation }}"
+                        class="form-control input-out" readonly>
+                </div>
             </div>
-        </div>
+            <div class="col-3">
+                <div class="form-group mt-1">
+                    <label for="" class="mb-1">Contact</label>
+                    <input type="text" id="phone_num_situational" value="{{ auth()->user()->phone_num }}"
+                        class="form-control input-out" readonly>
+                </div>
+            </div>
+        @endif
         <div class="col-6">
             <div class="form-group">
                 <label for="" class="mb-1">Barangay</label>
-                <input type="search" name="barangay" id="barangay_situational" autocomplete="off" class="form-control input-out" required list="situationalbarangay">
+                <input type="search" name="barangay" id="barangay_situational" autocomplete="off"
+                    class="form-control input-out" required list="situationalbarangay">
                 <datalist id="situationalbarangay">
                     @foreach ($barangaysituational as $b)
                         <option>{{ $b }}</option>
@@ -67,29 +70,30 @@
         <div class="col-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Affected Families</label>
-                <input type="number" id="affectedfamilies_situational" name="affectedfamilies" class="form-control input-out"
-                    required>
+                <input type="number" id="affectedfamilies_situational" name="affectedfamilies"
+                    class="form-control input-out" required>
             </div>
         </div>
         <div class="col-3 mt-3">
             <div class="form-group mt-1">
                 <label for="" class="mb-1">Person/Individuals</label>
-                <input type="number" name="individuals" id="individuals_situational" required class="form-control input-out">
+                <input type="number" name="individuals" id="individuals_situational" required
+                    class="form-control input-out">
             </div>
         </div>
         <div class="col-4">
-            <div class="row mx-auto">
-                <div class="col-12">
+            <div class="row mx-auto px-0">
+                <div class="col-12 px-0">
                     <label for="" class="mb-0 mt-1">(Evacuation Centers/Outside)</label>
                 </div>
-                <div class="col-6">
+                <div class="col-6 ps-0">
                     <div class="form-group">
                         <label for="" class="mb-1">Families</label>
                         <input type="number" name="evacuationfamilies" id="evacuationfamilies_situational"
                             value="0" class="form-control input-out" required>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 pe-0">
                     <div class="form-group">
                         <label for="" class="mb-1">Individuals</label>
                         <input type="number" name="evacuationindividuals" id="evacuationindividuals_situational"

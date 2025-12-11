@@ -7,6 +7,11 @@
         display: none;
     }
 
+    #userTable_wrapper thead tr th .dt-column-header .dt-column-title,
+    #userTable_wrapper td {
+        font-size: 15px !important;
+    }
+
     #userTable.dataTable>thead>tr>th,
     #userTable.dataTable>thead>tr>td {
         position: relative !important;
@@ -35,7 +40,7 @@
     .sticky-action {
         position: sticky !important;
         right: 0 !important;
-        background:  white !important;
+        background: white !important;
         z-index: 3;
         width: 80px !important;
     }

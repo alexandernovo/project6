@@ -86,6 +86,9 @@
     <script src="{{ asset('assets/js/leaflet/googlemutant.js') }}"></script>
     <script src="{{ asset('assets/js/html2pdf.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
+    <script>
+        let isStaff = {{ auth()->check() && auth()->user()->usertype === 'STAFF' ? 'true' : 'false' }};
+    </script>
     @include('layout.js.layoutjs')
     @yield('js')
 </body>

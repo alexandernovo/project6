@@ -625,3 +625,11 @@ textarea {
     color: black !important;
     font-weight: bold;
 }
+.table-report th {
+    border: 1px solid white;
+}
+@media print {
+    .table-report th {
+        border: 1px solid black !important;
+    }
+}

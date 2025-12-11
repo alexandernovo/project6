@@ -23,7 +23,7 @@
                     <div class="form-group mb-2">
                         <label for="" class="mb-1 text-white">Username</label>
                         <div class="position-relative">
-                            <i class="bi bi-person-circle position-absolute text-dark"
+                            <i class="bi bi-person-circle position-absolute text-prime"
                                 style="top: 50%; cursor: pointer; transform: translateY(-50%); left: 15px"></i>
                             <input type="text" name="username" id="username" class="form-control bg-white"
                                 style="text-indent: 20px" placeholder="Username">
@@ -32,11 +32,11 @@
                     <div class="form-group mt-4 mb-2">
                         <label for="" class="mb-1 text-white">Password</label>
                         <div class="position-relative">
-                            <i class="bi bi-lock-fill position-absolute text-dark"
+                            <i class="bi bi-lock-fill position-absolute text-prime"
                                 style="top: 50%; cursor: pointer; transform: translateY(-50%); left: 15px"></i>
                             <input type="password" name="password" id="password" class="form-control bg-white"
                                 placeholder="Password" style="text-indent: 20px">
-                            <i class="bi bi-eye-fill position-absolute toggle-password" data-target="password"
+                            <i class="bi bi-eye-fill position-absolute toggle-password text-prime" data-target="password"
                                 style="top: 50%; cursor: pointer; transform: translateY(-50%); right: 20px"></i>
                         </div>
                         <p id="error_login" class="text-warning mt-1 d-none mb-0 error-class"></p>

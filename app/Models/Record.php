@@ -39,5 +39,6 @@ class Record extends Model
         'typeOfRecord',
         'profile',
         'background',
+        'cause',
     ];
 }

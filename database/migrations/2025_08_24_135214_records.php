@@ -39,6 +39,7 @@ return new class extends Migration
             $table->date('dateacquired')->nullable();
             $table->decimal('amount', 10, 2)->nullable();
             $table->string('typeOfRecord')->nullable();
+            $table->string('cause')->nullable();
 
             $table->timestamps();
         });
