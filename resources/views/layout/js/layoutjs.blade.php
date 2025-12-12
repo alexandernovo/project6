@@ -64,42 +64,63 @@
 
             postRequest("{{ route('sidebarCounts') }}", {}, (response) => {
                 if (response.status == "success") {
-                    if (response.incidentReport > 0) {
-                        $("#incidentCountId").append(
-                            `<div id="incidentCountIdBadge" class="notifCount position-absolute d-flex justify-content-center align-items-center rounded-circle">3</div>`
-                        );
-                    } else {
-                        $("#incidentCountIdBadge").delete();
-                    }
+                    $("#incidentCountId").append(
+                        `<p id="incidentCountIdBadge" class="notifCount mb-0 position-absolute d-flex justify-content-center align-items-center rounded-circle">${response.incidentReport}</p>`
+                    );
 
-                    if (response.situationReport > 0) {
-                        $("#situationalCountId").append(`
-                            <div id="situationalCountIdBadge" class="notifCount position-absolute d-flex justify-content-center align-items-center rounded-circle">3</div>
+                    $("#situationalCountId").append(`
+                            <p id="situationalCountIdBadge" class="notifCount mb-0 position-absolute d-flex justify-content-center align-items-center rounded-circle">${response.situationReport}</p>
                     `);
-                    } else {
-                        $("#situationalCountIdBadge").delete();
-                    }
 
-                    if (response.progressReport > 0) {
-                        $("#progressCountId").append(`
-                            <div id="progressCountIdBadge" class="notifCount position-absolute d-flex justify-content-center align-items-center rounded-circle">3</div>
+                    $("#progressCountId").append(`
+                            <p id="progressCountIdBadge" class="notifCount mb-0 position-absolute d-flex justify-content-center align-items-center rounded-circle">${response.progressReport}</p>
                     `);
-                    } else {
-                        $("#progressCountIdBadge").delete();
-                    }
                 }
             })
         }
     }
 
-    getCountIncident();
-    getCountIncidentFunc();
+    $(document).ready(function() {
+        if (!isStaff) {
+            updateCount0(() => {
+                getCountIncident(); // load counts AFTER updating DB
+            });
+        }
+        if ({{ !in_array(Route::currentRouteName(), $excludedRoutes) }}) {
+            getCountIncidentFunc(); // start the loop
+        }
+    });
+
+
 
     function getCountIncidentFunc() {
         if (!isStaff) {
-            setInterval(() => {
+            // setInterval(() => {
                 getCountIncident();
-            }, 1500);
+            // }, 3000);
+        }
+    }
+
+    function updateCount0(callback) {
+        let routeName = "{{ Route::currentRouteName() }}";
+
+        if (!isStaff) {
+
+            let type = null;
+
+            if (routeName === "progressreport_view") type = "PROGRESSREPORT";
+            if (routeName === "incidentreport_view") type = "INCIDENTREPORT";
+            if (routeName === "situationalreport_view") type = "SITUATIONALREPORT";
+
+            if (type) {
+                postRequest("{{ route('updateCountsActive') }}", {
+                    type
+                }, (response) => {
+                    if (response.status == "success") {
+                        if (typeof callback == "function") callback();
+                    }
+                });
+            }
         }
     }
 </script>

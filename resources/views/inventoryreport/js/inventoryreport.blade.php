@@ -107,7 +107,7 @@
                     return `
                         <div class="d-flex gap-2">
                             <button class="btn btn-orange editRecord" data-type="inventory" data-record_id="${row.record_id}">
-                                <i class="bi bi-eye-fill"></i>
+                                <i class="bi bi-pencil-square"></i>
                             </button>
                             <button class="btn btn-red deleteRecord" data-record_id="${row.record_id}">
                                 <i class="bi bi-trash3-fill"></i>
@@ -230,9 +230,7 @@
                 postRequest("{{ route('deleteRecord') }}", {
                     record_id: record_id,
                 }, (response) => {
-                    if (response.status == "success") {
-                        reloadinventoryreportTable();
-                    }
+                    reloadinventoryreportTable();
                 })
             }
         });

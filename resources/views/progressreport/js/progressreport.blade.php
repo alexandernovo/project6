@@ -1,4 +1,5 @@
 <script>
+
     let progressreportOptions;
     let progressreportTable;
     let reportFormData = [];

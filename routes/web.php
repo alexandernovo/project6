@@ -38,6 +38,7 @@ Route::middleware(["userchecker"])->group(function () {
     Route::post('/wastecollect/getwastecollects', [WasteCollectController::class, 'getwastecollects'])->name('getwastecollect');
     Route::post('/wastecollect/deletewastecollect', [WasteCollectController::class, 'deletewastecollect'])->name('deletewastecollect');
     Route::post('/admin/sidebarCounts', [StaffReportController::class, 'sidebarCounts'])->name('sidebarCounts');
+    Route::post('/admin/updateCountsActive', [StaffReportController::class, 'updateCountsActive'])->name('updateCountsActive');
 
 
     //incident report

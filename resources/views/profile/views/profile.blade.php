@@ -1,6 +1,6 @@
 @extends('layout.mainlayout')
 @section('content')
-    <h4 class="mb-3">
+    <h4 class="mb-3 fw-semibold">
         <i class="text-prime bi bi-person-circle"></i>
         Profile
     </h4>
