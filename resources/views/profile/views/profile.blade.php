@@ -25,10 +25,8 @@
                     <p class="mb-2 text-center mt-1 text-white">
                         {{ '@' . auth()->user()->username }}
                     </p>
-                    <p class="mb-1 text-center mt-1 fw-semibold text-white" style="font-size: 20px">
-                        {{ auth()->user()->firstname }}
-                        {{ auth()->user()->middlename ? strtoupper(substr(auth()->user()->middlename, 0, 1)) . '.' : '' }}
-                        {{ auth()->user()->lastname }}
+                    <p class="mb-1 text-center mt-1 fw-semibold text-white text-capitalize" style="font-size: 20px">
+                        {{ auth()->user()->username }}
                     </p>
                     <div class="gap-3 p-2 px-3 text-white d-flex justify-content-between align-items-center"
                         style="border-radius: 20px; background-color: #630F0F">
@@ -92,11 +90,11 @@
                         </div>
                         <div class="d-flex justify-content-end gap-3 mt-3">
                             <button class="btn btn-prime" onclick="document.getElementById('backgroundInput').click()">
-                                <i class="text-prime bi bi-arrow-bar-up"></i>
+                                <i class="bi bi-arrow-bar-up"></i>
                                 Upload
                             </button>
                             <button class="btn btn-prime" id="deleteCover">
-                                <i class="text-prime bi bi-trash-fill"></i>
+                                <i class="bi bi-trash-fill"></i>
                                 Delete
                             </button>
                         </div>

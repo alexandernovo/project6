@@ -21,6 +21,17 @@
                     <head>
                         <title>Incident Report</title>
                         <link rel="stylesheet" href="{{ asset('template_assets/css/styles.min.css') }}">
+                        <style>
+                            .table-report th {
+                                border: 1px solid black !important;
+                            }
+                            .table-report th .border-inside-btm {
+                                border-bottom: 1px solid black !important;
+                            }
+                            .table-report th .border-inside-rt {
+                                border-right: 1px solid black !important;
+                            }
+                        </style>
                     </head>
                     <body>
                         ${content}

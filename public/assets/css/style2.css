@@ -628,8 +628,44 @@ textarea {
 .table-report th {
     border: 1px solid white;
 }
-@media print {
-    .table-report th {
-        border: 1px solid black !important;
-    }
+.border-inside-btm {
+    border-bottom: 1px solid white;
+}
+.border-inside-rt {
+    border-right: 1px solid white;
+}
+
+.notifCount {
+    background-color: #991818;
+    top: -10px;
+    right: -30px;
+    height: 23px;
+    width: 23px;
+    font-size: 13px;
+}
+.form-control:focus,
+.form-select:focus,
+input:focus,
+textarea:focus {
+    border-color: #3a0000 !important;
+    box-shadow: 0 0 0 0.1rem rgba(56, 2, 2, 0.5) !important; /* #3a0000 ring */
+    outline: none !important;
+}
+
+div.dt-container .dt-paging .dt-paging-button.active button {
+    color: white !important;
+    background-color: #3a0000 !important;
+    border: none !important;
+}
+
+div.dt-container .dt-paging .dt-paging-button.active button:hover {
+    color: white !important;
+    background-color: #3a0000 !important;
+}
+
+div.dt-container .dt-paging .dt-paging-button:not(.active) button:hover {
+    color: white !important;
+    background: #3a0000 !important;
+    /* padding: 5px 11px !important; */
+    border: none !important;
 }

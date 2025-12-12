@@ -41,7 +41,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-group mb-1">
-                                    <label for="" class="mb-1 label-out">Firstname</label>
+                                    <label for="" class="mb-1 label-out">First Name</label>
                                     <input type="text" id="firstname" name="firstname" class="form-control input-out"
                                         required>
                                 </div>
@@ -53,7 +53,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="form-group mb-1">
-                                    <label for="" class="mb-1 label-out">Middlename</label>
+                                    <label for="" class="mb-1 label-out">Middle Name</label>
                                     <input type="text" id="middlename" name="middlename" class="form-control input-out">
                                 </div>
                                 <div class="form-group mb-1">
@@ -64,7 +64,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="form-group mb-1">
-                                    <label for="" class="mb-1 label-out">Lastname</label>
+                                    <label for="" class="mb-1 label-out">Last Name</label>
                                     <input type="text" id="lastname" name="lastname" class="form-control input-out"
                                         required>
                                 </div>

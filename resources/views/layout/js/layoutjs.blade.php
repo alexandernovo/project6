@@ -13,8 +13,8 @@
             backdrop: true,
             allowOutsideClick: false,
             customClass: {
-                confirmButton: 'btn btn-danger me-2',
-                cancelButton: 'btn btn-secondary'
+                confirmButton: 'btn btn-prime me-2',
+                cancelButton: 'btn btn-gray-new'
             },
             buttonsStyling: false
         }).then((result) => {
@@ -50,11 +50,56 @@
                 console.log("Logout canceled");
             }
         });
-    })
+    });
+
     $(document).ready(function() {
         $('.toast').each(function() {
             var toast = new bootstrap.Toast(this);
             toast.show();
         });
     });
+
+    function getCountIncident() {
+        if (!isStaff) {
+
+            postRequest("{{ route('sidebarCounts') }}", {}, (response) => {
+                if (response.status == "success") {
+                    if (response.incidentReport > 0) {
+                        $("#incidentCountId").append(
+                            `<div id="incidentCountIdBadge" class="notifCount position-absolute d-flex justify-content-center align-items-center rounded-circle">3</div>`
+                        );
+                    } else {
+                        $("#incidentCountIdBadge").delete();
+                    }
+
+                    if (response.situationReport > 0) {
+                        $("#situationalCountId").append(`
+                            <div id="situationalCountIdBadge" class="notifCount position-absolute d-flex justify-content-center align-items-center rounded-circle">3</div>
+                    `);
+                    } else {
+                        $("#situationalCountIdBadge").delete();
+                    }
+
+                    if (response.progressReport > 0) {
+                        $("#progressCountId").append(`
+                            <div id="progressCountIdBadge" class="notifCount position-absolute d-flex justify-content-center align-items-center rounded-circle">3</div>
+                    `);
+                    } else {
+                        $("#progressCountIdBadge").delete();
+                    }
+                }
+            })
+        }
+    }
+
+    getCountIncident();
+    getCountIncidentFunc();
+
+    function getCountIncidentFunc() {
+        if (!isStaff) {
+            // setInterval(() => {
+                getCountIncident();
+            // }, 1000);
+        }
+    }
 </script>

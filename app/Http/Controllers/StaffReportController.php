@@ -267,4 +267,18 @@ class StaffReportController extends Controller
 
         return false;
     }
+
+    public function sidebarCounts()
+    {
+        $incidentReport = Record::where('typeOfRecord', "INCIDENTREPORT")->count();
+        $situationReport = Record::where('typeOfRecord', "SITUATIONALREPORT")->count();
+        $progressReport = Record::where('typeOfRecord', "PROGRESSREPORT")->count();
+
+        return response()->json([
+            'status' => 'success',
+            'incidentReport' => $incidentReport,
+            'situationReport' => $situationReport,
+            'progressReport' => $progressReport,
+        ]);
+    }
 }

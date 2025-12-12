@@ -50,9 +50,15 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link nav-icon-hover px-2" href="javascript:void(0)" id="drop2"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class=" d-flex align-items-center" style="width: 40px; height: 40px">
-                                    <i class="bi bi-person-circle text-white"
-                                        style="font-size: calc(30px - 2px); fill: white"></i>
+                                <div class=" d-flex align-items-center overflow-hidden rounded-circle" style="width: 40px; height: 40px">
+                                    @if (auth()->user() && auth()->user()->profile)
+                                        <img src="{{ asset(auth()->user()->profile) }}" alt=""
+                                            class="w-100 h-100 object-fit-cover">
+                                    @else
+                                        <i class="bi bi-person-circle text-white"
+                                            style="font-size: calc(30px - 2px); fill: white"></i>
+                                    @endif
+
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"

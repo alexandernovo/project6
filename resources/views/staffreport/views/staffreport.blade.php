@@ -33,7 +33,7 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Staff Name</th>
+                            <th>Staff</th>
                             <th>Designation</th>
                             <th>Report Type</th>
                             <th>Address</th>

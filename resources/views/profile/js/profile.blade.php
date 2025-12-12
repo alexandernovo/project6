@@ -19,7 +19,12 @@
                         title: "Success",
                         text: response.message,
                         icon: "success",
-                        allowOutsideClick: false
+                        allowOutsideClick: false,
+                        confirmButtonText: "OK"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.reload(); // refresh the page
+                        }
                     });
                 }
                 if (response.status == "error") {
@@ -77,6 +82,10 @@
                         text: response.message,
                         icon: "success",
                         allowOutsideClick: false
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.reload(); // refresh the page
+                        }
                     });
                 } else if (response.status === "error") {
                     Swal.fire({
@@ -166,7 +175,8 @@
             if (result.isConfirmed) {
                 postRequest("{{ route('deleteCover') }}", {}, (response) => {
                     if (response.status == "success") {
-                        $("#backgroundPreview").attr("src", "{{ asset('assets/images/placeholder.png') }}");
+                        $("#backgroundPreview").attr("src",
+                            "{{ asset('assets/images/placeholder.png') }}");
                         Swal.fire({
                             title: "Success",
                             text: response.message,

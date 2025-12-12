@@ -26,11 +26,11 @@
             </div>
         </div>
         <div class="d-flex justify-content-end gap-2 mb-2 px-0">
-            <a href="{{ route('inventoryreportPrint') }}" class="btn btn-red">
+            <a href="{{ route('inventoryreportPrint') }}" class="btn btn-red fw-semibold">
                 <i class="bi bi-journals"></i>
                 Report
             </a>
-            <button class="btn btn-red openNewReport" data-type="inventory" data-table="inventory">
+            <button class="btn btn-red openNewReport fw-semibold" data-type="inventory" data-table="inventory">
                 <i class="bi bi-plus-circle"></i>
                 Add Item
             </button>

@@ -28,7 +28,7 @@
                 }
             },
             {
-                title: 'Staff Name',
+                title: 'Staff',
                 visible: !isStaff,
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {

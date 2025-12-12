@@ -32,7 +32,7 @@
                 }
             },
             {
-                title: 'Staff Name',
+                title: 'Staff',
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return row.fullname;

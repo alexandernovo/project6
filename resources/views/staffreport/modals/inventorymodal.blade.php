@@ -16,9 +16,7 @@
                     @include('staffreport.forms.inventoryform')
                 </div>
                 <div class="modal-footer">
-                    @if (auth()->user() && auth()->user()->usertype == 'STAFF')
-                        <button type="submit" class="btn btn-primary btn-update-button btn-gray-new">Submit</button>
-                    @endif
+                    <button type="submit" class="btn btn-primary btn-update-button btn-gray-new">Submit</button>
                     <button type="button" class="btn btn-secondary btn-prime" data-bs-dismiss="modal">Close</button>
                 </div>
             </form>

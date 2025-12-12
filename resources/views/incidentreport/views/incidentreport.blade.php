@@ -39,7 +39,7 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Staff Name</th>
+                            <th>Staff</th>
                             <th>Designation</th>
                             <th>Type of Incident</th>
                             <th>Cause of Incident</th>

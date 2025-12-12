@@ -15,7 +15,7 @@
                     <div class="row mx-auto">
                         <div class="col-4">
                             <div class="form-group mb-1">
-                                <label for="" class="mb-1">Firstname</label>
+                                <label for="" class="mb-1">First Name</label>
                                 <input type="text" class="form-control" autocomplete="off" required name="firstname"
                                     id="firstname">
                             </div>
@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-4">
                             <div class="form-group mb-1">
-                                <label for="" class="mb-1">Middlename</label>
+                                <label for="" class="mb-1">Middle Name</label>
                                 <input type="text" class="form-control" autocomplete="off" required name="middlename"
                                     id="middlename">
                             </div>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-4">
                             <div class="form-group mb-1">
-                                <label for="" class="mb-1">Lastname</label>
+                                <label for="" class="mb-1">Last Name</label>
                                 <input type="text" class="form-control" autocomplete="off" required name="lastname"
                                     id="lastname">
                             </div>

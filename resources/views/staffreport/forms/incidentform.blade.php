@@ -20,7 +20,7 @@
         @if (auth()->user() && auth()->user()->usertype != 'STAFF')
             <div class="col-4">
                 <div class="form-group">
-                    <label for="" class="mb-1">Firstname</label>
+                    <label for="" class="mb-1">First Name</label>
                     <input type="text" value="{{ auth()->user()->firstname }}" id="firstname_incident"
                         class="form-control input-out" readonly>
                 </div>
@@ -28,14 +28,14 @@
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="" class="mb-1">Middlename</label>
+                    <label for="" class="mb-1">Middle Name</label>
                     <input type="text" id="middlename_incident" value="{{ auth()->user()->middlename }}"
                         class="form-control input-out" readonly>
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="" class="mb-1">Lastname</label>
+                    <label for="" class="mb-1">Last Name</label>
                     <input type="text" id="lastname_incident" value="{{ auth()->user()->lastname }}"
                         class="form-control input-out" readonly>
                 </div>
@@ -91,7 +91,7 @@
         <div class="col-6">
             <div class="row mx-auto">
                 <div class="col-12 px-0">
-                    <label for="" class="mb-0 mt-1">(No. of Person Involved)</label>
+                    <label for="" class="mb-0 mt-1 text-nowrap">(No. of Person Involved)</label>
                 </div>
                 <div class="col-6 ps-0">
                     <div class="form-group">

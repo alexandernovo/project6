@@ -88,11 +88,11 @@
                                     Person/Individuals</th>
                                 <th class="text-center p-0 align-middle" style="font-size: 12px">
                                     <div class="d-flex flex-column h-100">
-                                        <div class="p-1" style="border-bottom: 1px solid white">
+                                        <div class="p-1 border-inside-btm">
                                             Evacuation Centers/Outside
                                         </div>
                                         <div class="d-flex flex-1">
-                                            <div style="border-right: 1px solid white;" class="w-50 h-100 p-1">Families
+                                            <div class="w-50 h-100 p-1 border-inside-rt">Families
                                             </div>
                                             <div class="w-50 h-100 p-1">Individuals</div>
                                         </div>

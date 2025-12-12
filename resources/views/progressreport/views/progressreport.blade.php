@@ -38,7 +38,7 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Staff Name</th>
+                            <th>Staff</th>
                             <th>Designation</th>
                             <th>Barangay</th>
                             <th>Affected Families</th>

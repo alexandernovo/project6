@@ -50,7 +50,7 @@
                             </div>
                             <p id="error_login_staff" class="text-danger mt-1 d-none mb-0 error-class"></p>
                         </div>
-                        <a href="{{ route('forgot.password') }}" class="text-white">Forgot password?</a>
+                        <a href="{{ route('forgot.password') }}" class="text-white">Forgot Password?</a>
                         <div class="form-group mt-3">
                             <button type="submit" class="btn btn-prime w-100"
                                 style="background-color: #630F0F !important">Log in</button>

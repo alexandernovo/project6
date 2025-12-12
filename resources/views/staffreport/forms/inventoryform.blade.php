@@ -15,7 +15,7 @@
     <div class="row mx-auto align-items-end">
         {{-- <div class="col-3">
             <div class="form-group">
-                <label for="" class="mb-1">Firstname</label>
+                <label for="" class="mb-1">First Name</label>
                 <input type="text" value="{{ auth()->user()->firstname }}" id="firstname_inventory"
                     class="form-control input-out" readonly>
             </div>
@@ -23,14 +23,14 @@
         </div>
         <div class="col-3">
             <div class="form-group">
-                <label for="" class="mb-1">Middlename</label>
+                <label for="" class="mb-1">Middle Name</label>
                 <input type="text" id="middlename_inventory" value="{{ auth()->user()->middlename }}"
                     class="form-control input-out" readonly>
             </div>
         </div>
         <div class="col-3">
             <div class="form-group">
-                <label for="" class="mb-1">Lastname</label>
+                <label for="" class="mb-1">Last Name</label>
                 <input type="text" id="lastname_inventory" value="{{ auth()->user()->lastname }}"
                     class="form-control input-out" readonly>
             </div>

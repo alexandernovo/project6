@@ -8,7 +8,8 @@
                         class="d-flex align-items-center mb-2 flex-wrap text-lg-start text-sm-center gap-2 title-tips-class">
                         <h4 class="fw-semibold mb-0 text-nowrap">
                             <i class="bi bi-journals"></i>
-                            Monthly Report | Incident</h4>
+                            Monthly Report | Incident
+                        </h4>
                     </div>
                     <nav aria-label="breadcrumb" class="breadcrum-sm-class">
                         <ol class="breadcrumb mb-1">
@@ -79,7 +80,7 @@
                                 <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">No.
                                 </th>
                                 <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
-                                    Staff Name</th>
+                                    Staff</th>
                                 <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
                                     Date & Time of Occurence</th>
                                 <th class="text-center p-1 align-middle" style="font-size: 12px" style="font-size: 12px">
@@ -91,11 +92,11 @@
                                     Incident</th>
                                 <th class="text-center p-0 align-middle" style="font-size: 12px" style="font-size: 12px">
                                     <div class="d-flex flex-column h-100">
-                                        <div class="p-1" style="border-bottom: 1px solid white">
+                                        <div class="p-1 border-inside-btm">
                                             No. of Person Involved
                                         </div>
                                         <div class="d-flex flex-1">
-                                            <div style="border-right: 1px solid white;" class="w-50 h-100 p-1">Injured</div>
+                                            <div class="w-50 h-100 p-1 border-inside-rt">Injured</div>
                                             <div class="w-50 h-100 p-1">Dead</div>
                                         </div>
                                     </div>
