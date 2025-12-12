@@ -97,9 +97,9 @@
 
     function getCountIncidentFunc() {
         if (!isStaff) {
-            // setInterval(() => {
+            setInterval(() => {
                 getCountIncident();
-            // }, 1000);
+            }, 1000);
         }
     }
 </script>
