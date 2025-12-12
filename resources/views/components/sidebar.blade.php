@@ -7,7 +7,7 @@
                 <img src="{{ asset('assets/images/logo1.png') }}" class="bg-white rounded-circle" width=""
                     alt="" style="width: 78px; height: 78px" />
             </div>
-            <p class="mb-0 text-center text-white font-semibold" style="font-size: 17px;">TIBIAO MDRRMO PORTAL</p>
+            <p class="mb-0 text-center text-white fw-semibold" style="font-size: 17px;">TIBIAO MDRRMO PORTAL</p>
         </div>
         <nav class="sidebar-nav scroll-sidebar mt-1 position-relative pb-3 h-100">
             <ul id="sidebarnav">
@@ -21,7 +21,7 @@
                 </li>
                 <hr class="border-top border-white">
                 <span class="hide-menu ms-2 text-white fw-semibold" style="font-size: 16px">DOCUMENT</span>
-                <li class="sidebar-item mb-1">
+                <li class="sidebar-item mb-1 mt-1">
                     <a class="sidebar-link" href="{{ route('incidentreport_view') }}" aria-expanded="false">
                         <span>
                             <i class="bi bi-journals"></i>

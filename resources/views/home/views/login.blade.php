@@ -19,7 +19,7 @@
                             alt="" style="width: 78px; height: 78px" />
                     </div>
                     <p class="mb-2 text-center fw-semibold text-white" style="font-size: 22px;">TIBIAO MDRRMO PORTAL</p>
-                    <hr class="my-1">
+                    <hr class="my-1" style="border-top: 2px solid white !important">
                 </div>
                 <div>
                     <p class="mb-1 text-center fw-semibold text-white" style="font-size: 18px;">Log in to your Account</p>

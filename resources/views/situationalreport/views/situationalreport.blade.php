@@ -26,7 +26,7 @@
         </div>
         @if (auth()->user() && auth()->user()->usertype == 'STAFF')
             <div class="d-flex justify-content-end mb-2 px-0">
-                <button class="btn btn-prime openNewReport" data-type="situational" data-table="situational">
+                <button class="btn btn-red fw-semibold openNewReport" data-type="situational" data-table="situational">
                     <i class="bi bi-plus-circle"></i>
                     Add Report
                 </button>

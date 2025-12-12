@@ -31,7 +31,7 @@
                             alt="" style="width: 78px; height: 78px" />
                     </div>
                     <p class="mb-2 text-center fw-semibold text-white" style="font-size: 19px;">TIBIAO MDRRMO PORTAL</p>
-                    <hr class="my-1">
+                    <hr class="my-1"  style="border-top: 2px solid white !important">
                 </div>
                 <div>
                     <p class="mb-2 mt-0 text-center fw-semibold text-white" style="font-size: 19px;">Create an Account</p>
@@ -120,7 +120,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mt-1">
+                            <div class="form-group mt-3">
                                 <button type="submit" class="btn btn-prime w-100"
                                     style="background-color: #630F0F !important">Sign up</button>
                                 <p class="mb-0 text-center mt-2 text-white" style="font-size: 12px">
