@@ -29,13 +29,14 @@
 
     $(document).on("click", ".editRecord", function() {
         formReset('reportform');
-        console.log(isStaff);
-        if (!isStaff) {
+        console.log(typeFormReport);
+        typeFormReport = $(this).data("type");
+
+        if (!isStaff && typeFormReport != 'inventory') {
             $(".reportform").find("input, select, textarea").prop("disabled", true);
         }
         $(".btn-update-button").html("Submit");
         let record_id = $(this).data("record_id");
-        typeFormReport = $(this).data("type");
         typeTable = $(this).data("table") ?? "";
 
         $(`#${typeFormReport}Modal`).modal("show");
