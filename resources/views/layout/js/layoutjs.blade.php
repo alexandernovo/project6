@@ -99,7 +99,7 @@
         if (!isStaff) {
             setInterval(() => {
                 getCountIncident();
-            }, 1000);
+            }, 1500);
         }
     }
 </script>
