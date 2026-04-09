@@ -2,6 +2,8 @@
 @section('content')
     @include('situationalreport.css.situationalreport')
     @include('staffreport.modals.situationalmodal')
+    @include('components.remarks')
+
     <div class="row mx-auto">
         <div class="card-body px-2 py-1">
             <div class="row align-items-center">
@@ -47,6 +49,7 @@
                             <th>Remarks</th>
                             <th>File Submitted</th>
                             <th>Date Submitted</th>
+                            <th>Remarks</th>
                             <th>Action</th>
                         </tr>
                     </thead>

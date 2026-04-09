@@ -138,6 +138,15 @@ class UserController extends Controller
         ]);
     }
 
+    public function deletestaff(Request $request)
+    {
+        $id = $request->id;
+        User::where('id', $id)->delete();
+        return response()->json([
+            'status' => 'success'
+        ]);
+    }
+
     public function activatedeactivate(Request $request)
     {
         $id = $request->id;

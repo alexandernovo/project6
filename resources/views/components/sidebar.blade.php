@@ -77,6 +77,14 @@
                         </a>
                     </li>
                     <li class="sidebar-item mb-1">
+                        <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['incidentreportPrint', 'situationalreportPrint', 'progressreportPrint']) ? 'active' : '' }}" data-bs-toggle="modal" data-bs-target="#monthlyReportModal">
+                            <span>
+                                <i class="bi bi-folder2-open"></i>
+                            </span>
+                            <span class="hide-menu">Monthly Report</span>
+                        </a>
+                    </li>
+                    {{-- <li class="sidebar-item mb-1">
                         <a class="sidebar-link {{ in_array(Route::currentRouteName(), ['incidentreportPrint', 'situationalreportPrint', 'progressreportPrint']) ? 'active' : '' }}"
                             href="{{ route('report_view') }}" aria-expanded="false">
                             <span>
@@ -84,7 +92,7 @@
                             </span>
                             <span class="hide-menu">Monthly Report</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <hr class="border-top border-white mt-2 mb-1">
                     <li class="sidebar-item mb-1">
                         <a class="sidebar-link" href="{{ route('user_view') }}" aria-expanded="false">

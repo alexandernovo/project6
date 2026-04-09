@@ -63,6 +63,8 @@
             </div>
         </div>
     </div>
+
+    @include('layout/components/monthlyreport')
     <script src="{{ asset('assets/js/loader.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/datatables.js') }}"></script>
@@ -90,6 +92,7 @@
         let isStaff = {{ auth()->check() && auth()->user()->usertype === 'STAFF' ? 'true' : 'false' }};
     </script>
     @include('layout.js.layoutjs')
+    @include('layout/js/monthlyreport')
     @yield('js')
 </body>
 

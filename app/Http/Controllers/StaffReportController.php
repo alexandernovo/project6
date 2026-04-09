@@ -290,4 +290,16 @@ class StaffReportController extends Controller
             'status' => 'success',
         ]);
     }
+
+    public function submitRemarks(Request $request)
+    {
+        $record_id = $request->record_id;
+        $remarksAdmin = $request->remarksAdmin;
+
+        Record::where('record_id', $record_id)->update(['remarksAdmin' => $remarksAdmin]);
+        
+        return response()->json([
+            'status' => 'success',
+        ]);
+    }
 }

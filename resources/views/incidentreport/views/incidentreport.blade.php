@@ -2,6 +2,7 @@
 @section('content')
     @include('incidentreport.css.incidentreport')
     @include('staffreport.modals.incidentmodal')
+    @include('components.remarks')
     <div class="row mx-auto">
 
         <div class="card-body px-2 py-1">
@@ -50,6 +51,7 @@
                             <th>No. of Person Involved</th>
                             <th>File Submitted</th>
                             <th>Date Submitted</th>
+                            <th>Remarks</th>
                             <th>Action</th>
                         </tr>
                     </thead>

@@ -40,6 +40,7 @@ return new class extends Migration
             $table->decimal('amount', 10, 2)->nullable();
             $table->string('typeOfRecord')->nullable();
             $table->string('cause')->nullable();
+            $table->string('remarksAdmin')->nullable();
 
             $table->timestamps();
         });

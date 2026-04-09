@@ -87,9 +87,13 @@
                 render: function(data, type, row) {
                     return `
                         <div class="d-flex gap-2">
-                            <button class="btn deactivate_user ${row.status=="ACTIVE" ? 'btn-red' : 'btn-green'}" data-user_id="${row.id}" data-status="${row.status}"> 
+                            <button style="width: 120px" class="btn deactivate_user ${row.status=="ACTIVE" ? 'btn-red' : 'btn-green'}" data-user_id="${row.id}" data-status="${row.status}"> 
                                 <i class="bi bi-power"></i>
                                 ${row.status=="ACTIVE" ? 'Deactivate' : 'Activate'}
+                            </button>
+
+                            <button style="padding: 4px 8px" class="btn btn-red delete_user" data-user_id="${row.id}" data-status="${row.status}"> 
+                                <i class="bi bi-trash"></i>
                             </button>
                         </div>
                     `;
@@ -157,9 +161,9 @@
     //     New Staff
     // </button>
 
-//     <button class="btn btn-info edit_user" data-user_id="${row.id}">
-//     <i class="bi bi-pencil-square"></i>
-// </button>
+    //     <button class="btn btn-info edit_user" data-user_id="${row.id}">
+    //     <i class="bi bi-pencil-square"></i>
+    // </button>
     function reloadButtonLoading(isLoading) {
         if (isLoading) {
             $("#reloaduserBtn").html(`
@@ -193,6 +197,33 @@
             populateForm(user_data, "userForm")
         }
         $("#userModal").modal("show");
+    });
+
+    $(document).on('click', '.delete_user', function() {
+        let user_id = $(this).data("user_id");
+        Swal.fire({
+            title: `Delete?`,
+            text: `Are you sure you want to Delete this staff?`,
+            icon: 'warning',
+            confirmButtonText: "Delete",
+            showCancelButton: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                postRequest("{{ route('deletestaff') }}", {
+                    id: user_id,
+                    status: status
+                }, (response) => {
+                    if (response.status == "success") {
+                        Swal.fire({
+                            title: `Success`,
+                            text: `Staff Deleted Successfully`,
+                            allowOutsideClick: false,
+                        });
+                        reloaduserTable();
+                    }
+                })
+            }
+        });
     });
 
     $(document).on('click', '.deactivate_user', function() {

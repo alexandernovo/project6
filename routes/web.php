@@ -65,6 +65,7 @@ Route::middleware(["userchecker"])->group(function () {
     Route::post('/staffreport/getstaffreports', [StaffReportController::class, 'getstaffreports'])->name('getstaffreports');
     Route::post('/staffreport/deleteRecord', [StaffReportController::class, 'deleteRecord'])->name('deleteRecord');
     Route::post('/staffreport/save_new_staffreport', [StaffReportController::class, 'save_new_staffreport'])->name('save_new_staffreport');
+    Route::post('/staffreport/submitRemarks', [StaffReportController::class, 'submitRemarks'])->name('submitRemarks');
 
     //report
     Route::get('/report/view', [ReportController::class, 'report_view'])->name('report_view');
@@ -77,6 +78,7 @@ Route::middleware(["userchecker"])->group(function () {
     Route::get('/user/view', [UserController::class, 'user_view'])->name('user_view');
     Route::post('/user/getusers', [UserController::class, 'getusers'])->name('getuser');
     Route::post('/user/activatedeactivate', [UserController::class, 'activatedeactivate'])->name('activatedeactivate');
+    Route::post('/user/deletestaff', [UserController::class, 'deletestaff'])->name('deletestaff');
 
     //profile
     Route::get('/profile/view', [ProfileController::class, 'profile_view'])->name('profile_view');

@@ -5,6 +5,7 @@
     let selectedsituationalreportId = null;
     let dateFrom = "";
     let dateTo = "";
+    let record_id_remarks = null;
 
     situationalreportOptions = {
         processing: false,
@@ -130,6 +131,27 @@
                 className: 'text-nowrap p-3 align-middle text-center',
                 render: function(data, type, row) {
                     return formatDateToStr(row.created_at);
+                }
+            },
+            {
+                title: 'Remarks',
+                className: 'text-nowrap px-4 align-middle text-center',
+                render: function(data, type, row) {
+                    return `
+                        <div class="d-flex gap-2 justify-content-center">
+                            ${!isStaff ? `
+                                <button class="btn btn-red remarksBtn" data-record_id="${row.record_id}">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </button>
+                            `: `
+                                ${row.remarksAdmin ? `
+                                    <button class="btn btn-red remarksBtn" data-record_id="${row.record_id}">
+                                        <i class="bi bi-envelope-exclamation-fill"></i>
+                                    </button>
+                                ` : ``}
+                            `}
+                        <div>
+                    `;
                 }
             },
             {
@@ -269,4 +291,39 @@
             }
         });
     });
+
+    $(document).on("click", ".remarksBtn", function() {
+        record_id_remarks = $(this).data("record_id");
+
+        $("#remarksAdminTitle").text("TIBIAO MDRRMO SITUATIONAL REPORT REMARKS");
+        if (isStaff) {
+            $("#remarksAdmin").attr('readonly', true);
+            $("#submitRemarks").addClass('d-none');
+        }
+        let remarks = reportFormData.find(x => x.record_id == record_id_remarks);
+
+        if (remarks) {
+            $("#remarksAdmin").val(remarks.remarksAdmin ?? '');
+        }
+
+        $("#remarksModal").modal("show");
+    })
+
+    $(document).on("click", "#submitRemarks", function() {
+        postRequest("{{ route('submitRemarks') }}", {
+            record_id: record_id_remarks,
+            remarksAdmin: $("#remarksAdmin").val()
+        }, (response) => {
+            if (response.status == "success") {
+                Swal.fire({
+                    title: `Success`,
+                    text: `Remarks Submitted Successfully`,
+                    icon: 'success',
+                    confirmButtonText: "Okay"
+                })
+                $("#remarksModal").modal("hide");
+                reloadsituationalreportTable();
+            }
+        })
+    })
 </script>
